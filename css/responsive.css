@@ -157,4 +157,34 @@
   .hero__floating-icon--4 {
       display:none;
   }
+
+  /* Form & Mobile Inputs */
+  .form-input,
+  .form-select {
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom on input focus */
+    padding: 12px 14px;
+  }
+  
+  .auth-card {
+    padding: var(--sk-space-5) var(--sk-space-4);
+  }
+
+  .auth-title {
+    font-size: 1.5rem;
+  }
+
+  .auth-subtitle {
+    font-size: var(--sk-text-sm);
+  }
+
+  .floating-nav {
+    bottom: calc(var(--sk-space-4) + 65px);
+    right: var(--sk-space-3);
+  }
+
+  .floating-nav__toggle {
+    width: 42px;
+    height: 42px;
+  }
 }
+

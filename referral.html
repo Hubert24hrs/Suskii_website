@@ -49,17 +49,14 @@
             <nav class="nav__links" aria-label="Main Navigation">
                 <a href="index.html#home" class="nav__link">Home</a>
                 <a href="index.html#features" class="nav__link">Features</a>
-                <a href="#" class="nav__link">About</a>
-                <a href="#" class="nav__link">Contact</a>
+                <a href="index.html#how-it-works" class="nav__link">How It Works</a>
+                <a href="referral.html" class="nav__link nav__link--active">Refer & Earn</a>
                 <a href="#" class="nav__link terms-trigger">Terms and Conditions</a>
-                <a href="#" class="nav__link">Privacy Policy</a>
             </nav>
             
-            <div class="nav__actions" id="footer-social-nav">
-                <!-- Socials can be injected here or statically added -->
-                <a href="#" class="social-icon social-icon--small" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                <a href="#" class="social-icon social-icon--small" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
-                <a href="#" class="social-icon social-icon--small" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <div class="nav__actions">
+                <a href="https://suskii.com/login" class="nav__signin">Sign In</a>
+                <a href="index.html#download" class="btn btn--primary btn--sm">Get the App</a>
             </div>
             
             <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false" id="menu-toggle">
@@ -72,10 +69,12 @@
         <!-- Mobile Menu Overlay -->
         <div class="nav__mobile-menu" id="mobile-menu">
             <a href="index.html#home" class="nav__mobile-link">Home</a>
+            <a href="index.html#how-it-works" class="nav__mobile-link">How It Works</a>
             <a href="index.html#features" class="nav__mobile-link">Features</a>
-            <a href="#" class="nav__mobile-link">About</a>
-            <a href="#" class="nav__mobile-link">Contact</a>
+            <a href="referral.html" class="nav__mobile-link" style="color: var(--sk-orange); font-weight: 700;">🎁 Refer & Earn</a>
             <a href="#" class="nav__mobile-link terms-trigger">Terms and Conditions</a>
+            <a href="https://suskii.com/login" class="nav__mobile-link mt-4">Sign In</a>
+            <a href="index.html#download" class="btn btn--primary btn--lg nav__mobile-link">Get the App</a>
         </div>
     </header>
 
@@ -183,6 +182,86 @@
             
         </div>
     </main>
+
+    <!-- Floating Section Menu -->
+    <div class="floating-nav">
+        <button class="floating-nav__toggle" id="floating-nav-toggle" aria-label="Toggle sections menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <div class="floating-nav__menu" id="floating-nav-menu">
+            <a href="index.html#home" class="floating-nav__link">Home</a>
+            <a href="index.html#how-it-works" class="floating-nav__link">How It Works</a>
+            <a href="index.html#features" class="floating-nav__link">Features</a>
+            <a href="index.html#buyer-seller" class="floating-nav__link">Buy & Sell</a>
+            <a href="index.html#faq" class="floating-nav__link">FAQ</a>
+            <a href="referral.html" class="floating-nav__link" style="color: var(--sk-orange); font-weight: 600;">🎁 Referral Signup</a>
+        </div>
+    </div>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" rx="20" fill="url(#paint0_linear_footer)"/>
+                            <path d="M70 35H35L25 65H60L70 35Z" fill="white"/>
+                            <path d="M40 50H70L80 20H50L40 50Z" fill="url(#paint1_linear_footer)"/>
+                            <defs>
+                                <linearGradient id="paint0_linear_footer" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FF5722"/>
+                                    <stop offset="1" stop-color="#C23A15"/>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_footer" x1="40" y1="20" x2="80" y2="50" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FFFFFF"/>
+                                    <stop offset="1" stop-color="#E4E8F0"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="footer__logo-text">SUSKII</span>
+                    </a>
+                    <p class="footer__brand-desc">A marketplace where you can discover, buy, list, and sell legitimate salable products directly through a modern digital platform.</p>
+                    <div class="social-icons" id="footer-social"></div>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Marketplace</h4>
+                    <div class="footer__col-links">
+                        <a href="https://suskii.com/explore" class="footer__link">Explore</a>
+                        <a href="https://suskii.com/categories" class="footer__link">Categories</a>
+                        <a href="referral.html" class="footer__link" style="color: var(--sk-orange);">Referral Program</a>
+                        <a href="https://suskii.com/login" class="footer__link">Sign In</a>
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Company</h4>
+                    <div class="footer__col-links">
+                        <a href="index.html#about" class="footer__link">About Us</a>
+                        <a href="index.html#contact" class="footer__link">Contact</a>
+                        <a href="#" class="footer__link terms-trigger">Terms and Conditions</a>
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__col-title">App Download</h4>
+                    <div class="footer__col-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="footer__link">Google Play Store</a>
+                        <a href="index.html#download" class="footer__link">iOS (Coming Soon)</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; <span id="year">2026</span> SUSKII. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#" class="terms-trigger">Terms and Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="js/config.js"></script>
