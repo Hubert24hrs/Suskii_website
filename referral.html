@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Create your Suskii account</title>
+    <meta name="description" content="Create a Suskii account and join the premier peer-to-peer marketplace.">
+    
+    <link rel="icon" type="image/png" href="assets/isoko.png">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="bg-light">
+
+    <!-- ─── NAVIGATION ─── -->
+    <header class="nav nav--scrolled" id="main-nav" style="position: sticky;">
+        <div class="container nav__inner">
+            <a href="index.html" class="nav__logo" aria-label="SUSKII Home">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="20" fill="url(#paint0_linear)"/>
+                    <path d="M70 35H35L25 65H60L70 35Z" fill="white"/>
+                    <path d="M40 50H70L80 20H50L40 50Z" fill="url(#paint1_linear)"/>
+                    <defs>
+                        <linearGradient id="paint0_linear" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FF5722"/>
+                            <stop offset="1" stop-color="#C23A15"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear" x1="40" y1="20" x2="80" y2="50" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FFFFFF"/>
+                            <stop offset="1" stop-color="#E4E8F0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                SUSKII
+            </a>
+            
+            <nav class="nav__links" aria-label="Main Navigation">
+                <a href="index.html#home" class="nav__link">Home</a>
+                <a href="index.html#features" class="nav__link">Features</a>
+                <a href="#" class="nav__link">About</a>
+                <a href="#" class="nav__link">Contact</a>
+                <a href="#" class="nav__link terms-trigger">Terms and Conditions</a>
+                <a href="#" class="nav__link">Privacy Policy</a>
+            </nav>
+            
+            <div class="nav__actions" id="footer-social-nav">
+                <!-- Socials can be injected here or statically added -->
+                <a href="#" class="social-icon social-icon--small" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                <a href="#" class="social-icon social-icon--small" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                <a href="#" class="social-icon social-icon--small" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            </div>
+            
+            <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false" id="menu-toggle">
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="nav__mobile-menu" id="mobile-menu">
+            <a href="index.html#home" class="nav__mobile-link">Home</a>
+            <a href="index.html#features" class="nav__mobile-link">Features</a>
+            <a href="#" class="nav__mobile-link">About</a>
+            <a href="#" class="nav__mobile-link">Contact</a>
+            <a href="#" class="nav__mobile-link terms-trigger">Terms and Conditions</a>
+        </div>
+    </header>
+
+    <main class="auth-layout">
+        <div class="container auth-container">
+            
+            <div class="auth-header">
+                <div class="auth-header__content">
+                    <span class="auth-step">STEP 1</span>
+                    <h1 class="auth-title">
+                        <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 12px;">
+                            <rect width="100" height="100" rx="20" fill="url(#paint0_linear)"/>
+                            <path d="M70 35H35L25 65H60L70 35Z" fill="white"/>
+                            <path d="M40 50H70L80 20H50L40 50Z" fill="url(#paint1_linear)"/>
+                        </svg>
+                        Create your Suskii account
+                    </h1>
+                    <p class="auth-subtitle">Use the code from your referral link, choose your country, and submit the signup request.</p>
+                </div>
+                <a href="index.html" class="auth-back-link">Back to home</a>
+            </div>
+
+            <!-- Referral Link Card -->
+            <div class="card auth-card">
+                <div class="auth-card__header">
+                    <h2 class="auth-card__title">REFERRAL LINK</h2>
+                    <p class="auth-card__subtitle">Join me on Suskii! Use your referral link to continue signup.</p>
+                </div>
+                <div class="form-group">
+                    <label for="ref-code-top" class="form-label">Referral code from link</label>
+                    <input type="text" id="ref-code-top" class="form-input" placeholder="">
+                </div>
+            </div>
+
+            <!-- Signup Form Card -->
+            <div class="card auth-card mt-6">
+                <div class="auth-card__header">
+                    <h2 class="auth-card__title">SIGNUP FORM</h2>
+                    <h3 class="auth-card__subtitle--large">Enter your details</h3>
+                </div>
+                
+                <form class="auth-form" action="#" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="first-name" class="form-label">First name</label>
+                            <input type="text" id="first-name" class="form-input" placeholder="First name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name" class="form-label">Last name</label>
+                            <input type="text" id="last-name" class="form-input" placeholder="Last name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country" class="form-label">Country</label>
+                            <div class="select-wrapper">
+                                <select id="country" class="form-input form-select" required>
+                                    <option value="" disabled selected>Select a country</option>
+                                    <option value="NG">Nigeria</option>
+                                    <option value="RW">Rwanda</option>
+                                    <option value="US">United States</option>
+                                    <option value="GB">United Kingdom</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone" class="form-label">Telephone</label>
+                            <input type="tel" id="telephone" class="form-input" placeholder="Telephone" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pin" class="form-label">PIN</label>
+                            <div class="input-icon-wrapper">
+                                <input type="password" id="pin" class="form-input" placeholder="4 digit PIN" maxlength="4" pattern="\d{4}" required>
+                                <button type="button" class="password-toggle" aria-label="Toggle PIN visibility">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-pin" class="form-label">Confirm PIN</label>
+                            <div class="input-icon-wrapper">
+                                <input type="password" id="confirm-pin" class="form-input" placeholder="Confirm PIN" maxlength="4" pattern="\d{4}" required>
+                                <button type="button" class="password-toggle" aria-label="Toggle PIN visibility">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="ref-code-bottom" class="form-label">Referral code</label>
+                            <input type="text" id="ref-code-bottom" class="form-input" placeholder="">
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions mt-6">
+                        <button type="submit" class="btn btn--primary btn--lg full-width-sm">Submit signup</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Sync the two referral code inputs
+        document.addEventListener('DOMContentLoaded', () => {
+            const topRef = document.getElementById('ref-code-top');
+            const bottomRef = document.getElementById('ref-code-bottom');
+            
+            if (topRef && bottomRef) {
+                topRef.addEventListener('input', (e) => bottomRef.value = e.target.value);
+                bottomRef.addEventListener('input', (e) => topRef.value = e.target.value);
+            }
+            
+            // Password visibility toggle
+            const toggles = document.querySelectorAll('.password-toggle');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const input = toggle.previousElementSibling;
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+                    
+                    if(type === 'text') {
+                        toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>';
+                    } else {
+                        toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Terms & Conditions Modal -->
+    <div class="modal-overlay" id="terms-modal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+            <div class="modal__header">
+                <h2 class="modal__title" id="terms-title">Terms & Conditions</h2>
+                <button class="modal__close" aria-label="Close" data-close-modal>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <p><strong>Last updated: May 14, 2026</strong></p>
+                <h2>1. Agreement to Terms</h2>
+                <p>These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") and Suskii ("Company," "we," "us," or "our"), governing your use of the Suskii mobile application (the "App"). By using the App you acknowledge that you have read, understood, and agree to be bound by these Terms. You must be at least 13 years old to use the App.</p>
+                <h2>2. License Grant</h2>
+                <p>Subject to your compliance with these Terms, Suskii grants you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes.</p>
+                <h2>3. License Restrictions</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Copy, modify, distribute, or create derivative works of the App.</li>
+                    <li>Reverse engineer or attempt to extract the source code.</li>
+                    <li>Use the App for illegal, fraudulent, or unauthorized purposes.</li>
+                </ul>
+                <h2>4. Account Registration and Security</h2>
+                <p>Certain features require account registration. You agree to provide accurate information and maintain the security of your account credentials.</p>
+                <h2>5. Marketplace Listings and User Conduct</h2>
+                <p>Suskii is a platform for buying and selling goods. You are responsible for your listings and transactions. Do not post counterfeit, stolen, or illegal items. Suskii is not a party to transactions between users.</p>
+                <h2>6. Intellectual Property</h2>
+                <p>The App and its content remain the exclusive property of Suskii and its licensors.</p>
+                <h2>7. In-App Purchases</h2>
+                <p>All payments processed through Google Play are subject to Google's payment policies.</p>
+                <h2>8. Termination</h2>
+                <p>We may suspend or terminate access to the App for violations of these Terms.</p>
+                <h2>9. Disclaimer of Warranties</h2>
+                <p>The App is provided "as is" without warranties of any kind.</p>
+                <h2>10. Limitation of Liability</h2>
+                <p>To the fullest extent permitted by law, Suskii will not be liable for indirect or consequential damages arising from your use of the App.</p>
+                <h2>11. Indemnification</h2>
+                <p>You agree to indemnify and hold Suskii harmless from claims arising from your use of the App or violation of these Terms.</p>
+                <h2>12. Third-Party Services and Links</h2>
+                <p>The App may contain links to third-party services; we are not responsible for their content or policies.</p>
+                <h2>13. Governing Law and Dispute Resolution</h2>
+                <p>These Terms are governed by the laws of the Federal Republic of Nigeria.</p>
+                <h2>14. Changes to These Terms</h2>
+                <p>We may modify these Terms at any time; continued use constitutes acceptance of changes.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -85,6 +85,7 @@
                 <a href="#features" class="nav__link">Features</a>
                 <a href="#buyer-seller" class="nav__link">Buy & Sell</a>
                 <a href="#faq" class="nav__link">FAQ</a>
+                <a href="#" class="nav__link terms-trigger">Terms and Conditions</a>
             </nav>
             
             <div class="nav__actions">
@@ -106,7 +107,8 @@
             <a href="#buyer-seller" class="nav__mobile-link">Buy</a>
             <a href="#buyer-seller" class="nav__mobile-link">Sell</a>
             <a href="#faq" class="nav__mobile-link">FAQ</a>
-            <a href="https://suskii.com/login" class="nav__mobile-link">Sign In</a>
+            <a href="#" class="nav__mobile-link terms-trigger">Terms and Conditions</a>
+            <a href="https://suskii.com/login" class="nav__mobile-link mt-4">Sign In</a>
             <a href="#download" class="btn btn--primary btn--lg nav__mobile-link" data-action="download">Get the App</a>
         </div>
     </header>
@@ -379,6 +381,20 @@
         </section>
     </main>
 
+    <!-- Floating Section Menu -->
+    <div class="floating-nav">
+        <button class="floating-nav__toggle" id="floating-nav-toggle" aria-label="Toggle sections menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+        <div class="floating-nav__menu" id="floating-nav-menu">
+            <a href="#home" class="floating-nav__link">Home</a>
+            <a href="#how-it-works" class="floating-nav__link">How It Works</a>
+            <a href="#features" class="floating-nav__link">Features</a>
+            <a href="#buyer-seller" class="floating-nav__link">Buy & Sell</a>
+            <a href="#faq" class="floating-nav__link">FAQ</a>
+        </div>
+    </div>
+
     <!-- ─── FOOTER ─── -->
     <footer class="footer">
         <div class="container">
@@ -500,5 +516,52 @@
     <!-- JavaScript -->
     <script src="js/config.js"></script>
     <script src="js/app.js"></script>
+    <!-- Terms & Conditions Modal -->
+    <div class="modal-overlay" id="terms-modal">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+            <div class="modal__header">
+                <h2 class="modal__title" id="terms-title">Terms & Conditions</h2>
+                <button class="modal__close" aria-label="Close" data-close-modal>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <p><strong>Last updated: May 14, 2026</strong></p>
+                <h2>1. Agreement to Terms</h2>
+                <p>These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") and Suskii ("Company," "we," "us," or "our"), governing your use of the Suskii mobile application (the "App"). By using the App you acknowledge that you have read, understood, and agree to be bound by these Terms. You must be at least 13 years old to use the App.</p>
+                <h2>2. License Grant</h2>
+                <p>Subject to your compliance with these Terms, Suskii grants you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes.</p>
+                <h2>3. License Restrictions</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Copy, modify, distribute, or create derivative works of the App.</li>
+                    <li>Reverse engineer or attempt to extract the source code.</li>
+                    <li>Use the App for illegal, fraudulent, or unauthorized purposes.</li>
+                </ul>
+                <h2>4. Account Registration and Security</h2>
+                <p>Certain features require account registration. You agree to provide accurate information and maintain the security of your account credentials.</p>
+                <h2>5. Marketplace Listings and User Conduct</h2>
+                <p>Suskii is a platform for buying and selling goods. You are responsible for your listings and transactions. Do not post counterfeit, stolen, or illegal items. Suskii is not a party to transactions between users.</p>
+                <h2>6. Intellectual Property</h2>
+                <p>The App and its content remain the exclusive property of Suskii and its licensors.</p>
+                <h2>7. In-App Purchases</h2>
+                <p>All payments processed through Google Play are subject to Google's payment policies.</p>
+                <h2>8. Termination</h2>
+                <p>We may suspend or terminate access to the App for violations of these Terms.</p>
+                <h2>9. Disclaimer of Warranties</h2>
+                <p>The App is provided "as is" without warranties of any kind.</p>
+                <h2>10. Limitation of Liability</h2>
+                <p>To the fullest extent permitted by law, Suskii will not be liable for indirect or consequential damages arising from your use of the App.</p>
+                <h2>11. Indemnification</h2>
+                <p>You agree to indemnify and hold Suskii harmless from claims arising from your use of the App or violation of these Terms.</p>
+                <h2>12. Third-Party Services and Links</h2>
+                <p>The App may contain links to third-party services; we are not responsible for their content or policies.</p>
+                <h2>13. Governing Law and Dispute Resolution</h2>
+                <p>These Terms are governed by the laws of the Federal Republic of Nigeria.</p>
+                <h2>14. Changes to These Terms</h2>
+                <p>We may modify these Terms at any time; continued use constitutes acceptance of changes.</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

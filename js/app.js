@@ -391,6 +391,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize Interactivity
     initNavigation();
+    initParallax();
+    initModal();
     
     // Defer non-critical initializations
     setTimeout(() => {
@@ -398,9 +400,78 @@ document.addEventListener('DOMContentLoaded', () => {
         initScrollAnimations();
         initMobileStickyCTA();
         initChatBubble();
+        initFloatingNav();
         
         // Set dynamic year in footer
         const yearEl = document.getElementById('year');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
     }, 100);
 });
+
+// Terms and Conditions Modal Logic
+function initModal() {
+    const triggers = document.querySelectorAll('.terms-trigger');
+    const modal = document.getElementById('terms-modal');
+    if (!modal) return;
+    
+    const closeBtn = modal.querySelector('[data-close-modal]');
+    
+    function openModal(e) {
+        if (e) e.preventDefault();
+        modal.classList.add('modal-overlay--open');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+        modal.classList.remove('modal-overlay--open');
+        document.body.style.overflow = '';
+    }
+    
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', openModal);
+    });
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('modal-overlay--open')) {
+            closeModal();
+        }
+    });
+}
+
+// Floating Section Navigation Logic
+function initFloatingNav() {
+    const toggle = document.getElementById('floating-nav-toggle');
+    const menu = document.getElementById('floating-nav-menu');
+    
+    if (!toggle || !menu) return;
+    
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('floating-nav__menu--open');
+    });
+    
+    document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && e.target !== toggle) {
+            menu.classList.remove('floating-nav__menu--open');
+        }
+    });
+    
+    const links = menu.querySelectorAll('.floating-nav__link');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('floating-nav__menu--open');
+        });
+    });
+}
