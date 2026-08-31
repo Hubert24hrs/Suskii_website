@@ -190,13 +190,40 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Close mobile menu on link click
+        // Close mobile menu on link click and handle smooth scrolling
         mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
                 mobileMenu.classList.remove('nav__mobile-menu--open');
-                menuToggle.classList.remove('nav__hamburger--active');
+                if (menuToggle) menuToggle.classList.remove('nav__hamburger--active');
                 document.body.style.overflow = '';
-                menuToggle.setAttribute('aria-expanded', 'false');
+                if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+
+                if (href === '#home' || href === 'index.html#home') {
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                } else if (href && href.startsWith('#') && href.length > 1) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Desktop nav links smooth scroll for Home
+        document.querySelectorAll('.nav__link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href === '#home' || href === 'index.html#home') {
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }
             });
         });
     }
@@ -439,8 +466,21 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const links = menu.querySelectorAll('.floating-nav__link');
         links.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
                 menu.classList.remove('floating-nav__menu--open');
+                const href = link.getAttribute('href');
+                if (href === '#home' || href === 'index.html#home') {
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                } else if (href && href.startsWith('#') && href.length > 1) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
             });
         });
     }
