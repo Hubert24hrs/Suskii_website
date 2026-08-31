@@ -98,15 +98,21 @@
 }
 
 .nav__hamburger {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: var(--sk-orange-gradient);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2600;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--sk-orange-gradient);
-  color: var(--sk-white);
-  border: none;
   box-shadow: 0 4px 14px rgba(232, 70, 30, 0.35);
-  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav__hamburger:hover,
@@ -120,7 +126,22 @@
   height: 2.5px;
   background: var(--sk-white);
   border-radius: 2px;
-  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+/* Morphing Hamburger-to-Close (✕) animation */
+.nav__hamburger--active .nav__hamburger-line:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.nav__hamburger--active .nav__hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.nav__hamburger--active .nav__hamburger-line:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
 }
 
 @media (min-width: 992px) {
@@ -129,74 +150,29 @@
   }
 }
 
-/* Mobile Menu Header & Internal Single "← Back" Button */
-.nav__mobile-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 0 var(--sk-space-3);
-  border-bottom: 1px solid var(--sk-gray-100);
-  margin-bottom: var(--sk-space-3);
-}
-
-.nav__mobile-brand {
-  display: flex;
-  align-items: center;
-  gap: var(--sk-space-2);
-}
-
-.nav__mobile-close-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 18px;
-  background: var(--sk-orange-gradient);
-  color: var(--sk-white);
-  border: none;
-  border-radius: 9999px;
-  font-size: var(--sk-text-sm);
-  font-weight: var(--sk-font-bold);
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(232, 70, 30, 0.35);
-  transition: all var(--sk-duration-fast) var(--sk-ease-out);
-}
-
-.nav__mobile-close-btn:hover,
-.nav__mobile-close-btn:active {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(232, 70, 30, 0.45);
-}
-
-.nav__mobile-close-btn svg {
-  transition: transform var(--sk-duration-fast) var(--sk-ease-out);
-}
-
-.nav__mobile-close-btn:hover svg,
-.nav__mobile-close-btn:active svg {
-  transform: translateX(-3px);
-}
-
-/* Mobile Menu Overlay (Full-screen clean drawer) */
+/* Mobile Menu Overlay (Clean Full-Screen Drawer) */
 .nav__mobile-menu {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100dvh;
   background: var(--sk-white);
-  z-index: 3000;
+  z-index: 2400;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: calc(env(safe-area-inset-top, 0px) + 16px) var(--sk-space-6) calc(env(safe-area-inset-bottom, 0px) + 32px);
-  gap: var(--sk-space-2);
+  padding-top: calc(var(--sk-nav-height) + 24px);
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 32px);
+  padding-left: var(--sk-space-6);
+  padding-right: var(--sk-space-6);
+  gap: var(--sk-space-3);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
-  transition: opacity var(--sk-duration-normal) var(--sk-ease-out), transform var(--sk-duration-normal) var(--sk-ease-out), visibility var(--sk-duration-normal);
+  transform: translateY(-10px);
+  transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1), transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.28s;
 }
 
 .nav__mobile-menu--open {
@@ -206,22 +182,23 @@
 }
 
 .nav__mobile-link {
-  font-size: var(--sk-text-lg);
-  font-weight: var(--sk-font-semibold);
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--sk-gray-800);
-  padding: var(--sk-space-2) var(--sk-space-4);
-  border-radius: var(--sk-radius-md);
+  padding: 10px 16px;
+  border-radius: 12px;
   text-align: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   text-decoration: none;
-  transition: color var(--sk-duration-fast), background var(--sk-duration-fast);
+  transition: all 0.2s ease;
 }
 
 .nav__mobile-link:hover,
 .nav__mobile-link:active {
   color: var(--sk-orange);
-  background: rgba(232, 70, 30, 0.06);
+  background: rgba(232, 70, 30, 0.08);
+  transform: translateY(-1px);
 }
 
 /* Hide floating action buttons when mobile menu is open */
