@@ -795,7 +795,7 @@ body.mobile-menu-open .mobile-cta {
 
 .app-product-title {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   color: #1A202C;
   line-height: 1.25;
   display: -webkit-box;
@@ -804,22 +804,24 @@ body.mobile-menu-open .mobile-cta {
   overflow: hidden;
 }
 
-.app-product-pricing {
-  display: flex;
-  align-items: baseline;
-  gap: 3px;
-  margin-top: 1px;
-}
-
-.app-product-price {
-  font-size: 12px;
-  font-weight: 800;
-  color: #E8461E;
-}
-
-.app-product-orig {
+.app-product-desc {
   font-size: 8.5px;
-  color: #718096;
+  color: #5C6780;
+  line-height: 1.2;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-product-loc {
+  font-size: 8px;
+  color: #7A869E;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 1px;
 }
 
 .app-product-meta {
@@ -838,6 +840,24 @@ body.mobile-menu-open .mobile-cta {
 .app-product-sold {
   font-size: 7.5px;
   color: #A0AEC0;
+}
+
+.app-p2p-btn {
+  background: var(--sk-orange-gradient);
+  color: #FFFFFF;
+  font-size: 8.5px;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 3px;
+  box-shadow: 0 2px 5px rgba(232, 70, 30, 0.25);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 /* Floating Help Headset */
