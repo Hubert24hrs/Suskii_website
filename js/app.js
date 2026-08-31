@@ -192,6 +192,17 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+        if (mobileMenuCloseBtn && mobileMenu) {
+            mobileMenuCloseBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('nav__mobile-menu--open');
+                if (menuToggle) menuToggle.classList.remove('nav__hamburger--active');
+                document.body.style.overflow = '';
+                document.body.classList.remove('mobile-menu-open');
+                if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        }
+
         // Close mobile menu on link click and handle smooth scrolling
         mobileLinks.forEach(link => {
             link.addEventListener('click', (e) => {
