@@ -52,7 +52,35 @@
   .hero__visual {
     transform: scale(0.9);
   }
-  
+
+  .hero__phone-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__qr {
+    position: static;
+    transform: none;
+    margin-top: var(--sk-space-6);
+  }
+
+  .qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sk-space-2);
+  }
+
+  .qr-code {
+    width: 120px;
+    height: 120px;
+    padding: 8px;
+    background: var(--sk-white);
+    border-radius: var(--sk-radius-lg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
   /* How It Works */
   .how-it-works__steps {
     grid-template-columns: 1fr;

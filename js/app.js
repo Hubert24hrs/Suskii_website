@@ -139,9 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
             badgesHtml = googlePlayBtn + appleStoreBtn;
         } else {
             badgesHtml = googlePlayBtn + appleStoreBtn; // Desktop
-            // Show QR codes on desktop
-            document.querySelectorAll('.qr-container').forEach(el => el.style.display = 'flex');
         }
+
+        // Always show QR codes across all platforms
+        document.querySelectorAll('.qr-container').forEach(el => el.style.display = 'flex');
 
         // Inject into containers
         const containers = ['hero-store-badges', 'final-store-badges', 'footer-store-badges'];
