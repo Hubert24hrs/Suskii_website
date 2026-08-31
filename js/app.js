@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 nav.classList.remove('nav--scrolled');
             }
-        });
+        }, { passive: true });
 
         // Mobile Menu Toggle
         if (menuToggle && mobileMenu) {
@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cta.classList.remove('mobile-cta--visible');
                 document.body.classList.remove('has-mobile-cta');
             }
-        });
+        }, { passive: true });
         
         closeBtn.addEventListener('click', () => {
             cta.classList.remove('mobile-cta--visible');
@@ -406,44 +406,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Modal Logic
+    // Modal Logic (Terms & Conditions and Privacy Policy)
     function initModal() {
-        const triggers = document.querySelectorAll('.terms-trigger');
-        const modal = document.getElementById('terms-modal');
-        if (!modal) return;
-        
-        const closeBtn = modal.querySelector('[data-close-modal]');
-        
-        function openModal(e) {
-            if (e) e.preventDefault();
-            modal.classList.add('modal-overlay--open');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeModal() {
-            modal.classList.remove('modal-overlay--open');
-            document.body.style.overflow = '';
-        }
-        
-        triggers.forEach(trigger => {
-            trigger.addEventListener('click', openModal);
-        });
-        
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closeModal);
-        }
-        
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
+        const setupModal = (triggerSelector, modalId) => {
+            const triggers = document.querySelectorAll(triggerSelector);
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+            
+            const closeBtn = modal.querySelector('[data-close-modal]');
+            
+            const openModal = (e) => {
+                if (e) e.preventDefault();
+                modal.classList.add('modal-overlay--open');
+                document.body.style.overflow = 'hidden';
+            };
+            
+            const closeModal = () => {
+                modal.classList.remove('modal-overlay--open');
+                document.body.style.overflow = '';
+            };
+            
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', openModal);
+            });
+            
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
             }
-        });
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('modal-overlay--open')) {
-                closeModal();
-            }
-        });
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('modal-overlay--open')) {
+                    closeModal();
+                }
+            });
+        };
+
+        setupModal('.terms-trigger', 'terms-modal');
+        setupModal('.privacy-trigger', 'privacy-modal');
     }
 
     // Floating Section Navigation Logic
