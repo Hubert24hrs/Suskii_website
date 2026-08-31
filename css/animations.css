@@ -55,6 +55,46 @@
 .reveal-stagger--visible > *:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 700ms; }
 .reveal-stagger--visible > *:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 800ms; }
 
+/* Hero section immediate entry (above the fold) */
+.hero__content.reveal-stagger > * {
+  opacity: 1;
+  transform: translateY(0);
+  animation: heroEntrance 0.7s var(--sk-ease-out) backwards;
+}
+.hero__content.reveal-stagger > *:nth-child(1) { animation-delay: 50ms; }
+.hero__content.reveal-stagger > *:nth-child(2) { animation-delay: 150ms; }
+.hero__content.reveal-stagger > *:nth-child(3) { animation-delay: 250ms; }
+.hero__content.reveal-stagger > *:nth-child(4) { animation-delay: 350ms; }
+
+.hero__visual.reveal-right {
+  opacity: 1;
+  transform: translateX(0);
+  animation: heroVisualEntrance 0.8s var(--sk-ease-out) backwards;
+  animation-delay: 150ms;
+}
+
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroVisualEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* ─── Keyframe Animations ─── */
 @keyframes float {
   0% { transform: translateY(0px); }

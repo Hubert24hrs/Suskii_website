@@ -234,37 +234,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initScrollAnimations() {
-        // Intersection Observer for scroll reveals
         const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-stagger');
         
+        const makeVisible = (el) => {
+            if (el.classList.contains('reveal')) el.classList.add('reveal--visible');
+            if (el.classList.contains('reveal-left')) el.classList.add('reveal-left--visible');
+            if (el.classList.contains('reveal-right')) el.classList.add('reveal-right--visible');
+            if (el.classList.contains('reveal-stagger')) el.classList.add('reveal-stagger--visible');
+        };
+
+        if (!('IntersectionObserver' in window)) {
+            revealElements.forEach(makeVisible);
+            return;
+        }
+        
         const revealOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
+            threshold: 0.05,
+            rootMargin: "50px 0px 0px 0px"
         };
         
         const revealObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
+                if (entry.isIntersecting) {
+                    makeVisible(entry.target);
+                    observer.unobserve(entry.target);
                 }
-                
-                if (entry.target.classList.contains('reveal')) {
-                    entry.target.classList.add('reveal--visible');
-                } else if (entry.target.classList.contains('reveal-left')) {
-                    entry.target.classList.add('reveal-left--visible');
-                } else if (entry.target.classList.contains('reveal-right')) {
-                    entry.target.classList.add('reveal-right--visible');
-                } else if (entry.target.classList.contains('reveal-stagger')) {
-                    entry.target.classList.add('reveal-stagger--visible');
-                }
-                
-                // Unobserve after revealing to prevent refiring
-                observer.unobserve(entry.target);
             });
         }, revealOptions);
         
         revealElements.forEach(el => {
             revealObserver.observe(el);
+        });
+
+        // Trigger visible immediately for elements already in viewport on load
+        revealElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight + 100) {
+                makeVisible(el);
+            }
         });
     }
 
@@ -279,7 +286,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Show after scrolling past hero section
         window.addEventListener('scroll', () => {
-            // Only applicable on mobile/tablet
             if (window.innerWidth > 768) return;
             
             if (window.scrollY > 600) {
@@ -309,7 +315,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (!trigger || !panel) return;
         
-        // Toggle Panel
         trigger.addEventListener('click', () => {
             panel.classList.toggle('chat-bubble__panel--open');
             if (panel.classList.contains('chat-bubble__panel--open')) {
@@ -321,7 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
             panel.classList.remove('chat-bubble__panel--open');
         });
         
-        // Add Message to UI
         const appendMessage = (text, isUser = false) => {
             const msgDiv = document.createElement('div');
             msgDiv.className = `chat-bubble__message chat-bubble__message--${isUser ? 'user' : 'bot'}`;
@@ -330,10 +334,9 @@ document.addEventListener('DOMContentLoaded', () => {
             messagesArea.scrollTop = messagesArea.scrollHeight;
         };
         
-        // Simple Bot Logic
         const getBotResponse = (userInput) => {
             const inputLower = userInput.toLowerCase();
-            const { keywords, fallback } = SUSKII_CONFIG.chatResponses;
+            const { keywords, fallback } = (SUSKII_CONFIG && SUSKII_CONFIG.chatResponses) ? SUSKII_CONFIG.chatResponses : { keywords: {}, fallback: "How can I help you with SUSKII today?" };
             
             for (const [key, response] of Object.entries(keywords)) {
                 if (inputLower.includes(key)) {
@@ -341,28 +344,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // Check for specific keywords manually if not caught by exact phrases
-            if (inputLower.includes('buy') || inputLower.includes('purchase')) return keywords['how to buy'];
-            if (inputLower.includes('sell') || inputLower.includes('list')) return keywords['how to sell'];
-            if (inputLower.includes('cost') || inputLower.includes('free') || inputLower.includes('price')) return keywords['free'];
-            if (inputLower.includes('app') || inputLower.includes('download') || inputLower.includes('install')) return keywords['download'];
+            if (inputLower.includes('buy') || inputLower.includes('purchase')) return keywords['how to buy'] || fallback;
+            if (inputLower.includes('sell') || inputLower.includes('list')) return keywords['how to sell'] || fallback;
+            if (inputLower.includes('cost') || inputLower.includes('free') || inputLower.includes('price')) return keywords['free'] || fallback;
+            if (inputLower.includes('app') || inputLower.includes('download') || inputLower.includes('install')) return keywords['download'] || fallback;
             
             return fallback;
-        };
-        
-        const handleSend = () => {
-            const text = input.value.trim();
-            if (!text) return;
-            
-            // User message
-            appendMessage(text, true);
-            input.value = '';
-            
-            // Bot typing delay
-            setTimeout(() => {
-                const response = getBotResponse(text);
-                appendMessage(response, false);
-            }, 600);
         };
         
         sendBtn.addEventListener('click', handleSend);
@@ -370,7 +357,19 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter') handleSend();
         });
         
-        // Handle suggestion clicks
+        function handleSend() {
+            const text = input.value.trim();
+            if (!text) return;
+            
+            appendMessage(text, true);
+            input.value = '';
+            
+            setTimeout(() => {
+                const response = getBotResponse(text);
+                appendMessage(response, false);
+            }, 600);
+        }
+        
         suggestions.forEach(btn => {
             btn.addEventListener('click', () => {
                 input.value = btn.textContent;
@@ -379,99 +378,100 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Modal Logic
+    function initModal() {
+        const triggers = document.querySelectorAll('.terms-trigger');
+        const modal = document.getElementById('terms-modal');
+        if (!modal) return;
+        
+        const closeBtn = modal.querySelector('[data-close-modal]');
+        
+        function openModal(e) {
+            if (e) e.preventDefault();
+            modal.classList.add('modal-overlay--open');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            modal.classList.remove('modal-overlay--open');
+            document.body.style.overflow = '';
+        }
+        
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', openModal);
+        });
+        
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+        }
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('modal-overlay--open')) {
+                closeModal();
+            }
+        });
+    }
+
+    // Floating Section Navigation Logic
+    function initFloatingNav() {
+        const toggle = document.getElementById('floating-nav-toggle');
+        const menu = document.getElementById('floating-nav-menu');
+        
+        if (!toggle || !menu) return;
+        
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('floating-nav__menu--open');
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && e.target !== toggle) {
+                menu.classList.remove('floating-nav__menu--open');
+            }
+        });
+        
+        const links = menu.querySelectorAll('.floating-nav__link');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('floating-nav__menu--open');
+            });
+        });
+    }
+
     // =========================================================================
-    // 3. EXECUTION
+    // 3. SAFE EXECUTION
     // =========================================================================
     
+    const safeExec = (fn, name) => {
+        try {
+            if (typeof fn === 'function') fn();
+        } catch (err) {
+            console.warn(`[SUSKII] Error executing ${name}:`, err);
+        }
+    };
+
     // Inject Content
-    injectFeatures();
-    injectFAQ();
-    injectSocialLinks();
-    detectOSAndInjectBadges();
+    safeExec(injectFeatures, 'injectFeatures');
+    safeExec(injectFAQ, 'injectFAQ');
+    safeExec(injectSocialLinks, 'injectSocialLinks');
+    safeExec(detectOSAndInjectBadges, 'detectOSAndInjectBadges');
     
     // Initialize Interactivity
-    initNavigation();
-    initParallax();
-    initModal();
+    safeExec(initNavigation, 'initNavigation');
+    safeExec(initScrollAnimations, 'initScrollAnimations');
+    safeExec(initModal, 'initModal');
+    safeExec(initFloatingNav, 'initFloatingNav');
+    safeExec(initFAQ, 'initFAQ');
+    safeExec(initMobileStickyCTA, 'initMobileStickyCTA');
+    safeExec(initChatBubble, 'initChatBubble');
     
-    // Defer non-critical initializations
-    setTimeout(() => {
-        initFAQ();
-        initScrollAnimations();
-        initMobileStickyCTA();
-        initChatBubble();
-        initFloatingNav();
-        
-        // Set dynamic year in footer
-        const yearEl = document.getElementById('year');
-        if (yearEl) yearEl.textContent = new Date().getFullYear();
-    }, 100);
+    // Set dynamic year in footer
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
-
-// Terms and Conditions Modal Logic
-function initModal() {
-    const triggers = document.querySelectorAll('.terms-trigger');
-    const modal = document.getElementById('terms-modal');
-    if (!modal) return;
-    
-    const closeBtn = modal.querySelector('[data-close-modal]');
-    
-    function openModal(e) {
-        if (e) e.preventDefault();
-        modal.classList.add('modal-overlay--open');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    function closeModal() {
-        modal.classList.remove('modal-overlay--open');
-        document.body.style.overflow = '';
-    }
-    
-    triggers.forEach(trigger => {
-        trigger.addEventListener('click', openModal);
-    });
-    
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-    }
-    
-    // Close on outside click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('modal-overlay--open')) {
-            closeModal();
-        }
-    });
-}
-
-// Floating Section Navigation Logic
-function initFloatingNav() {
-    const toggle = document.getElementById('floating-nav-toggle');
-    const menu = document.getElementById('floating-nav-menu');
-    
-    if (!toggle || !menu) return;
-    
-    toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        menu.classList.toggle('floating-nav__menu--open');
-    });
-    
-    document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && e.target !== toggle) {
-            menu.classList.remove('floating-nav__menu--open');
-        }
-    });
-    
-    const links = menu.querySelectorAll('.floating-nav__link');
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('floating-nav__menu--open');
-        });
-    });
-}
