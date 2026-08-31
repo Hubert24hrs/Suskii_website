@@ -1,0 +1,211 @@
+/* ==========================================================================
+   SUSKII — Base Styles: Reset, Typography, Global
+   ========================================================================== */
+
+/* ─── Modern Reset ─── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--sk-nav-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--sk-font-body);
+  font-size: var(--sk-text-base);
+  line-height: var(--sk-leading-normal);
+  color: var(--sk-gray-800);
+  background-color: var(--sk-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--sk-font-heading);
+  line-height: var(--sk-leading-tight);
+  letter-spacing: var(--sk-tracking-tight);
+  color: var(--sk-gray-900);
+  overflow-wrap: break-word;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+/* ─── Typography Scale ─── */
+h1 {
+  font-size: var(--sk-text-6xl);
+  font-weight: var(--sk-font-extrabold);
+}
+
+h2 {
+  font-size: var(--sk-text-4xl);
+  font-weight: var(--sk-font-bold);
+}
+
+h3 {
+  font-size: var(--sk-text-2xl);
+  font-weight: var(--sk-font-semibold);
+}
+
+h4 {
+  font-size: var(--sk-text-xl);
+  font-weight: var(--sk-font-semibold);
+}
+
+/* ─── Focus States ─── */
+:focus-visible {
+  outline: 2px solid var(--sk-orange);
+  outline-offset: 2px;
+  border-radius: var(--sk-radius-sm);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: var(--sk-orange);
+  color: var(--sk-white);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sk-gray-50);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sk-gray-300);
+  border-radius: var(--sk-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sk-orange);
+}
+
+/* ─── Layout Utilities ─── */
+.container {
+  width: 100%;
+  max-width: var(--sk-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--sk-gutter);
+  padding-right: var(--sk-gutter);
+}
+
+.container--narrow {
+  max-width: var(--sk-max-width-narrow);
+}
+
+.container--wide {
+  max-width: var(--sk-max-width-wide);
+}
+
+.section {
+  padding-top: var(--sk-space-20);
+  padding-bottom: var(--sk-space-20);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--sk-space-12);
+    padding-bottom: var(--sk-space-12);
+  }
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--sk-space-12);
+}
+
+.section-header__eyebrow {
+  display: inline-block;
+  font-size: var(--sk-text-sm);
+  font-weight: var(--sk-font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--sk-tracking-wider);
+  color: var(--sk-orange);
+  margin-bottom: var(--sk-space-3);
+}
+
+.section-header__title {
+  margin-bottom: var(--sk-space-4);
+}
+
+.section-header__subtitle {
+  font-size: var(--sk-text-lg);
+  color: var(--sk-gray-500);
+  line-height: var(--sk-leading-relaxed);
+}
+
+/* ─── Screen Reader Only ─── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Hidden Sections (feature-flagged) ─── */
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>SUSKII — A market for anything salable</title>
+    <meta name="description" content="SUSKII is the premier peer-to-peer marketplace to discover, buy, and sell anything. From gadgets and fashion to property and vehicles. All in one app.">
+    <meta name="keywords" content="SUSKII, marketplace, buy, sell, peer-to-peer, ecommerce, Nigeria, Rwanda">
+    <meta name="author" content="SUSKII">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suskii.com/">
+    <meta property="og:title" content="SUSKII — A market for anything salable">
+    <meta property="og:description" content="Discover, buy, and sell anything on SUSKII. The premier peer-to-peer marketplace.">
+    <meta property="og:image" content="https://suskii.com/assets/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://suskii.com/">
+    <meta property="twitter:title" content="SUSKII — A market for anything salable">
+    <meta property="twitter:description" content="Discover, buy, and sell anything on SUSKII. The premier peer-to-peer marketplace.">
+    <meta property="twitter:image" content="https://suskii.com/assets/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/isoko.png">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SUSKII",
+      "url": "https://suskii.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://suskii.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ─── NAVIGATION ─── -->
+    <header class="nav" id="main-nav">
+        <div class="container nav__inner">
+            <a href="#" class="nav__logo" aria-label="SUSKII Home">
+                <!-- Using placeholder for logo, to be replaced by actual SVG -->
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="20" fill="url(#paint0_linear)"/>
+                    <path d="M70 35H35L25 65H60L70 35Z" fill="white"/>
+                    <path d="M40 50H70L80 20H50L40 50Z" fill="url(#paint1_linear)"/>
+                    <defs>
+                        <linearGradient id="paint0_linear" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FF5722"/>
+                            <stop offset="1" stop-color="#C23A15"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear" x1="40" y1="20" x2="80" y2="50" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FFFFFF"/>
+                            <stop offset="1" stop-color="#E4E8F0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                SUSKII
+            </a>
+            
+            <nav class="nav__links" aria-label="Main Navigation">
+                <a href="#how-it-works" class="nav__link">How It Works</a>
+                <a href="#features" class="nav__link">Features</a>
+                <a href="#buyer-seller" class="nav__link">Buy & Sell</a>
+                <a href="#faq" class="nav__link">FAQ</a>
+            </nav>
+            
+            <div class="nav__actions">
+                <a href="https://suskii.com/login" class="nav__signin">Sign In</a>
+                <a href="#download" class="btn btn--primary btn--sm" data-action="download">Get the App</a>
+            </div>
+            
+            <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false" id="menu-toggle">
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+                <span class="nav__hamburger-line"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="nav__mobile-menu" id="mobile-menu">
+            <a href="#how-it-works" class="nav__mobile-link">How It Works</a>
+            <a href="#features" class="nav__mobile-link">Features</a>
+            <a href="#buyer-seller" class="nav__mobile-link">Buy</a>
+            <a href="#buyer-seller" class="nav__mobile-link">Sell</a>
+            <a href="#faq" class="nav__mobile-link">FAQ</a>
+            <a href="https://suskii.com/login" class="nav__mobile-link">Sign In</a>
+            <a href="#download" class="btn btn--primary btn--lg nav__mobile-link" data-action="download">Get the App</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ─── HERO SECTION ─── -->
+        <section class="hero" id="home">
+            <div class="hero__bg-shapes">
+                <div class="hero__bg-circle hero__bg-circle--1"></div>
+                <div class="hero__bg-circle hero__bg-circle--2"></div>
+                <div class="hero__bg-circle hero__bg-circle--3"></div>
+            </div>
+            
+            <div class="container hero__grid">
+                <div class="hero__content reveal-stagger">
+                    <div class="hero__badge">
+                        <span class="hero__badge-dot"></span>
+                        A market for anything salable
+                    </div>
+                    
+                    <h1 class="hero__title">
+                        Buy what you need. <br>
+                        Sell what you don't. <br>
+                        <span class="hero__title-accent">All in one marketplace.</span>
+                    </h1>
+                    
+                    <p class="hero__subtitle">
+                        Discover, buy, and sell legitimate products directly through our modern platform. Join thousands trading safely every day.
+                    </p>
+                    
+                    <div class="hero__ctas">
+                        <div class="store-badges" id="hero-store-badges">
+                            <!-- Injected by JS based on OS -->
+                        </div>
+                        
+                        <a href="https://suskii.com/explore" class="hero__secondary-cta">
+                            Explore SUSKII on Web
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero__visual reveal-right">
+                    <div class="hero__phone-wrapper">
+                        <!-- Floating Category Icons -->
+                        <div class="hero__floating-icons">
+                            <div class="hero__floating-icon hero__floating-icon--1">📱</div>
+                            <div class="hero__floating-icon hero__floating-icon--2">🏠</div>
+                            <div class="hero__floating-icon hero__floating-icon--3">👕</div>
+                            <div class="hero__floating-icon hero__floating-icon--4">🚗</div>
+                        </div>
+                        
+                        <!-- 3D Phone Mockup -->
+                        <div class="phone-mockup">
+                            <div class="phone-mockup__screen">
+                                <!-- Placeholder for App Screenshot -->
+                                <div style="width:100%; height:100%; background:var(--sk-off-white); display:flex; flex-direction:column;">
+                                    <div style="height:60px; background:var(--sk-orange-gradient); display:flex; align-items:center; padding:0 20px; color:white; font-weight:bold;">SUSKII</div>
+                                    <div style="padding:20px; flex:1; display:flex; flex-direction:column; gap:15px;">
+                                        <div class="skeleton" style="height:40px; border-radius:20px;"></div>
+                                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+                                            <div class="skeleton" style="height:80px; border-radius:10px;"></div>
+                                            <div class="skeleton" style="height:80px; border-radius:10px;"></div>
+                                        </div>
+                                        <div class="skeleton" style="height:150px; border-radius:10px; margin-top:10px;"></div>
+                                        <div class="skeleton" style="height:150px; border-radius:10px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- QR Code (Desktop only) -->
+                        <div class="hero__qr qr-container" style="display:none;" id="hero-qr">
+                            <div class="qr-code">
+                                <!-- Placeholder QR -->
+                                <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="100" height="100" fill="white"/>
+                                    <path d="M10 10h25v25H10zm5 5h15v15H15zm45-5h25v25H60zm5 5h15v15H65zM10 60h25v25H10zm5 5h15v15H15zM45 10h10v10H45zM45 25h10v10H45zM45 40h10v10H45zM10 45h10v10H10zM25 45h10v10H25zM60 45h10v10H60zM75 45h15v10H75zM45 60h10v10H45zM60 60h15v15H60zm5 5h5v5h-5zM45 75h10v10H45zM80 60h10v25H80z" fill="black"/>
+                                </svg>
+                            </div>
+                            <span class="qr-code__label">Scan to Download</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── HOW IT WORKS ─── -->
+        <section class="section how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-header__eyebrow">How It Works</span>
+                    <h2 class="section-header__title">Start buying or selling in minutes</h2>
+                    <p class="section-header__subtitle">Join the marketplace and connect with thousands of users in three simple steps.</p>
+                </div>
+                
+                <div class="how-it-works__steps reveal-stagger">
+                    <div class="how-it-works__connector">
+                        <div class="how-it-works__connector-line"></div>
+                    </div>
+                    
+                    <div class="step hover-lift">
+                        <div class="step__number step__number--orange">1</div>
+                        <h3 class="step__title">Create Account</h3>
+                        <p class="step__description">Join SUSKII quickly and securely to start your journey.</p>
+                    </div>
+                    
+                    <div class="step hover-lift">
+                        <div class="step__number step__number--orange">2</div>
+                        <h3 class="step__title">Buy or List</h3>
+                        <p class="step__description">Discover products you need or list something you want to sell.</p>
+                    </div>
+                    
+                    <div class="step hover-lift">
+                        <div class="step__number step__number--orange">3</div>
+                        <h3 class="step__title">Connect & Trade</h3>
+                        <p class="step__description">Chat directly, agree on terms, and complete your marketplace journey safely.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── BUYER / SELLER SPLIT ─── -->
+        <section class="section buyer-seller" id="buyer-seller">
+            <div class="container buyer-seller__grid">
+                <!-- Buyer -->
+                <div class="buyer-seller__card buyer-seller__card--buyer reveal-left">
+                    <div class="buyer-seller__icon buyer-seller__icon--orange">
+                        🛒
+                    </div>
+                    <h3 class="buyer-seller__title">Find what you're looking for</h3>
+                    <p class="buyer-seller__text">Discover deals on everything from electronics to real estate. Powerful search and smart categories make finding the right product simple.</p>
+                    
+                    <div class="buyer-seller__features">
+                        <div class="buyer-seller__feature">
+                            <div class="buyer-seller__check buyer-seller__check--orange">✓</div>
+                            Smart location-aware discovery
+                        </div>
+                        <div class="buyer-seller__feature">
+                            <div class="buyer-seller__check buyer-seller__check--orange">✓</div>
+                            Direct chat with verified sellers
+                        </div>
+                        <div class="buyer-seller__feature">
+                            <div class="buyer-seller__check buyer-seller__check--orange">✓</div>
+                            Save favorites and get notified
+                        </div>
+                    </div>
+                    
+                    <a href="#download" class="btn btn--primary" data-action="download">Start Browsing</a>
+                </div>
+                
+                <!-- Seller -->
+                <div class="buyer-seller__card buyer-seller__card--seller reveal-right">
+                    <div class="buyer-seller__icon buyer-seller__icon--blue">
+                        💰
+                    </div>
+                    <h3 class="buyer-seller__title">Turn what you have into opportunity</h3>
+                    <p class="buyer-seller__text">List your products in minutes and reach thousands of active buyers. Manage your listings, track interest, and close deals efficiently.</p>
+                    
+                    <div class="buyer-seller__features">
+                        <div class="buyer-seller__feature">
+                            <div class="buyer-seller__check buyer-seller__check--blue">✓</div>
+                            List products in under a minute
+                        </div>
+                        <div class="buyer-seller__feature">
+                            <div class="buyer-seller__check buyer-seller__check--blue">✓</div>
+                            Reach local and national buyers
+                        </div>
+                        <div class="buyer-seller__feature">
+                            <div class="buyer-seller__check buyer-seller__check--blue">✓</div>
+                            Build your seller reputation
+                        </div>
+                    </div>
+                    
+                    <a href="#download" class="btn btn--dark" data-action="download">Start Selling</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FEATURES ─── -->
+        <section class="section features" id="features">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-header__eyebrow">Platform Features</span>
+                    <h2 class="section-header__title">Everything you need in a modern marketplace</h2>
+                </div>
+                
+                <div class="features__grid reveal-stagger">
+                    <!-- Features injected by JS based on config -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- ─── APP SHOWCASE (Placeholder for JS injection) ─── -->
+        <section class="section app-showcase" id="app-showcase">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-header__eyebrow">The Experience</span>
+                    <h2 class="section-header__title">Designed for simplicity</h2>
+                    <p class="section-header__subtitle">A premium interface that makes buying and selling effortless.</p>
+                </div>
+                
+                <div class="app-showcase__carousel reveal">
+                    <!-- Phone mockups injected by JS -->
+                </div>
+                
+                <div class="app-showcase__nav reveal">
+                    <!-- Dots injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── TRUST & SAFETY ─── -->
+        <section class="section trust" id="trust">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-header__eyebrow">Trust & Safety</span>
+                    <h2 class="section-header__title">Trade with confidence</h2>
+                </div>
+                
+                <div class="trust__grid reveal-stagger">
+                    <div class="trust__card">
+                        <div class="trust__card-icon">🛡️</div>
+                        <h3 class="trust__card-title">Account Security</h3>
+                        <p class="trust__card-text">Secure authentication and profile verification keep our community safe and trustworthy.</p>
+                    </div>
+                    
+                    <div class="trust__card">
+                        <div class="trust__card-icon">🔒</div>
+                        <h3 class="trust__card-title">Data Privacy</h3>
+                        <p class="trust__card-text">Your personal information is encrypted and never shared without your explicit consent.</p>
+                    </div>
+                    
+                    <div class="trust__card">
+                        <div class="trust__card-icon">🤝</div>
+                        <h3 class="trust__card-title">Community Safety</h3>
+                        <p class="trust__card-text">Built-in reporting tools, seller ratings, and strict community guidelines ensure a safe environment.</p>
+                    </div>
+                </div>
+                
+                <div class="trust__links reveal">
+                    <a href="#privacy" class="trust__link">Privacy Policy</a>
+                    <a href="#terms" class="trust__link">Terms of Service</a>
+                    <a href="#guidelines" class="trust__link">Community Guidelines</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FAQ ─── -->
+        <section class="section faq" id="faq">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-header__eyebrow">Questions?</span>
+                    <h2 class="section-header__title">Frequently asked questions</h2>
+                </div>
+                
+                <div class="faq__list reveal-stagger" id="faq-container">
+                    <!-- FAQs injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── FINAL CTA ─── -->
+        <section class="section final-cta" id="download">
+            <div class="container final-cta__content reveal">
+                <h2 class="final-cta__title">Your next deal could be on SUSKII.</h2>
+                <p class="final-cta__subtitle">Join thousands of buyers and sellers already using the marketplace.</p>
+                
+                <div class="final-cta__actions">
+                    <div class="store-badges" id="final-store-badges">
+                        <!-- Injected by JS -->
+                    </div>
+                    
+                    <div class="qr-container" style="display:none;" id="final-qr">
+                        <div class="qr-code">
+                            <!-- Placeholder QR -->
+                            <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="100" height="100" fill="white"/>
+                                <path d="M10 10h25v25H10zm5 5h15v15H15zm45-5h25v25H60zm5 5h15v15H65zM10 60h25v25H10zm5 5h15v15H15zM45 10h10v10H45zM45 25h10v10H45zM45 40h10v10H45zM10 45h10v10H10zM25 45h10v10H25zM60 45h10v10H60zM75 45h15v10H75zM45 60h10v10H45zM60 60h15v15H60zm5 5h5v5h-5zM45 75h10v10H45zM80 60h10v25H80z" fill="black"/>
+                            </svg>
+                        </div>
+                        <span class="qr-code__label" style="color:white; opacity:0.8;">Scan to Download</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="#" class="footer__logo">
+                        <!-- Placeholder Logo SVG -->
+                         <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="100" height="100" rx="20" fill="url(#paint0_linear_footer)"/>
+                            <path d="M70 35H35L25 65H60L70 35Z" fill="white"/>
+                            <path d="M40 50H70L80 20H50L40 50Z" fill="url(#paint1_linear_footer)"/>
+                            <defs>
+                                <linearGradient id="paint0_linear_footer" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FF5722"/>
+                                    <stop offset="1" stop-color="#C23A15"/>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_footer" x1="40" y1="20" x2="80" y2="50" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FFFFFF"/>
+                                    <stop offset="1" stop-color="#E4E8F0"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="footer__logo-text">SUSKII</span>
+                    </a>
+                    <p class="footer__brand-desc">A marketplace where you can discover, buy, list, and sell legitimate salable products directly through a modern digital platform.</p>
+                    
+                    <div class="social-icons" id="footer-social">
+                        <!-- Injected by JS -->
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Marketplace</h4>
+                    <div class="footer__col-links">
+                        <a href="https://suskii.com/explore" class="footer__link">Explore</a>
+                        <a href="https://suskii.com/categories" class="footer__link">Categories</a>
+                        <a href="https://suskii.com/login" class="footer__link">Sign In</a>
+                        <a href="https://suskii.com/register" class="footer__link">Create Account</a>
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Company</h4>
+                    <div class="footer__col-links">
+                        <a href="#about" class="footer__link">About Us</a>
+                        <a href="#careers" class="footer__link">Careers</a>
+                        <a href="#press" class="footer__link">Press</a>
+                        <a href="#contact" class="footer__link">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Support</h4>
+                    <div class="footer__col-links">
+                        <a href="#faq" class="footer__link">Help Center</a>
+                        <a href="#safety" class="footer__link">Safety Tips</a>
+                        <a href="#privacy" class="footer__link">Privacy Policy</a>
+                        <a href="#terms" class="footer__link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">© <span id="year">2026</span> SUSKII. All rights reserved.</p>
+                <div class="store-badges" id="footer-store-badges" style="transform: scale(0.8); transform-origin: right center;">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── MOBILE STICKY CTA ─── -->
+    <div class="mobile-cta" id="mobile-cta">
+        <div class="mobile-cta__inner">
+            <div class="mobile-cta__text">
+                <span class="mobile-cta__label">Get the free app</span>
+                <span class="mobile-cta__brand">SUSKII Marketplace</span>
+            </div>
+            <a href="#download" class="btn btn--primary btn--sm" data-action="download">Install</a>
+        </div>
+        <button class="mobile-cta__close" id="mobile-cta-close" aria-label="Dismiss">&times;</button>
+    </div>
+
+    <!-- ─── CHAT BUBBLE ─── -->
+    <div class="chat-bubble">
+        <button class="chat-bubble__trigger" id="chat-trigger" aria-label="Open AI Assistant">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </button>
+        
+        <div class="chat-bubble__panel" id="chat-panel">
+            <div class="chat-bubble__header">
+                <div class="chat-bubble__header-title">SUSKII Assistant</div>
+                <button class="chat-bubble__close" id="chat-close" aria-label="Close Assistant">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            
+            <div class="chat-bubble__messages" id="chat-messages">
+                <div class="chat-bubble__message chat-bubble__message--bot">
+                    Hi! 👋 I'm here to help you learn about SUSKII. What would you like to know?
+                </div>
+            </div>
+            
+            <div class="chat-bubble__suggestions" id="chat-suggestions">
+                <button class="chat-bubble__suggestion">What is SUSKII?</button>
+                <button class="chat-bubble__suggestion">How to buy?</button>
+                <button class="chat-bubble__suggestion">How to sell?</button>
+            </div>
+            
+            <div class="chat-bubble__input-area">
+                <input type="text" class="chat-bubble__input" id="chat-input" placeholder="Ask a question..." aria-label="Ask a question">
+                <button class="chat-bubble__send" id="chat-send" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

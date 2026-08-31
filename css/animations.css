@@ -1,0 +1,109 @@
+/* ==========================================================================
+   SUSKII — Animations & Micro-interactions
+   ========================================================================== */
+
+/* ─── Scroll Reveal Animations (Intersection Observer) ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--sk-duration-slow) var(--sk-ease-out), transform var(--sk-duration-slow) var(--sk-ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity var(--sk-duration-slow) var(--sk-ease-out), transform var(--sk-duration-slow) var(--sk-ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal-left--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity var(--sk-duration-slow) var(--sk-ease-out), transform var(--sk-duration-slow) var(--sk-ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal-right--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--sk-duration-normal) var(--sk-ease-out), transform var(--sk-duration-normal) var(--sk-ease-out);
+}
+
+.reveal-stagger--visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 100ms; }
+.reveal-stagger--visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 200ms; }
+.reveal-stagger--visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 300ms; }
+.reveal-stagger--visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 400ms; }
+.reveal-stagger--visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 500ms; }
+.reveal-stagger--visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 600ms; }
+.reveal-stagger--visible > *:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 700ms; }
+.reveal-stagger--visible > *:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 800ms; }
+
+/* ─── Keyframe Animations ─── */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-icon {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(232, 70, 30, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(232, 70, 30, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(232, 70, 30, 0); }
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ─── Skeleton Loading (for async content) ─── */
+.skeleton {
+  background: linear-gradient(90deg, var(--sk-gray-100) 25%, var(--sk-gray-50) 50%, var(--sk-gray-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--sk-radius-sm);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── Micro-interactions ─── */
+.hover-lift {
+  transition: transform var(--sk-duration-normal) var(--sk-ease-out), box-shadow var(--sk-duration-normal) var(--sk-ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sk-shadow-lg);
+}
+
+/* Arrow slide on hover */
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(4px);
+}

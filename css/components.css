@@ -1,0 +1,364 @@
+/* ==========================================================================
+   SUSKII — Reusable Component Styles
+   ========================================================================== */
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sk-space-2);
+  padding: var(--sk-space-3) var(--sk-space-6);
+  font-size: var(--sk-text-base);
+  font-weight: var(--sk-font-semibold);
+  border-radius: var(--sk-radius-lg);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity var(--sk-duration-fast);
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn--primary {
+  background: var(--sk-orange-gradient);
+  color: var(--sk-white);
+  box-shadow: 0 4px 15px rgba(232, 70, 30, 0.3);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(232, 70, 30, 0.4);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--sk-gray-800);
+  border: 2px solid var(--sk-gray-200);
+}
+
+.btn--secondary:hover {
+  border-color: var(--sk-orange);
+  color: var(--sk-orange);
+  transform: translateY(-2px);
+}
+
+.btn--dark {
+  background: var(--sk-navy);
+  color: var(--sk-white);
+}
+
+.btn--dark:hover {
+  background: var(--sk-gray-700);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--sk-white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn--ghost:hover {
+  border-color: var(--sk-white);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn--sm {
+  padding: var(--sk-space-2) var(--sk-space-4);
+  font-size: var(--sk-text-sm);
+  border-radius: var(--sk-radius-md);
+}
+
+.btn--lg {
+  padding: var(--sk-space-4) var(--sk-space-8);
+  font-size: var(--sk-text-lg);
+  border-radius: var(--sk-radius-xl);
+}
+
+.btn__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ─── Store Badges ─── */
+.store-badges {
+  display: flex;
+  gap: var(--sk-space-3);
+  flex-wrap: wrap;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sk-space-2);
+  padding: var(--sk-space-3) var(--sk-space-5);
+  background: var(--sk-gray-900);
+  color: var(--sk-white);
+  border-radius: var(--sk-radius-lg);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+  text-decoration: none;
+  min-height: 52px;
+}
+
+.store-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sk-shadow-lg);
+}
+
+.store-badge__icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.store-badge__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.store-badge__label {
+  font-size: 10px;
+  font-weight: var(--sk-font-normal);
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.store-badge__store {
+  font-size: var(--sk-text-base);
+  font-weight: var(--sk-font-semibold);
+}
+
+.store-badge--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ─── Cards ─── */
+.card {
+  background: var(--sk-white);
+  border-radius: var(--sk-radius-xl);
+  padding: var(--sk-space-8);
+  border: 1px solid var(--sk-gray-100);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sk-shadow-lg);
+  border-color: transparent;
+}
+
+.card__icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--sk-radius-lg);
+  margin-bottom: var(--sk-space-5);
+  font-size: 24px;
+}
+
+.card__icon--orange {
+  background: linear-gradient(135deg, rgba(232, 70, 30, 0.1), rgba(255, 107, 61, 0.1));
+  color: var(--sk-orange);
+}
+
+.card__icon--blue {
+  background: linear-gradient(135deg, rgba(27, 58, 140, 0.1), rgba(42, 86, 198, 0.1));
+  color: var(--sk-blue);
+}
+
+.card__title {
+  font-size: var(--sk-text-lg);
+  font-weight: var(--sk-font-semibold);
+  margin-bottom: var(--sk-space-2);
+  color: var(--sk-gray-900);
+}
+
+.card__description {
+  font-size: var(--sk-text-sm);
+  color: var(--sk-gray-500);
+  line-height: var(--sk-leading-relaxed);
+}
+
+/* ─── Glass Effect ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass--dark {
+  background: rgba(26, 29, 46, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ─── QR Code Container ─── */
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sk-space-2);
+}
+
+.qr-code {
+  width: 120px;
+  height: 120px;
+  padding: var(--sk-space-2);
+  background: var(--sk-white);
+  border-radius: var(--sk-radius-lg);
+  box-shadow: var(--sk-shadow-md);
+}
+
+.qr-code__label {
+  font-size: var(--sk-text-xs);
+  color: var(--sk-gray-400);
+  text-align: center;
+}
+
+/* ─── Phone Mockup ─── */
+.phone-mockup {
+  position: relative;
+  width: 280px;
+  height: 580px;
+  border-radius: 40px;
+  background: var(--sk-gray-900);
+  padding: 12px;
+  box-shadow: 
+    0 0 0 2px var(--sk-gray-700),
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 28px;
+  background: var(--sk-gray-900);
+  border-radius: 0 0 20px 20px;
+  z-index: 2;
+}
+
+.phone-mockup__screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  background: var(--sk-off-white);
+  position: relative;
+}
+
+.phone-mockup__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── Step Indicator ─── */
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.step__number {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--sk-text-xl);
+  font-weight: var(--sk-font-bold);
+  margin-bottom: var(--sk-space-5);
+  position: relative;
+  z-index: 1;
+}
+
+.step__number--orange {
+  background: var(--sk-orange-gradient);
+  color: var(--sk-white);
+  box-shadow: 0 4px 20px rgba(232, 70, 30, 0.3);
+}
+
+.step__title {
+  font-size: var(--sk-text-lg);
+  font-weight: var(--sk-font-semibold);
+  margin-bottom: var(--sk-space-2);
+}
+
+.step__description {
+  font-size: var(--sk-text-sm);
+  color: var(--sk-gray-500);
+  max-width: 240px;
+}
+
+/* ─── Social Icons ─── */
+.social-icons {
+  display: flex;
+  gap: var(--sk-space-3);
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sk-gray-100);
+  color: var(--sk-gray-600);
+  transition: all var(--sk-duration-normal) var(--sk-ease-out);
+}
+
+.social-icon:hover {
+  background: var(--sk-orange);
+  color: var(--sk-white);
+  transform: translateY(-2px);
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ─── Tags / Pills ─── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sk-space-1);
+  padding: var(--sk-space-1) var(--sk-space-3);
+  font-size: var(--sk-text-xs);
+  font-weight: var(--sk-font-medium);
+  border-radius: var(--sk-radius-full);
+  background: rgba(232, 70, 30, 0.1);
+  color: var(--sk-orange);
+}
