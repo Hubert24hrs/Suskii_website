@@ -180,11 +180,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     mobileMenu.classList.remove('nav__mobile-menu--open');
                     menuToggle.classList.remove('nav__hamburger--active');
                     document.body.style.overflow = '';
+                    document.body.classList.remove('mobile-menu-open');
                     menuToggle.setAttribute('aria-expanded', 'false');
                 } else {
                     mobileMenu.classList.add('nav__mobile-menu--open');
                     menuToggle.classList.add('nav__hamburger--active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    document.body.style.overflow = 'hidden';
+                    document.body.classList.add('mobile-menu-open');
                     menuToggle.setAttribute('aria-expanded', 'true');
                 }
             });
@@ -197,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenu.classList.remove('nav__mobile-menu--open');
                 if (menuToggle) menuToggle.classList.remove('nav__hamburger--active');
                 document.body.style.overflow = '';
+                document.body.classList.remove('mobile-menu-open');
                 if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
 
                 if (href === '#home' || href === 'index.html#home') {
@@ -451,45 +454,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setupModal('.privacy-trigger', 'privacy-modal');
     }
 
-    // Floating Section Navigation Logic
-    function initFloatingNav() {
-        const toggle = document.getElementById('floating-nav-toggle');
-        const menu = document.getElementById('floating-nav-menu');
-        
-        if (!toggle || !menu) return;
-        
-        toggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            menu.classList.toggle('floating-nav__menu--open');
-        });
-        
-        document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && e.target !== toggle) {
-                menu.classList.remove('floating-nav__menu--open');
-            }
-        });
-        
-        const links = menu.querySelectorAll('.floating-nav__link');
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                menu.classList.remove('floating-nav__menu--open');
-                const href = link.getAttribute('href');
-                if (href === '#home' || href === 'index.html#home') {
-                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                } else if (href && href.startsWith('#') && href.length > 1) {
-                    const target = document.querySelector(href);
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-    }
-
     // =========================================================================
     // 3. SAFE EXECUTION
     // =========================================================================
@@ -512,7 +476,6 @@ document.addEventListener('DOMContentLoaded', () => {
     safeExec(initNavigation, 'initNavigation');
     safeExec(initScrollAnimations, 'initScrollAnimations');
     safeExec(initModal, 'initModal');
-    safeExec(initFloatingNav, 'initFloatingNav');
     safeExec(initFAQ, 'initFAQ');
     safeExec(initMobileStickyCTA, 'initMobileStickyCTA');
     safeExec(initChatBubble, 'initChatBubble');

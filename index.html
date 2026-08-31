@@ -61,23 +61,8 @@
     <header class="nav" id="main-nav">
         <div class="container nav__inner">
             <a href="index.html#home" class="nav__logo" aria-label="SUSKII Home">
-                <!-- Using placeholder for logo, to be replaced by actual SVG -->
-                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="20" fill="url(#paint0_linear)"/>
-                    <path d="M70 35H35L25 65H60L70 35Z" fill="white"/>
-                    <path d="M40 50H70L80 20H50L40 50Z" fill="url(#paint1_linear)"/>
-                    <defs>
-                        <linearGradient id="paint0_linear" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FF5722"/>
-                            <stop offset="1" stop-color="#C23A15"/>
-                        </linearGradient>
-                        <linearGradient id="paint1_linear" x1="40" y1="20" x2="80" y2="50" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#FFFFFF"/>
-                            <stop offset="1" stop-color="#E4E8F0"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-                SUSKII
+                <img src="assets/images/suskii-logo.png" alt="SUSKII Logo" class="nav__logo-img" width="40" height="40" style="border-radius: 10px; object-fit: contain;">
+                <span>SUSKII</span>
             </a>
             
             <nav class="nav__links" aria-label="Main Navigation">
@@ -385,43 +370,13 @@
         </section>
     </main>
 
-    <!-- Floating Section Menu -->
-    <div class="floating-nav">
-        <button class="floating-nav__toggle" id="floating-nav-toggle" aria-label="Toggle sections menu">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-        <div class="floating-nav__menu" id="floating-nav-menu">
-            <a href="#home" class="floating-nav__link">Home</a>
-            <a href="#how-it-works" class="floating-nav__link">How It Works</a>
-            <a href="#features" class="floating-nav__link">Features</a>
-            <a href="#buyer-seller" class="floating-nav__link">Buy & Sell</a>
-            <a href="#faq" class="floating-nav__link">FAQ</a>
-            <a href="referral.html" class="floating-nav__link" style="color: var(--sk-orange); font-weight: 600;">🎁 Referral Signup</a>
-        </div>
-    </div>
-
     <!-- ─── FOOTER ─── -->
     <footer class="footer">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__brand">
-                    <a href="#" class="footer__logo">
-                        <!-- Placeholder Logo SVG -->
-                         <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100" height="100" rx="20" fill="url(#paint0_linear_footer)"/>
-                            <path d="M70 35H35L25 65H60L70 35Z" fill="white"/>
-                            <path d="M40 50H70L80 20H50L40 50Z" fill="url(#paint1_linear_footer)"/>
-                            <defs>
-                                <linearGradient id="paint0_linear_footer" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#FF5722"/>
-                                    <stop offset="1" stop-color="#C23A15"/>
-                                </linearGradient>
-                                <linearGradient id="paint1_linear_footer" x1="40" y1="20" x2="80" y2="50" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#FFFFFF"/>
-                                    <stop offset="1" stop-color="#E4E8F0"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
+                    <a href="index.html#home" class="footer__logo">
+                        <img src="assets/images/suskii-logo.png" alt="SUSKII Logo" class="footer__logo-img" width="36" height="36" style="border-radius: 8px; object-fit: contain;">
                         <span class="footer__logo-text">SUSKII</span>
                     </a>
                     <p class="footer__brand-desc">A marketplace where you can discover, buy, list, and sell legitimate salable products directly through a modern digital platform.</p>
