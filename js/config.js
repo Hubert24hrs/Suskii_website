@@ -15,7 +15,7 @@ const SUSKII_CONFIG = {
   },
 
   storeLinks: {
-    googlePlay: 'https://play.google.com/store/apps/details?id=com.suskii.app',
+    googlePlay: 'https://play.google.com/store/apps/details?id=com.plugz.suskii.app',
     appleStore: '', // Add when available
     appleStoreAvailable: false,
   },
