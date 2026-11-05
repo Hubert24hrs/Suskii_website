@@ -1,0 +1,16 @@
+{
+  "name": "suskii-website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "SUSKII corporate ecosystem website: static HTML/CSS/JS deployed on Vercel.",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 5173",
+    "test": "node scripts/check-site.mjs",
+    "test:links": "node scripts/check-site.mjs --online",
+    "lint": "html-validate \"*.html\""
+  },
+  "devDependencies": {
+    "html-validate": "^9.0.0"
+  }
+}

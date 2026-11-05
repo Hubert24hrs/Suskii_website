@@ -1,0 +1,13 @@
+{
+  "name": "SUSKII",
+  "short_name": "SUSKII",
+  "description": "The SUSKII ecosystem: Marketplace, Errands and Travel & Tours.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0A0F24",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/assets/images/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}
