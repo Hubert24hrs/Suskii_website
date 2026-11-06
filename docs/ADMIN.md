@@ -156,7 +156,7 @@ ADMIN_EMAIL=me@suskii.test ADMIN_NAME="Me" npm run admin:create   # first local 
 ## Tests
 
 ```bash
-npm test              # site checks + 77 unit and integration tests (in-memory PostgreSQL)
+npm test              # site checks + 80 unit and integration tests (in-memory PostgreSQL)
 npm run test:e2e      # Playwright: login, protected routes, CMS publish, contact form, mobile
 npm run typecheck     # TypeScript, strict
 npm run lint          # html-validate

@@ -10,6 +10,8 @@ The corporate website for **SUSKII**, the parent brand of three independent digi
 
 Only verified URLs are linked. Anything not publicly available is shown as **Coming soon** or **In development**, never as a live link.
 
+**Live:** https://suskii-website.vercel.app (site) and https://suskii-website.vercel.app/admin (central admin and CMS, active since 2026-11-06). Changes are listed in [CHANGELOG.md](CHANGELOG.md). Contributors, and AI assistants, should read [CLAUDE.md](CLAUDE.md) first.
+
 ## Stack
 
 The public site is plain static HTML, CSS and vanilla JS, with no framework, deployed on Vercel. Since v3 it also has a **central admin and CMS** at `/admin`, backed by one TypeScript Vercel Function (`api/`) and PostgreSQL. Published CMS content is baked into the static pages at build time. With no database configured, the committed pages are published exactly as they are.
@@ -18,7 +20,9 @@ The public site is plain static HTML, CSS and vanilla JS, with no framework, dep
 |---|---|
 | [docs/ADMIN.md](docs/ADMIN.md) | Admin pages, roles, CMS workflow, data rules, security measures, tests |
 | [docs/INTEGRATIONS.md](docs/INTEGRATIONS.md) | Connecting Marketplace, Errands and Travel & Tours: API contract, webhooks, and what each platform team must provide |
-| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Database, environment variables, first administrator, cron, domain, backups |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Database, environment variables, first administrator, cron, domain, backups, current production status |
+| [CLAUDE.md](CLAUDE.md) | Commands, architecture, project rules and Vercel pitfalls, in one page |
+| [CHANGELOG.md](CHANGELOG.md) | What changed, release by release |
 
 ```
 index.html            Home page: hero, ecosystem, platforms, why, about, FAQ, partners, contact, footer
@@ -74,7 +78,7 @@ A **Partners** section, placed right after the FAQ, links to SUSKII's partners: 
 ```bash
 npm install
 npm run dev          # site + admin at http://localhost:5173 (embedded PostgreSQL in .data/, nothing else to install)
-ADMIN_EMAIL=me@suskii.test ADMIN_NAME="Me" npm run admin:create   # first local administrator
+ADMIN_EMAIL=me@suskii.test ADMIN_NAME="Me" npm run admin:create   # first local administrator (prints a one-time password)
 npm run dev:static   # the old way: plain static server, no admin
 ```
 
@@ -83,8 +87,8 @@ When you change `css/styles.css` or `js/main.js`, bump the `?v=` query on their 
 ## Testing
 
 ```bash
-npm test             # site checks (anchors, verified URLs, alt text, JSON-LD) + admin unit/integration tests
-npm run test:e2e     # Playwright end-to-end: admin sign-in, CMS publishing, contact form, mobile
+npm test             # site checks (anchors, verified URLs, alt text, JSON-LD) + 80 admin unit/integration tests
+npm run test:e2e     # 10 Playwright tests: admin sign-in, CMS publishing, contact form, mobile
 npm run test:links   # site checks plus a live request to every external URL
 npm run typecheck    # TypeScript (strict)
 npm run lint         # html-validate on every page
@@ -100,7 +104,7 @@ npm run audit:deps   # npm audit of production dependencies
 
 ## Deployment (Vercel)
 
-The project is linked to Vercel (project `suskii-website`). The build command is `npm run build`, which writes `dist/`. The API is a single Node function. Without a database the build simply publishes the committed static pages, so the public site never depends on the admin being configured. See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) to switch the admin on.
+The project is linked to Vercel (project `suskii-website`); pushing to `main` deploys production. The build command is `npm run build`, which writes `dist/`. The API is a single Node function (`api/index.ts`). If the database is ever unavailable, the build publishes the committed static pages, so the public site never depends on the admin. Production has a Neon database, Blob storage and the admin secrets configured; see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md#current-production-status).
 
 ```bash
 vercel          # preview deployment
