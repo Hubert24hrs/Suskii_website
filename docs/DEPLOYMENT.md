@@ -53,7 +53,7 @@ Sign in at `/admin/login`, change the one-time password, and turn on two-factor 
 The repository is linked to Vercel; pushing to `main` deploys to production.
 
 - **Build:** `npm run build` writes `dist/`, which Vercel serves.
-- **API:** the API is one Node function, `api/[...path].ts`, with a maximum duration of 60 s.
+- **API:** the API is one Node function, `api/index.ts` (all `/api/*` paths are rewritten to it), with a maximum duration of 60 s.
 - **Cron:** `vercel.json` schedules `/api/cron` daily, which the Hobby plan allows. On Pro, change it to `*/15 * * * *` for 15-minute synchronisation and scheduled publishing.
 - **Checking it:** after the deploy, `GET /api/health` returns `{ ok: true, admin: "ready" }`.
 

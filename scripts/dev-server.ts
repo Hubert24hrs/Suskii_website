@@ -1,6 +1,6 @@
 /**
  * Local development server that mirrors the Vercel deployment:
- *   /api/*            → the same handler as api/[...path].ts
+ *   /api/*            → the same handler as api/index.ts
  *   /admin, /admin/*  → admin/index.html (single-page admin)
  *   /uploads/*        → locally stored media (.data/uploads)
  *   everything else   → public static files only (server code is never served)

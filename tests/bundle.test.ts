@@ -61,3 +61,14 @@ console.log(r.status, c.sanitizeRich('<p>ok<script>x</script></p>'));`;
         expect(out.trim()).toBe('200 <p>ok</p>');
     }, 90_000);
 });
+
+describe('vercel.json routing', () => {
+    it('declares an existing function and routes every /api path to it', () => {
+        const cfg = JSON.parse(readFileSync('vercel.json', 'utf8'));
+        const fns = Object.keys(cfg.functions);
+        expect(fns).toEqual(['api/index.ts']);
+        expect(existsSync(fns[0])).toBe(true);
+        expect(cfg.rewrites[0]).toEqual({ source: '/api/:path*', destination: '/api' });
+        expect(cfg.crons.every((c: any) => c.path.startsWith('/api/'))).toBe(true);
+    });
+});

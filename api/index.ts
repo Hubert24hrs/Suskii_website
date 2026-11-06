@@ -1,5 +1,6 @@
 /**
  * Single Vercel Function for every /api/* route (Web-standard Request/Response handlers).
+ * vercel.json rewrites /api/:path* here; the request keeps its original URL, which server/app.ts routes.
  */
 import { handle } from '../server/app.js';
 
