@@ -28,7 +28,7 @@
     "html-validate": "^11.4.0",
     "tsx": "^4.23.15",
     "typescript": "5.9",
-    "vitest": "^5.1.0"
+    "vitest": "^4.1.12"
   },
   "dependencies": {
     "@vercel/blob": "^2.8.2",
@@ -39,7 +39,7 @@
     "sharp": "^0.35.5"
   },
   "engines": {
-    "node": ">=20"
+    "node": "24.x"
   },
   "overrides": {
     "@vercel/cli-config": {
