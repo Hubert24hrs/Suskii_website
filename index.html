@@ -1,769 +1,977 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>SUSKII — A market for anything salable</title>
-    <meta name="description" content="SUSKII is the premier peer-to-peer marketplace to discover, buy, and sell anything. From gadgets and fashion to property and vehicles. All in one app.">
-    <meta name="keywords" content="SUSKII, marketplace, buy, sell, peer-to-peer, ecommerce, Nigeria, Rwanda">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <script>document.documentElement.classList.replace('no-js', 'js');</script>
+
+    <!-- ─── SEO ─── -->
+    <title>SUSKII — Technology connecting people to commerce, services and travel</title>
+    <meta name="description" content="SUSKII is the parent brand of SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours: independent digital platforms forming one connected ecosystem for everyday commerce, services and travel.">
     <meta name="author" content="SUSKII">
-    
-    <!-- Open Graph / Social Media Preview -->
+    <meta name="theme-color" content="#0A0F24">
+    <link rel="canonical" href="https://suskii-website.vercel.app/">
+
+    <!-- ─── Open Graph ─── -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://suskii-website.vercel.app/">
     <meta property="og:site_name" content="SUSKII">
-    <meta property="og:title" content="SUSKII — A market for anything salable">
-    <meta property="og:description" content="Discover, buy, and sell anything on SUSKII. The premier peer-to-peer digital marketplace.">
-    <meta property="og:image" content="https://suskii-website.vercel.app/assets/images/og-image.png">
-    <meta property="og:image:secure_url" content="https://suskii-website.vercel.app/assets/images/og-image.png">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:title" content="SUSKII — One ecosystem for commerce, services and travel">
+    <meta property="og:description" content="Meet the SUSKII ecosystem: SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours.">
+    <meta property="og:image" content="https://suskii-website.vercel.app/assets/og/suskii-ecosystem.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="SUSKII - A market for anything salable">
-    
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://suskii-website.vercel.app/">
-    <meta name="twitter:title" content="SUSKII — A market for anything salable">
-    <meta name="twitter:description" content="Discover, buy, and sell anything on SUSKII. The premier peer-to-peer digital marketplace.">
-    <meta name="twitter:image" content="https://suskii-website.vercel.app/assets/images/og-image.png">
-    <meta name="twitter:image:alt" content="SUSKII - A market for anything salable">
+    <meta property="og:image:alt" content="SUSKII ecosystem: Marketplace, Errands, and Travel &amp; Tours">
 
-    <!-- Favicons & App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    <link rel="shortcut icon" href="assets/images/favicon.png">
-    
-    <!-- Preconnect to Google Fonts -->
+    <!-- ─── Twitter / X ─── -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SUSKII — One ecosystem for commerce, services and travel">
+    <meta name="twitter:description" content="Meet the SUSKII ecosystem: SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours.">
+    <meta name="twitter:image" content="https://suskii-website.vercel.app/assets/og/suskii-ecosystem.png">
+    <meta name="twitter:image:alt" content="SUSKII ecosystem: Marketplace, Errands, and Travel &amp; Tours">
+
+    <!-- ─── Icons ─── -->
+    <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- ─── Fonts & styles ─── -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="css/styles.css?v=2.2.0">
 
-    <!-- Structured Data -->
+    <!-- ─── Structured data ─── -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SUSKII",
-      "url": "https://suskii.com/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://suskii.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://suskii-website.vercel.app/#organization",
+          "name": "SUSKII",
+          "url": "https://suskii-website.vercel.app/",
+          "logo": "https://suskii-website.vercel.app/assets/brand/suskii-logo.png",
+          "email": "support@suskii.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kisimenti, opposite Jollof Kigali",
+            "addressLocality": "Kigali",
+            "addressCountry": "RW"
+          },
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61592829380893",
+            "https://www.instagram.com/suskiiapp",
+            "https://www.tiktok.com/@suskii2026",
+            "https://www.linkedin.com/in/suskii2026/"
+          ],
+          "brand": [
+            { "@type": "Brand", "name": "SUSKII Marketplace" },
+            { "@type": "Brand", "name": "SUSKII Errands" },
+            { "@type": "Brand", "name": "SUSKII Travel & Tours" }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://suskii-website.vercel.app/#website",
+          "name": "SUSKII",
+          "url": "https://suskii-website.vercel.app/",
+          "publisher": { "@id": "https://suskii-website.vercel.app/#organization" }
+        },
+        {
+          "@type": "MobileApplication",
+          "name": "SUSKII Marketplace",
+          "operatingSystem": "Android",
+          "applicationCategory": "ShoppingApplication",
+          "url": "https://suskii.com/",
+          "installUrl": "https://play.google.com/store/apps/details?id=com.plugz.suskii.app&hl=en_AU",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "publisher": { "@id": "https://suskii-website.vercel.app/#organization" }
+        }
+      ]
     }
     </script>
 </head>
 <body>
+    <!-- ─── Icon sprite ─── -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+        <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+        <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+        <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+        <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+        <symbol id="i-network" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98"/><path d="m15.41 6.51-6.82 3.98"/></symbol>
+        <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10l-6.1 1.2L12 17l-1.9-5.8L4 10l6.1-1.2z"/><path d="M19 17v4"/><path d="M17 19h4"/></symbol>
+        <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+        <symbol id="i-bed" viewBox="0 0 24 24"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></symbol>
+        <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+        <symbol id="i-bus" viewBox="0 0 24 24"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></symbol>
+        <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/></symbol>
+        <symbol id="i-store" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+        <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+        <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+        <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+        <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></symbol>
+        <symbol id="i-home" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+        <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+        <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V3c.4 2.6 2.4 4.6 5 5"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+        <symbol id="i-gplay" viewBox="0 0 24 24"><path fill="#4285F4" stroke="none" d="M3.61 1.81 13.79 12 3.61 22.19C3.24 21.9 3 21.4 3 20.8V3.2c0-.6.24-1.1.61-1.39Z"/><path fill="#34A853" stroke="none" d="M3.61 1.81 13.79 12l3.31-3.31L5.1 1.8c-.6-.34-1.1-.3-1.49.01Z"/><path fill="#EA4335" stroke="none" d="M3.61 22.19c.39.31.89.35 1.49.01l12-6.89L13.79 12Z"/><path fill="#FBBC04" stroke="none" d="M17.1 8.69 13.79 12l3.31 3.31 3.5-2.01c1-.6 1-2 0-2.6Z"/></symbol>
+        <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M16.37 1.43c0 1.14-.5 2.27-1.18 3.08-.74.9-1.99 1.57-2.99 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.57-2.27 1.21-2.98.8-.94 2.14-1.64 3.25-1.68.03.13.05.28.05.43Zm4.56 15.71c-.03.07-.46 1.58-1.52 3.12-.94 1.34-1.94 2.71-3.43 2.71-1.52 0-1.9-.88-3.63-.88-1.7 0-2.3.91-3.67.91-1.38 0-2.33-1.26-3.43-2.8C3.96 18.38 2.92 15.57 2.92 12.92c0-4.28 2.8-6.55 5.55-6.55 1.45 0 2.68.95 3.6.95.87 0 2.22-1.01 3.9-1.01.61 0 2.89.06 4.37 2.19-.13.09-2.38 1.37-2.38 4.19 0 3.26 2.85 4.42 2.96 4.45Z"/></symbol>
+    </svg>
 
-    <!-- ─── NAVIGATION ─── -->
-    <header class="nav" id="main-nav">
-        <div class="container nav__inner">
-            <a href="index.html#home" class="nav__logo" aria-label="SUSKII Home">
-                <img src="assets/images/suskii-logo.png" alt="SUSKII Logo" class="nav__logo-img" width="40" height="40" style="border-radius: 10px; object-fit: contain;">
-                <span>SUSKII</span>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+    <header class="site-header" id="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="#top" aria-label="SUSKII home">
+                <img class="brand__mark" src="assets/brand/suskii-logo.webp" alt="" width="226" height="256">
+                <span class="brand__word">SUSKII</span>
             </a>
-            
-            <nav class="nav__links" aria-label="Main Navigation">
-                <a href="#home" class="nav__link">Home</a>
-                <a href="#how-it-works" class="nav__link">How It Works</a>
-                <a href="#features" class="nav__link">Features</a>
-                <a href="#buyer-seller" class="nav__link">Buy & Sell</a>
-                <a href="#faq" class="nav__link">FAQ</a>
-                <a href="referral.html" class="nav__link">Refer & Earn</a>
-                <a href="#" class="nav__link terms-trigger">Terms and Conditions</a>
+
+            <nav class="primary-nav" aria-label="Primary">
+                <ul class="primary-nav__list">
+                    <li class="primary-nav__item has-menu">
+                        <button class="primary-nav__link primary-nav__trigger" type="button" aria-expanded="false" aria-controls="platforms-menu">
+                            Our Platforms
+                            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg>
+                        </button>
+                        <div class="mega-menu" id="platforms-menu">
+                            <a class="mega-menu__item" href="#marketplace">
+                                <span class="app-tile app-tile--market" aria-hidden="true"><svg class="icon"><use href="#i-bag"/></svg></span>
+                                <span class="mega-menu__text">
+                                    <strong>SUSKII Marketplace</strong>
+                                    <span>Buy and sell virtually anything</span>
+                                </span>
+                                <span class="status status--live">Live</span>
+                            </a>
+                            <a class="mega-menu__item" href="#errands">
+                                <span class="app-tile app-tile--errands" aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></span>
+                                <span class="mega-menu__text">
+                                    <strong>SUSKII Errands</strong>
+                                    <span>Discover and request services</span>
+                                </span>
+                                <span class="status status--soon">Soon</span>
+                            </a>
+                            <a class="mega-menu__item" href="#travel">
+                                <span class="app-tile app-tile--travel" aria-hidden="true"><svg class="icon"><use href="#i-plane"/></svg></span>
+                                <span class="mega-menu__text">
+                                    <strong>SUSKII Travel &amp; Tours</strong>
+                                    <span>Travel planning, in development</span>
+                                </span>
+                                <span class="status status--dev">In dev</span>
+                            </a>
+                            <a class="mega-menu__all" href="#platforms">View all platforms <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                        </div>
+                    </li>
+                    <li class="primary-nav__item"><a class="primary-nav__link" href="#about">About SUSKII</a></li>
+                    <li class="primary-nav__item"><a class="primary-nav__link" href="#ecosystem">Our Ecosystem</a></li>
+                    <li class="primary-nav__item"><a class="primary-nav__link" href="#contact">Contact</a></li>
+                </ul>
             </nav>
-            
-            <div class="nav__actions">
-                <a href="https://suskii.com/login" class="nav__signin">Sign In</a>
-                <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="btn btn--primary btn--sm" data-action="download">Get the App</a>
-            </div>
-            
-            <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false" id="menu-toggle">
-                <span class="nav__hamburger-line"></span>
-                <span class="nav__hamburger-line"></span>
-                <span class="nav__hamburger-line"></span>
+
+            <a class="btn btn--dark site-header__cta" href="#get-started">Get Started</a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+                <span class="menu-toggle__bar"></span>
+                <span class="menu-toggle__bar"></span>
             </button>
         </div>
-        
-        <!-- Mobile Menu Overlay -->
-        <div class="nav__mobile-menu" id="mobile-menu">
-            <a href="#home" class="nav__mobile-link">Home</a>
-            <a href="#how-it-works" class="nav__mobile-link">How It Works</a>
-            <a href="#features" class="nav__mobile-link">Features</a>
-            <a href="#buyer-seller" class="nav__mobile-link">Buy</a>
-            <a href="#buyer-seller" class="nav__mobile-link">Sell</a>
-            <a href="#faq" class="nav__mobile-link">FAQ</a>
-            <a href="referral.html" class="nav__mobile-link" style="color: var(--sk-orange); font-weight: 700;">🎁 Refer & Earn</a>
-            <a href="#" class="nav__mobile-link terms-trigger">Terms and Conditions</a>
-            <a href="https://suskii.com/login" class="nav__mobile-link mt-4">Sign In</a>
-            <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="btn btn--primary btn--lg nav__mobile-link" data-action="download">Get the App</a>
+
+        <div class="mobile-nav" id="mobile-nav" hidden>
+            <nav class="container mobile-nav__inner" aria-label="Mobile">
+                <p class="mobile-nav__label">Our Platforms</p>
+                <a class="mobile-nav__platform" href="#marketplace">
+                    <span class="app-tile app-tile--market" aria-hidden="true"><svg class="icon"><use href="#i-bag"/></svg></span>
+                    <span>SUSKII Marketplace</span><span class="status status--live">Live</span>
+                </a>
+                <a class="mobile-nav__platform" href="#errands">
+                    <span class="app-tile app-tile--errands" aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></span>
+                    <span>SUSKII Errands</span><span class="status status--soon">Soon</span>
+                </a>
+                <a class="mobile-nav__platform" href="#travel">
+                    <span class="app-tile app-tile--travel" aria-hidden="true"><svg class="icon"><use href="#i-plane"/></svg></span>
+                    <span>SUSKII Travel &amp; Tours</span><span class="status status--dev">In dev</span>
+                </a>
+                <div class="mobile-nav__links">
+                    <a href="#about">About SUSKII</a>
+                    <a href="#ecosystem">Our Ecosystem</a>
+                    <a href="#apps">Mobile Apps</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <a class="btn btn--dark btn--block" href="#get-started">Get Started</a>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <!-- ─── HERO SECTION ─── -->
-        <section class="hero" id="home">
-            <div class="hero__bg-shapes">
-                <div class="hero__bg-circle hero__bg-circle--1"></div>
-                <div class="hero__bg-circle hero__bg-circle--2"></div>
-                <div class="hero__bg-circle hero__bg-circle--3"></div>
+    <main id="main">
+        <!-- ═══════════════════════ HERO ═══════════════════════ -->
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="hero__backdrop" aria-hidden="true">
+                <span class="hero__glow hero__glow--a"></span>
+                <span class="hero__glow hero__glow--b"></span>
+                <span class="hero__glow hero__glow--c"></span>
+                <span class="hero__grid"></span>
             </div>
-            
-            <div class="container hero__grid">
-                <div class="hero__content reveal-stagger">
-                    <div class="hero__badge">
-                        <span class="hero__badge-dot"></span>
-                        A market for anything salable
-                    </div>
-                    
-                    <h1 class="hero__title">
-                        Buy what you need. <br>
-                        Sell what you don't. <br>
-                        <span class="hero__title-accent">All in one marketplace.</span>
-                    </h1>
-                    
-                    <p class="hero__subtitle">
-                        Discover, buy, and sell legitimate products directly through our modern platform. Join thousands trading safely every day.
+
+            <div class="container hero__layout">
+                <div class="hero__copy">
+                    <p class="eyebrow-pill reveal">
+                        <span class="eyebrow-pill__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                        The SUSKII ecosystem
                     </p>
-                    
-                    <div class="hero__ctas">
-                        <div class="store-badges" id="hero-store-badges">
-                            <!-- Injected by JS based on OS -->
-                        </div>
-                        
-                        <a href="https://suskii.com/explore" class="hero__secondary-cta">
-                            Explore SUSKII on Web
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    <h1 class="hero__title reveal" id="hero-title">
+                        Connecting people to
+                        <span class="tint tint--market">commerce,</span>
+                        <span class="tint tint--errands">services</span> and
+                        <span class="tint tint--travel">travel.</span>
+                    </h1>
+                    <p class="hero__lead reveal">
+                        SUSKII is a technology company building independent digital platforms that work together, so buying, selling, getting things done and going places all start in one trusted ecosystem.
+                    </p>
+                    <div class="hero__actions reveal">
+                        <a class="btn btn--primary btn--lg" href="#platforms">
+                            Explore Our Platforms
+                            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>
                         </a>
+                        <a class="btn btn--ghost btn--lg" href="#about">About SUSKII</a>
                     </div>
+                    <ul class="hero__status reveal">
+                        <li><span class="dot dot--live" aria-hidden="true"></span>Marketplace <em>Live</em></li>
+                        <li><span class="dot dot--soon" aria-hidden="true"></span>Errands <em>Coming soon</em></li>
+                        <li><span class="dot dot--dev" aria-hidden="true"></span>Travel &amp; Tours <em>In development</em></li>
+                    </ul>
                 </div>
-                
-                <div class="hero__visual reveal-right">
-                    <div class="hero__phone-wrapper">
-                        <!-- Floating Category Icons -->
-                        <div class="hero__floating-icons">
-                            <div class="hero__floating-icon hero__floating-icon--1"><img src="assets/images/laptop.jpg" alt="Laptop" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;"></div>
-                            <div class="hero__floating-icon hero__floating-icon--2"><img src="assets/images/house.jpg" alt="House" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;"></div>
-                            <div class="hero__floating-icon hero__floating-icon--3"><img src="assets/images/sneaker.jpg" alt="Sneaker" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;"></div>
-                            <div class="hero__floating-icon hero__floating-icon--4"><img src="assets/images/car.jpg" alt="Car" style="width:100%; height:100%; object-fit:cover; border-radius:inherit;"></div>
+
+                <div class="hero__visual reveal" role="img" aria-label="Diagram of the SUSKII ecosystem: SUSKII at the centre, connected to Marketplace, Errands, and Travel and Tours">
+                    <div class="orbit" aria-hidden="true">
+                        <span class="orbit__ring orbit__ring--1"><i class="orbit__comet"></i></span>
+                        <span class="orbit__ring orbit__ring--2"><i class="orbit__comet"></i></span>
+                        <span class="orbit__ring orbit__ring--3"></span>
+                        <svg class="orbit__links" viewBox="0 0 400 400">
+                            <path class="orbit__link orbit__link--market" d="M200 200 L 200 50"/>
+                            <path class="orbit__link orbit__link--errands" d="M200 200 L 330 275"/>
+                            <path class="orbit__link orbit__link--travel" d="M200 200 L 70 275"/>
+                        </svg>
+                        <div class="orbit__core">
+                            <img src="assets/brand/suskii-logo.webp" alt="" width="226" height="256">
+                            <span>SUSKII</span>
                         </div>
-                        
-                        <!-- 3D Phone Mockup with Real E-Commerce Experience -->
-                        <div class="phone-mockup">
-                            <div class="phone-mockup__frame">
-                                <div class="phone-mockup__island">
-                                    <div class="phone-mockup__camera"></div>
-                                    <div class="phone-mockup__sensor"></div>
-                                </div>
 
-                                <!-- Phone Screen Content -->
-                                <div class="phone-mockup__screen">
-                                    <!-- App Header (Status Bar + 1688/Shein Style Search Bar) -->
-                                    <div class="app-header">
-                                        <!-- Status Bar -->
-                                        <div class="app-status-bar">
-                                            <span class="app-status-time">8:50</span>
-                                            <div class="app-status-icons">
-                                                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.96A10.938 10.938 0 0 1 1 12C1 5.92 5.92 1 12 1s11 4.92 11 11c0 2.6-.9 4.99-2.4 6.87l-.62-1.35C21.2 16.03 22 14.1 22 12c0-4.97-4.03-9-9-9z"/></svg>
-                                                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"/></svg>
-                                                <span class="app-battery"><span class="app-battery-level"></span></span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Search Bar with Scan Icon on Left, Camera & Search Icon on Right -->
-                                        <div class="app-search-bar">
-                                            <div class="app-search-input-wrapper">
-                                                <!-- Left: Scan Icon -->
-                                                <div class="app-search-scan-icon" title="Scan Barcode / QR">
-                                                    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M4 8V5a1 1 0 0 1 1-1h3M4 16v3a1 1 0 0 0 1 1h3M16 4h3a1 1 0 0 1 1 1v3M16 20h3a1 1 0 0 0 1-1v-3"></path>
-                                                        <line x1="7" y1="12" x2="17" y2="12"></line>
-                                                    </svg>
-                                                </div>
-                                                <!-- Center: Placeholder in English -->
-                                                <div class="app-search-placeholder">Search cars, homes, phones, fashion...</div>
-                                                <!-- Right: Camera Icon -->
-                                                <div class="app-search-camera-icon" title="Photo Search">
-                                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                                                        <circle cx="12" cy="13" r="4"></circle>
-                                                    </svg>
-                                                </div>
-                                                <!-- Far Right: Orange Search Button with Search Icon -->
-                                                <button class="app-search-btn" aria-label="Search">
-                                                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
-                                                        <circle cx="11" cy="11" r="7"></circle>
-                                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Scrollable App Content Area -->
-                                    <div class="app-scroll-content">
-                                        <!-- Promo Pan-African P2P Banner -->
-                                        <div class="app-promo-banner">
-                                            <div class="app-promo-badge">🌍 Pan-African P2P Market</div>
-                                            <h4 class="app-promo-title">Connect, Buy &amp; Sell Directly!</h4>
-                                            <span class="app-promo-btn">Direct P2P Trading &gt;&gt;</span>
-                                            <div class="app-promo-coupon">
-                                                <span class="coupon-label">SUSKII</span>
-                                                <span class="coupon-sub">Direct P2P</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Quick Category Services Row -->
-                                        <div class="app-services-row">
-                                            <div class="app-service-item">
-                                                <div class="app-service-icon app-service-icon--purple">💻</div>
-                                                <span class="app-service-text">Gadgets</span>
-                                            </div>
-                                            <div class="app-service-item">
-                                                <div class="app-service-icon app-service-icon--orange">👟</div>
-                                                <span class="app-service-text">Fashion</span>
-                                            </div>
-                                            <div class="app-service-item">
-                                                <div class="app-service-icon app-service-icon--gold">🏡</div>
-                                                <span class="app-service-text">Properties</span>
-                                            </div>
-                                            <div class="app-service-item">
-                                                <div class="app-service-icon app-service-icon--blue">🚗</div>
-                                                <span class="app-service-text">Vehicles</span>
-                                            </div>
-                                            <div class="app-service-item">
-                                                <div class="app-service-icon app-service-icon--cyan">🛡️</div>
-                                                <span class="app-service-text">Verified</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Guarantee Ribbon -->
-                                        <div class="app-guarantee-ribbon">
-                                            <div class="app-guarantee-col">
-                                                <span>🤝</span>
-                                                <strong>Direct P2P</strong>
-                                                <span class="app-guarantee-sub">Verified Sellers ›</span>
-                                            </div>
-                                            <div class="app-guarantee-col">
-                                                <span>🛡️</span>
-                                                <strong>Safe Deals</strong>
-                                                <span class="app-guarantee-sub">Direct Chat ›</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- 2-Column Product Grid (Pure English, Zero Currency, P2P Contact) -->
-                                        <div class="app-products-grid">
-                                            <!-- Product 1: Tech / Laptop -->
-                                            <div class="app-product-card">
-                                                <div class="app-product-img-box">
-                                                    <img src="assets/images/laptop.jpg" alt="Apple MacBook Pro M4 Space Black">
-                                                    <span class="app-product-badge">Top Seller</span>
-                                                </div>
-                                                <div class="app-product-info">
-                                                    <div class="app-product-title">Apple MacBook Pro 14" M4 Space Black</div>
-                                                    <div class="app-product-desc">Brand New · 16GB / 512GB · Sealed</div>
-                                                    <div class="app-product-loc">📍 Lagos, NG · Fast Reply</div>
-                                                    <div class="app-product-meta">
-                                                        <span class="app-product-tag">★ 5.0 Top Seller</span>
-                                                    </div>
-                                                    <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="app-p2p-btn">💬 Contact Seller</a>
-                                                </div>
-                                            </div>
-
-                                            <!-- Product 2: Fashion / Sneakers -->
-                                            <div class="app-product-card">
-                                                <div class="app-product-img-box">
-                                                    <img src="assets/images/sneaker.jpg" alt="Nike Air Jordan 1 Retro OG">
-                                                    <span class="app-product-badge app-product-badge--hot">Trending</span>
-                                                </div>
-                                                <div class="app-product-info">
-                                                    <div class="app-product-title">Nike Air Jordan 1 Retro High 'Chicago'</div>
-                                                    <div class="app-product-desc">Size 43 / 10.5 · Authenticated</div>
-                                                    <div class="app-product-loc">📍 Nairobi, KE · Verified</div>
-                                                    <div class="app-product-meta">
-                                                        <span class="app-product-tag" style="color: #FF6B3D;">★ 4.9 Deadstock</span>
-                                                    </div>
-                                                    <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="app-p2p-btn">💬 Contact Seller</a>
-                                                </div>
-                                            </div>
-
-                                            <!-- Product 3: Real Estate / Property -->
-                                            <div class="app-product-card">
-                                                <div class="app-product-img-box">
-                                                    <img src="assets/images/house.jpg" alt="Luxury 4-Bedroom Smart Duplex">
-                                                    <span class="app-product-badge">Property</span>
-                                                </div>
-                                                <div class="app-product-info">
-                                                    <div class="app-product-title">Luxury 4-Bed Modern Smart Duplex</div>
-                                                    <div class="app-product-desc">Furnished · Pool · 24/7 Power</div>
-                                                    <div class="app-product-loc">📍 Kigali, RW · Direct Owner</div>
-                                                    <div class="app-product-meta">
-                                                        <span class="app-product-tag">★ 5.0 Clean Title</span>
-                                                    </div>
-                                                    <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="app-p2p-btn">💬 Contact Seller</a>
-                                                </div>
-                                            </div>
-
-                                            <!-- Product 4: Vehicles / Cars -->
-                                            <div class="app-product-card">
-                                                <div class="app-product-img-box">
-                                                    <img src="assets/images/car.jpg" alt="Mercedes-Benz G63 AMG SUV">
-                                                    <span class="app-product-badge app-product-badge--hot">Verified Car</span>
-                                                </div>
-                                                <div class="app-product-info">
-                                                    <div class="app-product-title">Mercedes-Benz G63 AMG V8 BiTurbo</div>
-                                                    <div class="app-product-desc">2024 Model · Foreign Used</div>
-                                                    <div class="app-product-loc">📍 Accra, GH · Verified Dealer</div>
-                                                    <div class="app-product-meta">
-                                                        <span class="app-product-tag">★ 4.9 Inspected</span>
-                                                    </div>
-                                                    <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="app-p2p-btn">💬 Contact Seller</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Floating Help Headset -->
-                                    <div class="app-floating-help" title="Customer Support">
-                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                                            <path d="M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7a9 9 0 0 0-9-9z"/>
-                                        </svg>
-                                    </div>
-
-                                    <!-- Bottom App Navigation Bar (Pan-African P2P style) -->
-                                    <div class="app-bottom-nav">
-                                        <div class="app-tab-item app-tab-item--active">
-                                            <div class="app-tab-icon-brand">
-                                                <img src="assets/images/suskii-logo.png" alt="SUSKII" width="22" height="22">
-                                            </div>
-                                            <span class="app-tab-label" style="color: var(--sk-orange); font-weight: 700;">SUSKII</span>
-                                        </div>
-                                        <div class="app-tab-item">
-                                            <div class="app-tab-icon-wrap">
-                                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                                                <span class="app-tab-badge">12</span>
-                                            </div>
-                                            <span class="app-tab-label">Messages</span>
-                                        </div>
-                                        <div class="app-tab-item">
-                                            <div class="app-tab-icon-wrap">
-                                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-                                            </div>
-                                            <span class="app-tab-label">Sell / List</span>
-                                        </div>
-                                        <div class="app-tab-item">
-                                            <div class="app-tab-icon-wrap">
-                                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                                            </div>
-                                            <span class="app-tab-label">Profile</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="orbit__node orbit__node--market">
+                            <span class="app-tile app-tile--market"><svg class="icon"><use href="#i-bag"/></svg></span>
+                            <span class="orbit__label"><strong>Marketplace</strong><small>Buy &amp; sell</small></span>
                         </div>
-                        
-                        <!-- QR Code (Mobile & Desktop) -->
-                        <div class="hero__qr qr-container" id="hero-qr">
-                            <div class="qr-code">
-                                <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener">
-                                    <img src="assets/images/qr-playstore.png" alt="Scan QR to download SUSKII on Google Play" style="width:100%; height:100%; object-fit:contain;">
-                                </a>
-                            </div>
-                            <span class="qr-code__label">Scan to Download</span>
+                        <div class="orbit__node orbit__node--errands">
+                            <span class="app-tile app-tile--errands"><svg class="icon"><use href="#i-wrench"/></svg></span>
+                            <span class="orbit__label"><strong>Errands</strong><small>Get it done</small></span>
                         </div>
+                        <div class="orbit__node orbit__node--travel">
+                            <span class="app-tile app-tile--travel"><svg class="icon"><use href="#i-plane"/></svg></span>
+                            <span class="orbit__label"><strong>Travel &amp; Tours</strong><small>Go places</small></span>
+                        </div>
+
+                        <div class="orbit__chip orbit__chip--a"><svg class="icon icon--sm"><use href="#i-shield"/></svg>Trusted standards</div>
+                        <div class="orbit__chip orbit__chip--b"><svg class="icon icon--sm"><use href="#i-users"/></svg>People &amp; businesses</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ─── HOW IT WORKS ─── -->
-        <section class="section how-it-works" id="how-it-works">
+        <!-- ═══════════════════════ ECOSYSTEM ═══════════════════════ -->
+        <section class="section ecosystem" id="ecosystem" aria-labelledby="ecosystem-title">
             <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-header__eyebrow">How It Works</span>
-                    <h2 class="section-header__title">Start buying or selling in minutes</h2>
-                    <p class="section-header__subtitle">Join the marketplace and connect with thousands of users in three simple steps.</p>
-                </div>
-                
-                <div class="how-it-works__steps reveal-stagger">
-                    <div class="how-it-works__connector">
-                        <div class="how-it-works__connector-line"></div>
-                    </div>
-                    
-                    <div class="step hover-lift">
-                        <div class="step__number step__number--orange">1</div>
-                        <h3 class="step__title">Create Account</h3>
-                        <p class="step__description">Join SUSKII quickly and securely to start your journey.</p>
-                    </div>
-                    
-                    <div class="step hover-lift">
-                        <div class="step__number step__number--orange">2</div>
-                        <h3 class="step__title">Buy or List</h3>
-                        <p class="step__description">Discover products you need or list something you want to sell.</p>
-                    </div>
-                    
-                    <div class="step hover-lift">
-                        <div class="step__number step__number--orange">3</div>
-                        <h3 class="step__title">Connect & Trade</h3>
-                        <p class="step__description">Chat directly, agree on terms, and complete your marketplace journey safely.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <header class="section-head reveal">
+                    <p class="eyebrow">Our Ecosystem</p>
+                    <h2 class="section-title" id="ecosystem-title">One parent brand. Independent platforms. A connected experience.</h2>
+                    <p class="section-lead">SUSKII is the home of a growing family of digital products. Each platform is focused on one everyday need and runs as its own product, while all of them share the same SUSKII foundations: trust, simplicity and a commitment to the communities they serve.</p>
+                </header>
 
-        <!-- ─── BUYER / SELLER SPLIT ─── -->
-        <section class="section buyer-seller" id="buyer-seller">
-            <div class="container buyer-seller__grid">
-                <!-- Buyer -->
-                <div class="buyer-seller__card buyer-seller__card--buyer reveal-left">
-                    <div class="buyer-seller__icon buyer-seller__icon--orange">
-                        🛒
-                    </div>
-                    <h3 class="buyer-seller__title">Find what you're looking for</h3>
-                    <p class="buyer-seller__text">Discover deals on everything from electronics to real estate. Powerful search and smart categories make finding the right product simple.</p>
-                    
-                    <div class="buyer-seller__features">
-                        <div class="buyer-seller__feature">
-                            <div class="buyer-seller__check buyer-seller__check--orange">✓</div>
-                            Smart location-aware discovery
-                        </div>
-                        <div class="buyer-seller__feature">
-                            <div class="buyer-seller__check buyer-seller__check--orange">✓</div>
-                            Direct chat with verified sellers
-                        </div>
-                        <div class="buyer-seller__feature">
-                            <div class="buyer-seller__check buyer-seller__check--orange">✓</div>
-                            Save favorites and get notified
-                        </div>
-                    </div>
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="btn btn--primary" data-action="download">Start Browsing</a>
-                </div>
-                
-                <!-- Seller -->
-                <div class="buyer-seller__card buyer-seller__card--seller reveal-right">
-                    <div class="buyer-seller__icon buyer-seller__icon--blue">
-                        💰
-                    </div>
-                    <h3 class="buyer-seller__title">Turn what you have into opportunity</h3>
-                    <p class="buyer-seller__text">List your products in minutes and reach thousands of active buyers. Manage your listings, track interest, and close deals efficiently.</p>
-                    
-                    <div class="buyer-seller__features">
-                        <div class="buyer-seller__feature">
-                            <div class="buyer-seller__check buyer-seller__check--blue">✓</div>
-                            List products in under a minute
-                        </div>
-                        <div class="buyer-seller__feature">
-                            <div class="buyer-seller__check buyer-seller__check--blue">✓</div>
-                            Reach local and national buyers
-                        </div>
-                        <div class="buyer-seller__feature">
-                            <div class="buyer-seller__check buyer-seller__check--blue">✓</div>
-                            Build your seller reputation
-                        </div>
-                    </div>
-                    
-                    <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="btn btn--dark" data-action="download">Start Selling</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── FEATURES ─── -->
-        <section class="section features" id="features">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-header__eyebrow">Platform Features</span>
-                    <h2 class="section-header__title">Everything you need in a modern marketplace</h2>
-                </div>
-                
-                <div class="features__grid reveal-stagger">
-                    <!-- Features injected by JS based on config -->
-                </div>
-            </div>
-        </section>
-        
-        <!-- ─── APP SHOWCASE (Placeholder for JS injection) ─── -->
-        <section class="section app-showcase" id="app-showcase">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-header__eyebrow">The Experience</span>
-                    <h2 class="section-header__title">Designed for simplicity</h2>
-                    <p class="section-header__subtitle">A premium interface that makes buying and selling effortless.</p>
-                </div>
-                
-                <div class="app-showcase__carousel reveal">
-                    <!-- Phone mockups injected by JS -->
-                </div>
-                
-                <div class="app-showcase__nav reveal">
-                    <!-- Dots injected by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── TRUST & SAFETY ─── -->
-        <section class="section trust" id="trust">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-header__eyebrow">Trust & Safety</span>
-                    <h2 class="section-header__title">Trade with confidence</h2>
-                </div>
-                
-                <div class="trust__grid reveal-stagger">
-                    <div class="trust__card">
-                        <div class="trust__card-icon">🛡️</div>
-                        <h3 class="trust__card-title">Account Security</h3>
-                        <p class="trust__card-text">Secure authentication and profile verification keep our community safe and trustworthy.</p>
-                    </div>
-                    
-                    <div class="trust__card">
-                        <div class="trust__card-icon">🔒</div>
-                        <h3 class="trust__card-title">Data Privacy</h3>
-                        <p class="trust__card-text">Your personal information is encrypted and never shared without your explicit consent.</p>
-                    </div>
-                    
-                    <div class="trust__card">
-                        <div class="trust__card-icon">🤝</div>
-                        <h3 class="trust__card-title">Community Safety</h3>
-                        <p class="trust__card-text">Built-in reporting tools, seller ratings, and strict community guidelines ensure a safe environment.</p>
-                    </div>
-                </div>
-                
-                <div class="trust__links reveal">
-                    <a href="#" class="trust__link privacy-trigger">Privacy Policy</a>
-                    <a href="#" class="trust__link terms-trigger">Terms of Service</a>
-                    <a href="#" class="trust__link terms-trigger">Community Guidelines</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── FAQ ─── -->
-        <section class="section faq" id="faq">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-header__eyebrow">Questions?</span>
-                    <h2 class="section-header__title">Frequently asked questions</h2>
-                </div>
-                
-                <div class="faq__list reveal-stagger" id="faq-container">
-                    <!-- FAQs injected by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── FINAL CTA ─── -->
-        <section class="section final-cta" id="download">
-            <div class="container final-cta__content reveal">
-                <h2 class="final-cta__title">Your next deal could be on SUSKII.</h2>
-                <p class="final-cta__subtitle">Join thousands of buyers and sellers already using the marketplace.</p>
-                
-                <div class="final-cta__actions">
-                    <div class="store-badges" id="final-store-badges">
-                        <!-- Injected by JS -->
-                    </div>
-                    
-                    <div class="qr-container" id="final-qr">
-                        <div class="qr-code">
-                            <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener">
-                                <img src="assets/images/qr-playstore.png" alt="Scan QR to download SUSKII on Google Play" style="width:100%; height:100%; object-fit:contain;">
+                <div class="eco-stack reveal">
+                    <div class="eco-stack__row eco-stack__row--platforms">
+                        <p class="eco-stack__tag">Platforms</p>
+                        <div class="eco-stack__platforms">
+                            <a class="eco-card eco-card--market" href="#marketplace">
+                                <span class="app-tile app-tile--market" aria-hidden="true"><svg class="icon"><use href="#i-bag"/></svg></span>
+                                <span class="eco-card__body">
+                                    <strong>Commerce</strong>
+                                    <span>SUSKII Marketplace helps people buy and sell virtually anything.</span>
+                                </span>
+                                <svg class="icon icon--sm eco-card__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                            </a>
+                            <a class="eco-card eco-card--errands" href="#errands">
+                                <span class="app-tile app-tile--errands" aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></span>
+                                <span class="eco-card__body">
+                                    <strong>Services</strong>
+                                    <span>SUSKII Errands connects people who need services with people who provide them.</span>
+                                </span>
+                                <svg class="icon icon--sm eco-card__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                            </a>
+                            <a class="eco-card eco-card--travel" href="#travel">
+                                <span class="app-tile app-tile--travel" aria-hidden="true"><svg class="icon"><use href="#i-plane"/></svg></span>
+                                <span class="eco-card__body">
+                                    <strong>Travel</strong>
+                                    <span>SUSKII Travel &amp; Tours will bring trip planning and bookings into the ecosystem.</span>
+                                </span>
+                                <svg class="icon icon--sm eco-card__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
                             </a>
                         </div>
-                        <span class="qr-code__label" style="color:white; opacity:0.8;">Scan to Download</span>
                     </div>
+
+                    <div class="eco-stack__connector" aria-hidden="true"><span></span><span></span><span></span></div>
+
+                    <div class="eco-stack__row eco-stack__row--core">
+                        <p class="eco-stack__tag">SUSKII foundations</p>
+                        <div class="eco-core">
+                            <img class="eco-core__mark" src="assets/brand/suskii-logo.webp" alt="" width="226" height="256" loading="lazy">
+                            <ul class="eco-core__list">
+                                <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-shield"/></svg>Trust &amp; safety first</li>
+                                <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-phone"/></svg>Mobile-first design</li>
+                                <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-globe"/></svg>Built for local markets</li>
+                                <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-heart"/></svg>Real human support</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="eco-stack__connector" aria-hidden="true"><span></span><span></span><span></span></div>
+
+                    <div class="eco-stack__row eco-stack__row--people">
+                        <p class="eco-stack__tag">The people we serve</p>
+                        <ul class="eco-people">
+                            <li>Buyers</li>
+                            <li>Sellers</li>
+                            <li>Businesses</li>
+                            <li>Service providers</li>
+                            <li>Customers</li>
+                            <li>Travellers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ol class="journey reveal">
+                    <li class="journey__step journey__step--market">
+                        <span class="journey__num">01</span>
+                        <h3>Buy &amp; sell</h3>
+                        <p>Find what you need, or turn what you have into income, on SUSKII Marketplace.</p>
+                    </li>
+                    <li class="journey__step journey__step--errands">
+                        <span class="journey__num">02</span>
+                        <h3>Get it done</h3>
+                        <p>Find trusted help for the jobs around it, from repairs to deliveries, with SUSKII Errands.</p>
+                    </li>
+                    <li class="journey__step journey__step--travel">
+                        <span class="journey__num">03</span>
+                        <h3>Go places</h3>
+                        <p>Plan flights, stays and trips through SUSKII Travel &amp; Tours, the next chapter of the ecosystem.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ PLATFORMS ═══════════════════════ -->
+        <section class="section platforms" id="platforms" aria-labelledby="platforms-title">
+            <div class="container">
+                <header class="section-head section-head--center reveal">
+                    <p class="eyebrow">Our Platforms</p>
+                    <h2 class="section-title" id="platforms-title">Three platforms. Each built for one everyday need.</h2>
+                    <p class="section-lead">Every SUSKII platform has its own identity, team focus and product roadmap, and every one follows the same SUSKII standards.</p>
+                </header>
+            </div>
+
+            <!-- ─── Marketplace ─── -->
+            <article class="platform platform--market" id="marketplace" aria-labelledby="marketplace-title">
+                <div class="container platform__layout">
+                    <div class="platform__copy reveal">
+                        <div class="platform__lockup">
+                            <span class="app-tile app-tile--market app-tile--lg" aria-hidden="true"><svg class="icon"><use href="#i-bag"/></svg></span>
+                            <span class="platform__name"><small>SUSKII</small>Marketplace</span>
+                        </div>
+                        <div class="platform__meta">
+                            <span class="status status--live">Live</span>
+                            <span class="platform__category">Online P2P Marketplace</span>
+                        </div>
+                        <h3 class="platform__title" id="marketplace-title">A market for anything salable.</h3>
+                        <p class="platform__desc">An online marketplace where individuals and businesses can buy and sell virtually anything. SUSKII Marketplace is a digital market hub connecting buyers and sellers, from gadgets and fashion to property and vehicles.</p>
+                        <ul class="feature-list">
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Buy and sell products</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Individual and business sellers</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Product discovery and search</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Marketplace listings</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Buyer and seller connections</li>
+                        </ul>
+                        <div class="platform__actions">
+                            <a class="btn btn--brand" href="https://suskii.com/" target="_blank" rel="noopener">
+                                Visit SUSKII Marketplace
+                                <svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"/></svg>
+                                <span class="sr-only">(opens in a new tab)</span>
+                            </a>
+                            <div class="store-row">
+                                <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app&amp;hl=en_AU" target="_blank" rel="noopener" aria-label="Get SUSKII Marketplace on Google Play (opens in a new tab)">
+                                    <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
+                                    <span class="store-badge__text"><small>Get it on</small>Google Play</span>
+                                </a>
+                                <span class="store-badge store-badge--soon">
+                                    <svg class="store-badge__logo" aria-hidden="true"><use href="#i-apple"/></svg>
+                                    <span class="store-badge__text"><small>Coming soon</small>App Store</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="platform__visual reveal">
+                        <div class="device-stage device-stage--market">
+                            <div class="phone" role="img" aria-label="Illustration of the SUSKII Marketplace app showing search, categories and product listings">
+                                <div class="phone__screen" aria-hidden="true">
+                                    <div class="ui-status"><span>9:41</span><span class="ui-status__icons"><i></i><i></i><i></i></span></div>
+                                    <div class="ui-search ui-search--market">
+                                        <svg class="icon icon--xs"><use href="#i-search"/></svg>
+                                        <span>Search phones, homes, fashion…</span>
+                                    </div>
+                                    <div class="ui-promo">
+                                        <strong>Buy, sell &amp; connect near you</strong>
+                                        <span>Direct buyer–seller chat</span>
+                                    </div>
+                                    <div class="ui-cats">
+                                        <span><i><svg class="icon icon--xs"><use href="#i-phone"/></svg></i>Gadgets</span>
+                                        <span><i><svg class="icon icon--xs"><use href="#i-bag"/></svg></i>Fashion</span>
+                                        <span><i><svg class="icon icon--xs"><use href="#i-home"/></svg></i>Property</span>
+                                        <span><i><svg class="icon icon--xs"><use href="#i-car"/></svg></i>Vehicles</span>
+                                    </div>
+                                    <div class="ui-products">
+                                        <div class="ui-product"><img src="assets/img/laptop.webp" alt="" width="140" height="140" loading="lazy"><b>Laptop · 16GB / 512GB</b><small>Lagos · Fast reply</small><em>Contact seller</em></div>
+                                        <div class="ui-product"><img src="assets/img/sneaker.webp" alt="" width="140" height="140" loading="lazy"><b>Retro high-top sneakers</b><small>Kigali · Verified</small><em>Contact seller</em></div>
+                                        <div class="ui-product"><img src="assets/img/house.webp" alt="" width="140" height="140" loading="lazy"><b>4-bed modern duplex</b><small>Abuja · Direct owner</small><em>Contact seller</em></div>
+                                        <div class="ui-product"><img src="assets/img/car.webp" alt="" width="140" height="140" loading="lazy"><b>SUV · 2024 model</b><small>Kigali · Inspected</small><em>Contact seller</em></div>
+                                    </div>
+                                    <div class="ui-tabbar"><i class="is-active"></i><i></i><i></i><i></i></div>
+                                </div>
+                            </div>
+                            <div class="float-card float-card--tl" aria-hidden="true">
+                                <span class="float-card__icon"><svg class="icon icon--sm"><use href="#i-chat"/></svg></span>
+                                <span><strong>New message</strong><small>“Is this still available?”</small></span>
+                            </div>
+                            <div class="float-card float-card--br" aria-hidden="true">
+                                <img src="assets/img/prod-fashion-1.webp" alt="" width="40" height="40" loading="lazy">
+                                <span><strong>Listing published</strong><small>Visible to nearby buyers</small></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ─── Errands ─── -->
+            <article class="platform platform--errands" id="errands" aria-labelledby="errands-title">
+                <div class="container platform__layout platform__layout--flip">
+                    <div class="platform__copy reveal">
+                        <div class="platform__lockup">
+                            <span class="app-tile app-tile--errands app-tile--lg" aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></span>
+                            <span class="platform__name"><small>SUSKII</small>Errands</span>
+                        </div>
+                        <div class="platform__meta">
+                            <span class="status status--soon">Coming soon</span>
+                            <span class="platform__category">Services Marketplace</span>
+                        </div>
+                        <h3 class="platform__title" id="errands-title">Rendering All Available Services.</h3>
+                        <p class="platform__desc">A platform where users can discover, request and access different services. SUSKII Errands connects people who need services with individuals and businesses offering those services.</p>
+                        <ul class="feature-list">
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Request different services</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Discover available service providers</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Browse service categories</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Connect customers with service providers</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Service discovery and booking</li>
+                        </ul>
+                        <div class="platform__actions">
+                            <a class="btn btn--brand" href="mailto:support@suskii.com?subject=SUSKII%20Errands%20launch%20updates">
+                                <svg class="icon icon--sm" aria-hidden="true"><use href="#i-mail"/></svg>
+                                Get launch updates
+                            </a>
+                            <div class="store-row">
+                                <span class="store-badge store-badge--soon">
+                                    <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
+                                    <span class="store-badge__text"><small>Coming soon</small>Google Play</span>
+                                </span>
+                                <span class="store-badge store-badge--soon">
+                                    <svg class="store-badge__logo" aria-hidden="true"><use href="#i-apple"/></svg>
+                                    <span class="store-badge__text"><small>Coming soon</small>App Store</span>
+                                </span>
+                            </div>
+                        </div>
+                        <p class="platform__note">The SUSKII Errands website and apps are not public yet. We’ll share the links here when they launch.</p>
+                    </div>
+
+                    <div class="platform__visual reveal">
+                        <div class="device-stage device-stage--errands">
+                            <div class="phone" role="img" aria-label="Preview illustration of the SUSKII Errands app showing service categories and a service request">
+                                <div class="phone__screen" aria-hidden="true">
+                                    <div class="ui-status"><span>9:41</span><span class="ui-status__icons"><i></i><i></i><i></i></span></div>
+                                    <div class="ui-hello">
+                                        <small>Good morning</small>
+                                        <strong>What do you need done today?</strong>
+                                    </div>
+                                    <div class="ui-search ui-search--errands">
+                                        <svg class="icon icon--xs"><use href="#i-search"/></svg>
+                                        <span>Search services</span>
+                                    </div>
+                                    <div class="ui-services">
+                                        <span><i><svg class="icon icon--sm"><use href="#i-spark"/></svg></i>Cleaning</span>
+                                        <span><i><svg class="icon icon--sm"><use href="#i-wrench"/></svg></i>Repairs</span>
+                                        <span><i><svg class="icon icon--sm"><use href="#i-truck"/></svg></i>Delivery</span>
+                                        <span><i><svg class="icon icon--sm"><use href="#i-scissors"/></svg></i>Beauty</span>
+                                        <span><i><svg class="icon icon--sm"><use href="#i-book"/></svg></i>Tutoring</span>
+                                        <span><i><svg class="icon icon--sm"><use href="#i-home"/></svg></i>Moving</span>
+                                        <span><i><svg class="icon icon--sm"><use href="#i-calendar"/></svg></i>Events</span>
+                                        <span><i><svg class="icon icon--sm"><use href="#i-layers"/></svg></i>More</span>
+                                    </div>
+                                    <div class="ui-request">
+                                        <div class="ui-request__head"><strong>Home cleaning</strong><em>Request</em></div>
+                                        <div class="ui-request__row"><svg class="icon icon--xs"><use href="#i-calendar"/></svg>Saturday · 10:00</div>
+                                        <div class="ui-request__row"><svg class="icon icon--xs"><use href="#i-pin"/></svg>Your location</div>
+                                        <div class="ui-request__providers"><i></i><i></i><i></i><span>Providers nearby</span></div>
+                                    </div>
+                                    <div class="ui-cta">Request a service</div>
+                                </div>
+                            </div>
+                            <div class="float-card float-card--tl" aria-hidden="true">
+                                <span class="float-card__icon"><svg class="icon icon--sm"><use href="#i-check"/></svg></span>
+                                <span><strong>Request sent</strong><small>Matching you with providers</small></span>
+                            </div>
+                            <div class="float-card float-card--br" aria-hidden="true">
+                                <span class="float-card__icon"><svg class="icon icon--sm"><use href="#i-star"/></svg></span>
+                                <span><strong>Provider profiles</strong><small>Reviews &amp; categories</small></span>
+                            </div>
+                            <span class="device-stage__caption">Product preview, subject to change</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- ─── Travel & Tours ─── -->
+            <article class="platform platform--travel" id="travel" aria-labelledby="travel-title">
+                <div class="container platform__layout">
+                    <div class="platform__copy reveal">
+                        <div class="platform__lockup">
+                            <span class="app-tile app-tile--travel app-tile--lg" aria-hidden="true"><svg class="icon"><use href="#i-plane"/></svg></span>
+                            <span class="platform__name"><small>SUSKII</small>Travel &amp; Tours</span>
+                        </div>
+                        <div class="platform__meta">
+                            <span class="status status--dev">In development</span>
+                            <span class="platform__category">Travel and Tourism</span>
+                        </div>
+                        <h3 class="platform__title" id="travel-title">The next journey for the SUSKII ecosystem.</h3>
+                        <p class="platform__desc">An upcoming travel platform designed to make travel planning, bookings and tourism services accessible through the SUSKII ecosystem.</p>
+                        <p class="platform__sublabel">Planned features</p>
+                        <ul class="feature-list feature-list--grid">
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-plane"/></svg>Flight booking</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bed"/></svg>Hotel reservations</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-car"/></svg>Car rentals</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bus"/></svg>Intercity transportation</li>
+                            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-compass"/></svg>Travel and tourism services</li>
+                        </ul>
+                        <div class="notice">
+                            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-clock"/></svg>
+                            <p>SUSKII Travel &amp; Tours is in development. Bookings are <strong>not yet available</strong>.</p>
+                        </div>
+                        <div class="platform__actions">
+                            <a class="btn btn--brand" href="mailto:support@suskii.com?subject=SUSKII%20Travel%20%26%20Tours%20interest">
+                                <svg class="icon icon--sm" aria-hidden="true"><use href="#i-mail"/></svg>
+                                Register your interest
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="platform__visual reveal">
+                        <div class="device-stage device-stage--travel">
+                            <div class="browser" role="img" aria-label="Concept illustration of SUSKII Travel and Tours planning screens for flights, hotels, car rentals and intercity travel">
+                                <div class="browser__bar" aria-hidden="true">
+                                    <span class="browser__dots"><i></i><i></i><i></i></span>
+                                    <span class="browser__title">SUSKII Travel &amp; Tours · Concept</span>
+                                </div>
+                                <div class="browser__body" aria-hidden="true">
+                                    <div class="trip-tabs">
+                                        <span class="is-active"><svg class="icon icon--xs"><use href="#i-plane"/></svg>Flights</span>
+                                        <span><svg class="icon icon--xs"><use href="#i-bed"/></svg>Hotels</span>
+                                        <span><svg class="icon icon--xs"><use href="#i-car"/></svg>Cars</span>
+                                        <span><svg class="icon icon--xs"><use href="#i-bus"/></svg>Intercity</span>
+                                    </div>
+                                    <div class="trip-form">
+                                        <div class="trip-field"><small>From</small><strong>Lagos</strong></div>
+                                        <div class="trip-swap"><svg class="icon icon--xs"><use href="#i-arrow"/></svg></div>
+                                        <div class="trip-field"><small>To</small><strong>Kigali</strong></div>
+                                        <div class="trip-field"><small>Depart</small><strong>Select date</strong></div>
+                                        <div class="trip-field"><small>Travellers</small><strong>1 adult</strong></div>
+                                        <div class="trip-go">Coming soon</div>
+                                    </div>
+                                    <div class="trip-cards">
+                                        <div class="trip-card trip-card--a"><span>Stays</span><strong>Hotels &amp; apartments</strong></div>
+                                        <div class="trip-card trip-card--b"><span>On the road</span><strong>Car rentals</strong></div>
+                                        <div class="trip-card trip-card--c"><span>City to city</span><strong>Intercity travel</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="ribbon" aria-hidden="true">In development</span>
+                            <span class="device-stage__caption">Concept design only. Bookings not yet available.</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- ═══════════════════════ MOBILE APPS ═══════════════════════ -->
+        <section class="section apps" id="apps" aria-labelledby="apps-title">
+            <div class="container">
+                <header class="section-head section-head--center reveal">
+                    <p class="eyebrow eyebrow--light">Mobile Applications</p>
+                    <h2 class="section-title" id="apps-title">SUSKII, in your pocket.</h2>
+                    <p class="section-lead">Download the apps that are live today, and follow along as new SUSKII apps launch.</p>
+                    <ul class="legend">
+                        <li><span class="dot dot--live" aria-hidden="true"></span>Available now</li>
+                        <li><span class="dot dot--soon" aria-hidden="true"></span>Coming soon</li>
+                        <li><span class="dot dot--dev" aria-hidden="true"></span>In development</li>
+                    </ul>
+                </header>
+
+                <div class="app-grid">
+                    <article class="app-card app-card--market reveal" aria-labelledby="app-market-title">
+                        <div class="app-card__top">
+                            <img class="app-card__icon" src="assets/img/marketplace-icon-192.webp" alt="SUSKII Marketplace app icon" width="64" height="64" loading="lazy">
+                            <div>
+                                <h3 class="app-card__title" id="app-market-title">SUSKII Marketplace</h3>
+                                <span class="status status--live">Available on Android</span>
+                            </div>
+                        </div>
+                        <p class="app-card__text">Browse, list, and chat with buyers and sellers on the go.</p>
+                        <div class="app-card__stores">
+                            <a class="store-badge store-badge--light" href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app&amp;hl=en_AU" target="_blank" rel="noopener" aria-label="Get SUSKII Marketplace on Google Play (opens in a new tab)">
+                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
+                                <span class="store-badge__text"><small>Get it on</small>Google Play</span>
+                            </a>
+                            <span class="store-badge store-badge--light store-badge--soon">
+                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-apple"/></svg>
+                                <span class="store-badge__text"><small>Coming soon</small>App Store</span>
+                            </span>
+                        </div>
+                        <div class="app-card__qr">
+                            <img src="assets/images/qr-playstore.png" alt="QR code to download SUSKII Marketplace from Google Play" width="88" height="88" loading="lazy">
+                            <span>Scan with your Android phone to install from Google Play.</span>
+                        </div>
+                    </article>
+
+                    <article class="app-card app-card--errands reveal" aria-labelledby="app-errands-title">
+                        <div class="app-card__top">
+                            <span class="app-tile app-tile--errands app-tile--xl" aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></span>
+                            <div>
+                                <h3 class="app-card__title" id="app-errands-title">SUSKII Errands</h3>
+                                <span class="status status--soon">Coming soon</span>
+                            </div>
+                        </div>
+                        <p class="app-card__text">Discover service providers and request help, from your phone.</p>
+                        <div class="app-card__stores">
+                            <span class="store-badge store-badge--light store-badge--soon">
+                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
+                                <span class="store-badge__text"><small>Coming soon</small>Google Play</span>
+                            </span>
+                            <span class="store-badge store-badge--light store-badge--soon">
+                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-apple"/></svg>
+                                <span class="store-badge__text"><small>Coming soon</small>App Store</span>
+                            </span>
+                        </div>
+                        <a class="app-card__link" href="mailto:support@suskii.com?subject=SUSKII%20Errands%20launch%20updates">Notify me at launch <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                    </article>
+
+                    <article class="app-card app-card--travel reveal" aria-labelledby="app-travel-title">
+                        <div class="app-card__top">
+                            <span class="app-tile app-tile--travel app-tile--xl" aria-hidden="true"><svg class="icon"><use href="#i-plane"/></svg></span>
+                            <div>
+                                <h3 class="app-card__title" id="app-travel-title">SUSKII Travel &amp; Tours</h3>
+                                <span class="status status--dev">In development</span>
+                            </div>
+                        </div>
+                        <p class="app-card__text">Mobile apps are planned alongside the platform launch.</p>
+                        <div class="app-card__stores">
+                            <span class="store-badge store-badge--light store-badge--soon">
+                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
+                                <span class="store-badge__text"><small>In development</small>Google Play</span>
+                            </span>
+                            <span class="store-badge store-badge--light store-badge--soon">
+                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-apple"/></svg>
+                                <span class="store-badge__text"><small>In development</small>App Store</span>
+                            </span>
+                        </div>
+                        <a class="app-card__link" href="mailto:support@suskii.com?subject=SUSKII%20Travel%20%26%20Tours%20interest">Register interest <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ WHY SUSKII ═══════════════════════ -->
+        <section class="section why" id="why" aria-labelledby="why-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Why SUSKII</p>
+                    <h2 class="section-title" id="why-title">Everyday digital services, brought together.</h2>
+                </header>
+
+                <div class="bento">
+                    <article class="bento__tile bento__tile--vision reveal">
+                        <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
+                        <h3>One vision for everyday life</h3>
+                        <p>We’re building one trusted ecosystem where the services people rely on every day (shopping, help at home, getting around) are all within reach.</p>
+                        <div class="bento__visual" aria-hidden="true">
+                            <span class="app-tile app-tile--market"><svg class="icon"><use href="#i-bag"/></svg></span>
+                            <span class="app-tile app-tile--errands"><svg class="icon"><use href="#i-wrench"/></svg></span>
+                            <span class="app-tile app-tile--travel"><svg class="icon"><use href="#i-plane"/></svg></span>
+                        </div>
+                    </article>
+                    <article class="bento__tile reveal">
+                        <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span>
+                        <h3>Convenience</h3>
+                        <p>Every SUSKII platform shares one family of design and standards, so moving between them feels familiar from the first tap.</p>
+                    </article>
+                    <article class="bento__tile reveal">
+                        <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></span>
+                        <h3>Accessibility</h3>
+                        <p>Mobile-first products designed for the devices and connections people actually use, and free to browse.</p>
+                    </article>
+                    <article class="bento__tile reveal">
+                        <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg></span>
+                        <h3>Innovation</h3>
+                        <p>Modern digital products built for local markets, from smarter discovery to new ways of requesting services and planning travel.</p>
+                    </article>
+                    <article class="bento__tile reveal">
+                        <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-network"/></svg></span>
+                        <h3>Connectivity</h3>
+                        <p>We connect buyers with sellers, customers with service providers and travellers with journeys, creating opportunity on both sides.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+        <section class="section about" id="about" aria-labelledby="about-title">
+            <div class="container about__layout">
+                <div class="about__intro reveal">
+                    <p class="eyebrow">About SUSKII</p>
+                    <h2 class="section-title" id="about-title">Building useful technology for the way people live.</h2>
+                    <p class="section-lead">SUSKII started with a simple idea: a market for anything salable. Today it is growing into a family of platforms for the everyday needs that matter most: trading, getting things done and travelling. We build carefully, launch when products are ready, and put people first.</p>
+                    <dl class="about__facts">
+                        <div><dt>Platforms</dt><dd>3</dd></div>
+                        <div><dt>Live today</dt><dd>Nigeria &amp; Rwanda</dd></div>
+                        <div class="about__offices"><dt>Office</dt><dd>Kigali, Rwanda</dd><dd>Lagos, Nigeria</dd><dd>Across Africa</dd><dd class="about__soon">Globally soon</dd></div>
+                    </dl>
+                </div>
+                <div class="about__pillars">
+                    <article class="pillar reveal">
+                        <span class="pillar__icon" aria-hidden="true"><svg class="icon"><use href="#i-eye"/></svg></span>
+                        <h3>Our vision</h3>
+                        <p>To be the trusted digital ecosystem people across Africa turn to for everyday commerce, services and travel.</p>
+                    </article>
+                    <article class="pillar reveal">
+                        <span class="pillar__icon" aria-hidden="true"><svg class="icon"><use href="#i-target"/></svg></span>
+                        <h3>Our mission</h3>
+                        <p>To build useful, accessible platforms that connect people and businesses to opportunity, and make everyday transactions simpler, safer and closer to home.</p>
+                    </article>
+                    <article class="pillar reveal">
+                        <span class="pillar__icon" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
+                        <h3>Our commitment</h3>
+                        <p>Trust and safety first. Honest communication about what is available today and what is coming next. Products shipped only when they are ready to serve people well.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ FAQ ═══════════════════════ -->
+        <section class="section faq" id="faq" aria-labelledby="faq-title">
+            <div class="container faq__layout">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Questions</p>
+                    <h2 class="section-title" id="faq-title">Frequently asked questions</h2>
+                </header>
+                <div class="faq__list reveal">
+                    <details class="faq__item">
+                        <summary>What is SUSKII?</summary>
+                        <p>SUSKII is a technology company and the parent brand of SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours. Each is an independent platform within the SUSKII ecosystem.</p>
+                    </details>
+                    <details class="faq__item">
+                        <summary>Which SUSKII platforms can I use today?</summary>
+                        <p>SUSKII Marketplace is live on the web at <a href="https://suskii.com/" target="_blank" rel="noopener">suskii.com</a> and on Android via <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app&amp;hl=en_AU" target="_blank" rel="noopener">Google Play</a>. SUSKII Errands is coming soon, and SUSKII Travel &amp; Tours is in development.</p>
+                    </details>
+                    <details class="faq__item">
+                        <summary>Is there an iPhone app?</summary>
+                        <p>Not yet. SUSKII Marketplace for iOS is coming soon. Until then, iPhone users can use the Marketplace on the web at suskii.com.</p>
+                    </details>
+                    <details class="faq__item">
+                        <summary>Where is SUSKII available?</summary>
+                        <p>SUSKII Marketplace is currently available in Nigeria and Rwanda, with plans to expand to more countries.</p>
+                    </details>
+                    <details class="faq__item">
+                        <summary>Is SUSKII free to use?</summary>
+                        <p>Creating an account and browsing products on SUSKII Marketplace is free.</p>
+                    </details>
+                    <details class="faq__item">
+                        <summary>Can I book travel with SUSKII yet?</summary>
+                        <p>No. SUSKII Travel &amp; Tours is in development and bookings are not yet available. Register your interest and we’ll let you know when it launches.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+        <section class="section contact" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Contact</p>
+                    <h2 class="section-title" id="contact-title">Talk to SUSKII.</h2>
+                </header>
+                <div class="contact__grid">
+                    <a class="contact-card reveal" href="mailto:support@suskii.com">
+                        <span class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
+                        <span class="contact-card__label">Email</span>
+                        <strong>support@suskii.com</strong>
+                        <span class="contact-card__hint">Support, partnerships and press</span>
+                    </a>
+                    <a class="contact-card reveal" href="https://www.google.com/maps/search/?api=1&amp;query=Kigali%20Kisimenti%2C%20Opposite%20Jollof%20Kigali" target="_blank" rel="noopener">
+                        <span class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-pin"/></svg></span>
+                        <span class="contact-card__label">Office</span>
+                        <strong>Kisimenti, Kigali</strong>
+                        <span class="contact-card__hint">Opposite Jollof Kigali · Open in Google Maps</span>
+                    </a>
+                    <div class="contact-card contact-card--social reveal">
+                        <span class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-network"/></svg></span>
+                        <span class="contact-card__label">Follow SUSKII</span>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/profile.php?id=61592829380893" target="_blank" rel="noopener" aria-label="SUSKII on Facebook"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+                            <li><a href="https://www.instagram.com/suskiiapp" target="_blank" rel="noopener" aria-label="SUSKII on Instagram"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+                            <li><a href="https://www.tiktok.com/@suskii2026" target="_blank" rel="noopener" aria-label="SUSKII on TikTok"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-tiktok"/></svg></a></li>
+                            <li><a href="https://www.linkedin.com/in/suskii2026/" target="_blank" rel="noopener" aria-label="SUSKII on LinkedIn"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ FINAL CTA ═══════════════════════ -->
+        <section class="final-cta" id="get-started" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="final-cta__panel reveal">
+                    <span class="final-cta__glow" aria-hidden="true"></span>
+                    <img class="final-cta__mark" src="assets/brand/suskii-logo.webp" alt="" width="226" height="256" loading="lazy">
+                    <h2 class="final-cta__title" id="cta-title">Step into the SUSKII ecosystem.</h2>
+                    <p class="final-cta__lead">Start with SUSKII Marketplace today. Buy, sell and connect near you, and be first in line as Errands and Travel &amp; Tours arrive.</p>
+                    <div class="final-cta__actions">
+                        <a class="btn btn--light btn--lg" href="https://suskii.com/" target="_blank" rel="noopener">
+                            Open SUSKII Marketplace
+                            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"/></svg>
+                            <span class="sr-only">(opens in a new tab)</span>
+                        </a>
+                        <a class="store-badge store-badge--glass" href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app&amp;hl=en_AU" target="_blank" rel="noopener" aria-label="Get SUSKII Marketplace on Google Play (opens in a new tab)">
+                            <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
+                            <span class="store-badge__text"><small>Get it on</small>Google Play</span>
+                        </a>
+                    </div>
+                    <a class="final-cta__link" href="#platforms">Explore all platforms <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ─── FOOTER ─── -->
-    <footer class="footer">
+    <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+    <footer class="site-footer">
         <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand">
-                    <a href="index.html#home" class="footer__logo">
-                        <img src="assets/images/suskii-logo.png" alt="SUSKII Logo" class="footer__logo-img" width="36" height="36" style="border-radius: 8px; object-fit: contain;">
-                        <span class="footer__logo-text">SUSKII</span>
+            <div class="site-footer__grid">
+                <div class="site-footer__brand">
+                    <a class="brand brand--light" href="#top" aria-label="SUSKII home">
+                        <img class="brand__mark" src="assets/brand/suskii-logo.webp" alt="" width="226" height="256" loading="lazy">
+                        <span class="brand__word">SUSKII</span>
                     </a>
-                    <p class="footer__brand-desc">A marketplace where you can discover, buy, list, and sell legitimate salable products directly through a modern digital platform.</p>
-                    
-                    <div class="social-icons" id="footer-social">
-                        <!-- Injected by JS -->
-                    </div>
+                    <p>SUSKII is a technology company building digital platforms that connect people and businesses to commerce, services and travel.</p>
+                    <ul class="social social--footer">
+                        <li><a href="https://www.facebook.com/profile.php?id=61592829380893" target="_blank" rel="noopener" aria-label="SUSKII on Facebook"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+                        <li><a href="https://www.instagram.com/suskiiapp" target="_blank" rel="noopener" aria-label="SUSKII on Instagram"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+                        <li><a href="https://www.tiktok.com/@suskii2026" target="_blank" rel="noopener" aria-label="SUSKII on TikTok"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-tiktok"/></svg></a></li>
+                        <li><a href="https://www.linkedin.com/in/suskii2026/" target="_blank" rel="noopener" aria-label="SUSKII on LinkedIn"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+                    </ul>
                 </div>
-                
-                <div class="footer__col">
-                    <h4 class="footer__col-title">Marketplace</h4>
-                    <div class="footer__col-links">
-                        <a href="https://suskii.com/explore" class="footer__link">Explore</a>
-                        <a href="https://suskii.com/categories" class="footer__link">Categories</a>
-                        <a href="referral.html" class="footer__link" style="color: var(--sk-orange);">Referral Program</a>
-                        <a href="https://suskii.com/login" class="footer__link">Sign In</a>
-                        <a href="https://suskii.com/register" class="footer__link">Create Account</a>
-                    </div>
-                </div>
-                
-                <div class="footer__col">
-                    <h4 class="footer__col-title">Company</h4>
-                    <div class="footer__col-links">
-                        <a href="#buyer-seller" class="footer__link">About Us</a>
-                        <a href="mailto:support@suskii.com?subject=Careers%20at%20SUSKII" class="footer__link">Careers</a>
-                        <a href="mailto:support@suskii.com?subject=Press%20Inquiry" class="footer__link">Press</a>
-                        <a href="mailto:support@suskii.com?subject=Contact%20SUSKII" class="footer__link">Contact</a>
-                    </div>
-                </div>
-                
-                <div class="footer__col">
-                    <h4 class="footer__col-title">Support</h4>
-                    <div class="footer__col-links">
-                        <a href="#faq" class="footer__link">Help Center</a>
-                        <a href="#trust" class="footer__link">Safety Tips</a>
-                        <a href="#" class="footer__link privacy-trigger">Privacy Policy</a>
-                        <a href="#" class="footer__link terms-trigger">Terms of Service</a>
-                    </div>
+
+                <nav class="site-footer__col" aria-label="Platforms">
+                    <h2>Platforms</h2>
+                    <ul>
+                        <li><a href="https://suskii.com/" target="_blank" rel="noopener">SUSKII Marketplace</a></li>
+                        <li><a href="#errands">SUSKII Errands <span class="tag">Soon</span></a></li>
+                        <li><a href="#travel">SUSKII Travel &amp; Tours <span class="tag">In dev</span></a></li>
+                        <li><a href="https://suskii.com/referral" target="_blank" rel="noopener">Marketplace referral program</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="site-footer__col" aria-label="App downloads">
+                    <h2>Get the apps</h2>
+                    <ul>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app&amp;hl=en_AU" target="_blank" rel="noopener">Marketplace for Android</a></li>
+                        <li><span class="muted">Marketplace for iOS · Coming soon</span></li>
+                        <li><span class="muted">Errands apps · Coming soon</span></li>
+                        <li><span class="muted">Travel &amp; Tours apps · In development</span></li>
+                    </ul>
+                </nav>
+
+                <nav class="site-footer__col" aria-label="Company">
+                    <h2>Company</h2>
+                    <ul>
+                        <li><a href="#about">About SUSKII</a></li>
+                        <li><a href="#ecosystem">Our Ecosystem</a></li>
+                        <li><a href="#why">Why SUSKII</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="site-footer__col">
+                    <h2>Contact</h2>
+                    <ul>
+                        <li><a href="mailto:support@suskii.com">support@suskii.com</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Kigali%20Kisimenti%2C%20Opposite%20Jollof%20Kigali" target="_blank" rel="noopener">Kisimenti, Kigali, Rwanda</a></li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="footer__bottom">
-                <p class="footer__copyright">© <span id="year">2026</span> SUSKII. All rights reserved.</p>
-                <div class="store-badges" id="footer-store-badges" style="transform: scale(0.8); transform-origin: right center;">
-                    <!-- Injected by JS -->
-                </div>
+
+            <div class="site-footer__bottom">
+                <p>© <span data-year>2026</span> SUSKII. All rights reserved.</p>
+                <ul class="site-footer__legal">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
     </footer>
 
-    <!-- ─── MOBILE STICKY CTA ─── -->
-    <div class="mobile-cta" id="mobile-cta">
-        <div class="mobile-cta__inner">
-            <div class="mobile-cta__text">
-                <span class="mobile-cta__label">Get the free app</span>
-                <span class="mobile-cta__brand">SUSKII Marketplace</span>
-            </div>
-            <a href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app" target="_blank" rel="noopener" class="btn btn--primary btn--sm" data-action="download">Install</a>
-        </div>
-        <button class="mobile-cta__close" id="mobile-cta-close" aria-label="Dismiss">&times;</button>
+    <!-- ─── Mobile app bar ─── -->
+    <div class="app-bar" id="app-bar" hidden>
+        <img src="assets/img/marketplace-icon-96.webp" alt="" width="40" height="40">
+        <span class="app-bar__text"><strong>SUSKII Marketplace</strong><small>Free on Google Play</small></span>
+        <a class="btn btn--brand btn--sm" href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app&amp;hl=en_AU" target="_blank" rel="noopener">Install</a>
+        <button class="app-bar__close" type="button" aria-label="Dismiss app banner"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-close"/></svg></button>
     </div>
 
-    <!-- ─── CHAT BUBBLE ─── -->
-    <div class="chat-bubble">
-        <button class="chat-bubble__trigger" id="chat-trigger" aria-label="Open AI Assistant">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-        </button>
-        
-        <div class="chat-bubble__panel" id="chat-panel">
-            <div class="chat-bubble__header">
-                <div class="chat-bubble__header-title">SUSKII Assistant</div>
-                <button class="chat-bubble__close" id="chat-close" aria-label="Close Assistant">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-            </div>
-            
-            <div class="chat-bubble__messages" id="chat-messages">
-                <div class="chat-bubble__message chat-bubble__message--bot">
-                    Hi! 👋 I'm here to help you learn about SUSKII. What would you like to know?
-                </div>
-            </div>
-            
-            <div class="chat-bubble__suggestions" id="chat-suggestions">
-                <button class="chat-bubble__suggestion">What is SUSKII?</button>
-                <button class="chat-bubble__suggestion">How to buy?</button>
-                <button class="chat-bubble__suggestion">How to sell?</button>
-            </div>
-            
-            <div class="chat-bubble__input-area">
-                <input type="text" class="chat-bubble__input" id="chat-input" placeholder="Ask a question..." aria-label="Ask a question">
-                <button class="chat-bubble__send" id="chat-send" aria-label="Send message">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
-    <script src="js/config.js"></script>
-    <script src="js/app.js"></script>
-    <!-- Terms & Conditions Modal -->
-    <div class="modal-overlay" id="terms-modal">
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
-            <div class="modal__header">
-                <h2 class="modal__title" id="terms-title">Terms & Conditions</h2>
-                <button class="modal__close" aria-label="Close" data-close-modal>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-            </div>
-            <div class="modal__body">
-                <p><strong>Last updated: May 14, 2026</strong></p>
-                <h2>1. Agreement to Terms</h2>
-                <p>These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") and Suskii ("Company," "we," "us," or "our"), governing your use of the Suskii mobile application (the "App"). By using the App you acknowledge that you have read, understood, and agree to be bound by these Terms. You must be at least 13 years old to use the App.</p>
-                <h2>2. License Grant</h2>
-                <p>Subject to your compliance with these Terms, Suskii grants you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes.</p>
-                <h2>3. License Restrictions</h2>
-                <p>You agree not to:</p>
-                <ul>
-                    <li>Copy, modify, distribute, or create derivative works of the App.</li>
-                    <li>Reverse engineer or attempt to extract the source code.</li>
-                    <li>Use the App for illegal, fraudulent, or unauthorized purposes.</li>
-                </ul>
-                <h2>4. Account Registration and Security</h2>
-                <p>Certain features require account registration. You agree to provide accurate information and maintain the security of your account credentials.</p>
-                <h2>5. Marketplace Listings and User Conduct</h2>
-                <p>Suskii is a platform for buying and selling goods. You are responsible for your listings and transactions. Do not post counterfeit, stolen, or illegal items. Suskii is not a party to transactions between users.</p>
-                <h2>6. Intellectual Property</h2>
-                <p>The App and its content remain the exclusive property of Suskii and its licensors.</p>
-                <h2>7. In-App Purchases</h2>
-                <p>All payments processed through Google Play are subject to Google's payment policies.</p>
-                <h2>8. Termination</h2>
-                <p>We may suspend or terminate access to the App for violations of these Terms.</p>
-                <h2>9. Disclaimer of Warranties</h2>
-                <p>The App is provided "as is" without warranties of any kind.</p>
-                <h2>10. Limitation of Liability</h2>
-                <p>To the fullest extent permitted by law, Suskii will not be liable for indirect or consequential damages arising from your use of the App.</p>
-                <h2>11. Indemnification</h2>
-                <p>You agree to indemnify and hold Suskii harmless from claims arising from your use of the App or violation of these Terms.</p>
-                <h2>12. Third-Party Services and Links</h2>
-                <p>The App may contain links to third-party services; we are not responsible for their content or policies.</p>
-                <h2>13. Governing Law and Dispute Resolution</h2>
-                <p>These Terms are governed by the laws of the Federal Republic of Nigeria.</p>
-                <h2>14. Changes to These Terms</h2>
-                <p>We may modify these Terms at any time; continued use constitutes acceptance of changes.</p>
-            </div>
-        </div>
-    </div>
-    <!-- Privacy Policy Modal -->
-    <div class="modal-overlay" id="privacy-modal">
-        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
-            <div class="modal__header">
-                <h2 class="modal__title" id="privacy-title">Privacy Policy</h2>
-                <button class="modal__close" aria-label="Close" data-close-modal>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-            </div>
-            <div class="modal__body">
-                <p><strong>Last updated: May 14, 2026</strong></p>
-                <h2>1. Information We Collect</h2>
-                <p>We collect information you provide directly to us when you create an account, list an item, communicate with other users, or contact our support team. This includes your name, email, phone number, and transaction details.</p>
-                <h2>2. How We Use Your Information</h2>
-                <p>We use the information we collect to operate, maintain, and improve our marketplace services, facilitate user connections, ensure platform security, and prevent fraud.</p>
-                <h2>3. Information Sharing & Security</h2>
-                <p>We do not sell your personal data. We implement robust industry-standard security measures and encryption to protect your data from unauthorized access or disclosure.</p>
-                <h2>4. Your Privacy Rights</h2>
-                <p>You have the right to access, update, or request deletion of your personal account information at any time through the SUSKII app settings or by contacting support@suskii.com.</p>
-                <h2>5. Contact Us</h2>
-                <p>If you have any questions regarding this Privacy Policy, please contact our privacy team at <a href="mailto:support@suskii.com" style="color: var(--sk-orange);">support@suskii.com</a>.</p>
-            </div>
-        </div>
-    </div>
+    <script src="js/main.js?v=2.2.0" defer></script>
 </body>
 </html>

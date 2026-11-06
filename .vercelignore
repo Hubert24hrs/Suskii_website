@@ -1,0 +1,8 @@
+# Deploy as a pure static site: keep dev tooling out of the upload
+node_modules
+scripts
+package.json
+package-lock.json
+.htmlvalidate.json
+README.md
+.claude
