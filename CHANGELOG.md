@@ -9,6 +9,9 @@ All notable changes to the SUSKII website. Dates are UTC.
   - It is idempotent and ignored on Preview deployments.
   - This is for when nobody can sign in and the Sensitive database variables can't be reached from a laptop.
 - **Used it** to issue the owner a new password for `admin@suskii.com`. The original one-time password no longer works.
+  - The production build log confirmed: "Password replaced for admin@suskii.com; all sessions and reset links revoked".
+  - The recovery variables were then removed and production was redeployed.
+  - The new password is stored only in the owner's git-ignored `.data/admin-login.txt`, never in the repository, which is public.
 
 ## 3.0.2 — 2026-11-06: production activation
 
