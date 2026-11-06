@@ -22,7 +22,7 @@ terms.html            Terms of Service
 referral.html         Legacy URL; forwards to https://suskii.com/referral, keeping the query string
 css/styles.css        The full design system: tokens, components, sections, motion, responsive rules
 js/main.js            Progressive enhancement: header state, platforms menu, mobile drawer,
-                      scroll reveal, active-section nav, mobile "Install" bar
+                      scroll reveal, active-section nav
 assets/brand/         Official SUSKII logo (transparent PNG/WebP), favicon and app icons
 assets/img/           Optimised WebP images used by the page mockups
 assets/og/            Open Graph / social share image (1200×630)

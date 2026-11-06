@@ -798,23 +798,6 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
 .site-footer__legal { display: flex; gap: 24px; }
 .site-footer__legal a:hover { color: #fff; }
 
-/* Mobile app bar */
-.app-bar {
-  position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 90;
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 10px 10px 12px; border-radius: 20px;
-  background: rgba(255, 255, 255, .96); border: 1px solid var(--line);
-  box-shadow: var(--shadow-lg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  --p-accent: var(--c-market); --p-ink: var(--c-market-ink);
-  transform: translateY(140%); transition: transform .45s var(--ease);
-}
-.app-bar.is-visible { transform: translateY(0); }
-.app-bar img { width: 40px; height: 40px; object-fit: contain; }
-.app-bar__text { display: flex; flex-direction: column; flex: 1; min-width: 0; line-height: 1.25; }
-.app-bar__text strong { font-size: .875rem; color: var(--ink); }
-.app-bar__text small { font-size: .75rem; color: var(--muted); }
-.app-bar__close { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--muted); }
-
 /* ─── 7. Legal pages ────────────────────────────────────────────────────── */
 .legal { padding: calc(var(--header-h) + env(safe-area-inset-top) + 56px) 0 var(--section-y); background: linear-gradient(180deg, var(--bg-soft), #fff 360px); }
 .legal__inner { max-width: 760px; }
@@ -926,9 +909,6 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
   .faq__item p { padding-right: 0; }
 }
 
-@media (min-width: 721px) {
-  .app-bar { display: none !important; }
-}
 
 /* Legal & utility page chrome */
 .site-header__end { margin-left: auto; }
@@ -961,8 +941,6 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
   .app-card__link, .final-cta__link, .legal__back, .mega-menu__all { min-height: 44px; }
   .brand { min-height: 44px; }
   .social a { width: 44px; height: 44px; }
-  .app-bar .btn--sm { min-height: 44px; }
-  .app-bar__close { width: 44px; height: 44px; }
   .menu-toggle { width: 46px; height: 46px; }
   .menu-toggle__bar:nth-child(1) { top: 19px; }
   .menu-toggle__bar:nth-child(2) { top: 25px; }
@@ -982,7 +960,6 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
   .platform__desc { font-size: 1rem; }
   .eco-card { padding: 18px; }
   .app-card, .bento__tile, .contact-card, .pillar { padding: 22px; }
-  .app-bar { left: max(12px, env(safe-area-inset-left)); right: max(12px, env(safe-area-inset-right)); }
 }
 
 /* Small phones (iPhone SE, compact Android) */
@@ -1026,7 +1003,6 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
   .hero__actions .btn { width: auto; }
   .mobile-nav__inner { padding-block: 12px 24px; }
   .mobile-nav__links a { padding-block: 12px; }
-  .app-bar { display: none !important; }
 }
 
 /* Tablets in portrait (iPad, Android tablets) */

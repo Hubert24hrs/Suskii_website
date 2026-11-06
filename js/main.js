@@ -8,10 +8,6 @@
     const header = document.getElementById('site-header');
     const desktopQuery = window.matchMedia('(min-width: 1081px)');
 
-    const storage = {
-        get(key) { try { return sessionStorage.getItem(key); } catch { return null; } },
-        set(key, value) { try { sessionStorage.setItem(key, value); } catch { /* storage unavailable */ } },
-    };
 
     // ─── Header: solid background once the page scrolls ───
     function initHeaderState() {
@@ -157,34 +153,12 @@
         });
     }
 
-    // ─── Mobile "Install" bar for the live Marketplace app ───
-    function initAppBar() {
-        const bar = document.getElementById('app-bar');
-        if (!bar || storage.get('suskii_app_bar_dismissed')) return;
-        const isAndroidOrDesktop = !/iPad|iPhone|iPod/.test(navigator.userAgent);
-        if (!isAndroidOrDesktop) return; // Marketplace is not on the App Store yet
-
-        bar.hidden = false;
-        const update = () => {
-            const footer = document.querySelector('.site-footer');
-            const nearEnd = footer && footer.getBoundingClientRect().top < window.innerHeight;
-            bar.classList.toggle('is-visible', window.scrollY > 700 && !nearEnd);
-        };
-        window.addEventListener('scroll', update, { passive: true });
-        update();
-
-        bar.querySelector('.app-bar__close').addEventListener('click', () => {
-            bar.classList.remove('is-visible');
-            storage.set('suskii_app_bar_dismissed', '1');
-            setTimeout(() => { bar.hidden = true; }, 450);
-        });
-    }
 
     function setYear() {
         document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
     }
 
-    [initHeaderState, initPlatformsMenu, initMobileNav, initReveal, initActiveSection, initAppBar, setYear].forEach((fn) => {
+    [initHeaderState, initPlatformsMenu, initMobileNav, initReveal, initActiveSection, setYear].forEach((fn) => {
         try { fn(); } catch (err) { console.warn(`[SUSKII] ${fn.name} failed:`, err); }
     });
 })();
