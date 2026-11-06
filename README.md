@@ -15,7 +15,7 @@ Only verified URLs are linked. Anything not publicly available is shown as **Com
 A plain static site (HTML, CSS and vanilla JS) with no framework and no build step, deployed on Vercel.
 
 ```
-index.html            Home page: hero, ecosystem, platforms, apps, why, about, FAQ, contact, CTA, footer
+index.html            Home page: hero, ecosystem, platforms, why, about, FAQ, partners, contact, footer
 privacy.html          Privacy Policy
 terms.html            Terms of Service
 404.html              Not-found page (served by Vercel for unknown paths)
@@ -42,7 +42,7 @@ Every section and link works without JavaScript. JS only adds motion and menu be
   - Errands: teal (`--c-errands`)
   - Travel & Tours: indigo/sky on a dark stage (`--c-travel`)
 - **Type:** [Geist](https://fonts.google.com/specimen/Geist) (Google Fonts, `display=swap`).
-- **Reusable components:** `.btn`, `.status` (`--live` / `--soon` / `--dev`), `.app-tile`, `.store-badge` (`--soon`, `--light`, `--glass`), `.feature-list`, `.platform`, `.app-card`, `.bento__tile`, `.contact-card`.
+- **Reusable components:** `.btn`, `.status` (`--live` / `--soon` / `--dev`), `.app-tile`, `.store-badge` (`--soon`, `--light`, `--glass`), `.feature-list`, `.platform`, `.bento__tile`, `.contact-card`.
 
 The store badges are styled to match the official artwork. If brand guidelines require Google's and Apple's official badge images, drop those images into the `.store-badge` links.
 
@@ -50,9 +50,13 @@ The store badges are styled to match the official artwork. If brand guidelines r
 
 When SUSKII Errands or Travel & Tours launches, or the Marketplace iOS app goes live:
 
-1. Swap the relevant `<span class="store-badge … store-badge--soon">` for an `<a class="store-badge" href="…" target="_blank" rel="noopener">`, and change the `status--soon` / `status--dev` pill to `status--live`. Places to update in `index.html`: the platform showcase, the **Mobile Applications** card, the footer "Get the apps" column and the FAQ.
+1. Swap the relevant `<span class="store-badge … store-badge--soon">` for an `<a class="store-badge" href="…" target="_blank" rel="noopener">`, and change the `status--soon` / `status--dev` pill to `status--live`. Places to update in `index.html`: the platform showcase, the footer "Get the apps" column and the FAQ.
 2. Add each new URL to `VERIFIED_URLS` in `scripts/check-site.mjs`. The check fails on any external link that isn't on that list, which keeps invented links out of the site.
 3. Run `npm test && npm run test:links`.
+
+## Partners
+
+A **Partners** section, placed right after the FAQ, links to SUSKII's partners: **My Eya Homes** (https://myeyahomes.com/) and **Eya Autos** (https://eyaautos.com/). Logos live in `assets/partners/`. Neither domain resolved when the links were added, so `scripts/check-site.mjs` lists them in `NOT_YET_LIVE`. That makes `npm run test:links` warn about them instead of failing. Remove them from that set once the sites are up.
 
 ## Local development
 

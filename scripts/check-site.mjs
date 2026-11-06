@@ -36,11 +36,20 @@ const VERIFIED_URLS = [
     'https://www.instagram.com/suskiiapp',
     'https://www.tiktok.com/@suskii2026',
     'https://www.linkedin.com/in/suskii2026/',
+    // Partners (supplied by SUSKII)
+    'https://myeyahomes.com/',
+    'https://eyaautos.com/',
     // Infrastructure (fonts, canonical / OG / schema URLs)
     'https://fonts.googleapis.com',
     'https://fonts.gstatic.com',
     'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap',
 ];
+
+/**
+ * Partner sites SUSKII asked to link before they were live. The online check
+ * reports them as warnings instead of failures; remove an entry once its site is up.
+ */
+const NOT_YET_LIVE = new Set(['https://myeyahomes.com/', 'https://eyaautos.com/']);
 
 /** This site's own production origin (canonical, Open Graph and schema URLs). */
 const SITE_ORIGIN = 'https://suskii-website.vercel.app/';
@@ -131,9 +140,10 @@ if (ONLINE) {
             // LinkedIn answers bots with 999; treat that as reachable.
             const ok = res.ok || res.status === 999;
             console.log(`${ok ? 'ok ' : 'ERR'} ${res.status} ${url}`);
-            if (!ok) fail('links', `${url} returned ${res.status}`);
+            if (!ok && !NOT_YET_LIVE.has(url)) fail('links', `${url} returned ${res.status}`);
         } catch (e) {
-            fail('links', `${url} failed: ${e.message}`);
+            if (NOT_YET_LIVE.has(url)) console.warn(`WARN ${url} is not reachable yet (${e.cause?.code ?? e.message})`);
+            else fail('links', `${url} failed: ${e.message}`);
         }
     }
 }

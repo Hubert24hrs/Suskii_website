@@ -42,7 +42,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="css/styles.css?v=2.2.1">
+    <link rel="stylesheet" href="css/styles.css?v=2.3.3">
 
     <!-- ─── Structured data ─── -->
     <script type="application/ld+json">
@@ -193,7 +193,7 @@
                 </ul>
             </nav>
 
-            <a class="btn btn--dark site-header__cta" href="#get-started">Get Started</a>
+            <a class="btn btn--dark site-header__cta" href="#platforms">Get Started</a>
 
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
                 <span class="menu-toggle__bar"></span>
@@ -219,10 +219,9 @@
                 <div class="mobile-nav__links">
                     <a href="#about">About SUSKII</a>
                     <a href="#ecosystem">Our Ecosystem</a>
-                    <a href="#apps">Mobile Apps</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <a class="btn btn--dark btn--block" href="#get-started">Get Started</a>
+                <a class="btn btn--dark btn--block" href="#platforms">Get Started</a>
             </nav>
         </div>
     </header>
@@ -639,93 +638,6 @@
             </article>
         </section>
 
-        <!-- ═══════════════════════ MOBILE APPS ═══════════════════════ -->
-        <section class="section apps" id="apps" aria-labelledby="apps-title">
-            <div class="container">
-                <header class="section-head section-head--center reveal">
-                    <p class="eyebrow eyebrow--light">Mobile Applications</p>
-                    <h2 class="section-title" id="apps-title">SUSKII, in your pocket.</h2>
-                    <p class="section-lead">Download the apps that are live today, and follow along as new SUSKII apps launch.</p>
-                    <ul class="legend">
-                        <li><span class="dot dot--live" aria-hidden="true"></span>Available now</li>
-                        <li><span class="dot dot--soon" aria-hidden="true"></span>Coming soon</li>
-                        <li><span class="dot dot--dev" aria-hidden="true"></span>In development</li>
-                    </ul>
-                </header>
-
-                <div class="app-grid">
-                    <article class="app-card app-card--market reveal" aria-labelledby="app-market-title">
-                        <div class="app-card__top">
-                            <img class="app-card__icon" src="assets/img/marketplace-icon-192.webp" alt="SUSKII Marketplace app icon" width="64" height="64" loading="lazy">
-                            <div>
-                                <h3 class="app-card__title" id="app-market-title">SUSKII Marketplace</h3>
-                                <span class="status status--live">Available on Android</span>
-                            </div>
-                        </div>
-                        <p class="app-card__text">Browse, list, and chat with buyers and sellers on the go.</p>
-                        <div class="app-card__stores">
-                            <a class="store-badge store-badge--light" href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app&amp;hl=en_AU" target="_blank" rel="noopener" aria-label="Get SUSKII Marketplace on Google Play (opens in a new tab)">
-                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
-                                <span class="store-badge__text"><small>Get it on</small>Google Play</span>
-                            </a>
-                            <span class="store-badge store-badge--light store-badge--soon">
-                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-apple"/></svg>
-                                <span class="store-badge__text"><small>Coming soon</small>App Store</span>
-                            </span>
-                        </div>
-                        <div class="app-card__qr">
-                            <img src="assets/images/qr-playstore.png" alt="QR code to download SUSKII Marketplace from Google Play" width="88" height="88" loading="lazy">
-                            <span>Scan with your Android phone to install from Google Play.</span>
-                        </div>
-                    </article>
-
-                    <article class="app-card app-card--errands reveal" aria-labelledby="app-errands-title">
-                        <div class="app-card__top">
-                            <span class="app-tile app-tile--errands app-tile--xl" aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></span>
-                            <div>
-                                <h3 class="app-card__title" id="app-errands-title">SUSKII Errands</h3>
-                                <span class="status status--soon">Coming soon</span>
-                            </div>
-                        </div>
-                        <p class="app-card__text">Discover service providers and request help, from your phone.</p>
-                        <div class="app-card__stores">
-                            <span class="store-badge store-badge--light store-badge--soon">
-                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
-                                <span class="store-badge__text"><small>Coming soon</small>Google Play</span>
-                            </span>
-                            <span class="store-badge store-badge--light store-badge--soon">
-                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-apple"/></svg>
-                                <span class="store-badge__text"><small>Coming soon</small>App Store</span>
-                            </span>
-                        </div>
-                        <a class="app-card__link" href="mailto:support@suskii.com?subject=SUSKII%20Errands%20launch%20updates">Notify me at launch <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                    </article>
-
-                    <article class="app-card app-card--travel reveal" aria-labelledby="app-travel-title">
-                        <div class="app-card__top">
-                            <span class="app-tile app-tile--travel app-tile--xl" aria-hidden="true"><svg class="icon"><use href="#i-plane"/></svg></span>
-                            <div>
-                                <h3 class="app-card__title" id="app-travel-title">SUSKII Travel &amp; Tours</h3>
-                                <span class="status status--dev">In development</span>
-                            </div>
-                        </div>
-                        <p class="app-card__text">Mobile apps are planned alongside the platform launch.</p>
-                        <div class="app-card__stores">
-                            <span class="store-badge store-badge--light store-badge--soon">
-                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
-                                <span class="store-badge__text"><small>In development</small>Google Play</span>
-                            </span>
-                            <span class="store-badge store-badge--light store-badge--soon">
-                                <svg class="store-badge__logo" aria-hidden="true"><use href="#i-apple"/></svg>
-                                <span class="store-badge__text"><small>In development</small>App Store</span>
-                            </span>
-                        </div>
-                        <a class="app-card__link" href="mailto:support@suskii.com?subject=SUSKII%20Travel%20%26%20Tours%20interest">Register interest <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <!-- ═══════════════════════ WHY SUSKII ═══════════════════════ -->
         <section class="section why" id="why" aria-labelledby="why-title">
             <div class="container">
@@ -838,6 +750,38 @@
             </div>
         </section>
 
+        <!-- ═══════════════════════ PARTNERS ═══════════════════════ -->
+        <section class="section partners" id="partners" aria-labelledby="partners-title">
+            <div class="container">
+                <header class="section-head reveal">
+                    <p class="eyebrow">Partners</p>
+                    <h2 class="section-title" id="partners-title">In partnership with.</h2>
+                </header>
+                <ul class="partners__list reveal">
+                    <li>
+                        <a class="partner" href="https://myeyahomes.com/" target="_blank" rel="noopener">
+                            <span class="partner__logo"><img src="assets/partners/my-eya-homes.webp" alt="My Eya Homes — Estate &amp; Investments" width="373" height="240" loading="lazy"></span>
+                            <span class="partner__meta">
+                                <span class="partner__site">myeyahomes.com<svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"/></svg></span>
+                                <span class="partner__role">Partner</span>
+                            </span>
+                            <span class="sr-only">Visit My Eya Homes (opens in a new tab)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="partner" href="https://eyaautos.com/" target="_blank" rel="noopener">
+                            <span class="partner__logo"><img src="assets/partners/eya-autos.webp" alt="Eya Autos — Premium cars, global standards" width="533" height="200" loading="lazy"></span>
+                            <span class="partner__meta">
+                                <span class="partner__site">eyaautos.com<svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"/></svg></span>
+                                <span class="partner__role">Partner</span>
+                            </span>
+                            <span class="sr-only">Visit Eya Autos (opens in a new tab)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
         <section class="section contact" id="contact" aria-labelledby="contact-title">
             <div class="container">
@@ -872,29 +816,6 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════ FINAL CTA ═══════════════════════ -->
-        <section class="final-cta" id="get-started" aria-labelledby="cta-title">
-            <div class="container">
-                <div class="final-cta__panel reveal">
-                    <span class="final-cta__glow" aria-hidden="true"></span>
-                    <img class="final-cta__mark" src="assets/brand/suskii-logo.webp" alt="" width="226" height="256" loading="lazy">
-                    <h2 class="final-cta__title" id="cta-title">Step into the SUSKII ecosystem.</h2>
-                    <p class="final-cta__lead">Start with SUSKII Marketplace today. Buy, sell and connect near you, and be first in line as Errands and Travel &amp; Tours arrive.</p>
-                    <div class="final-cta__actions">
-                        <a class="btn btn--light btn--lg" href="https://suskii.com/" target="_blank" rel="noopener">
-                            Open SUSKII Marketplace
-                            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"/></svg>
-                            <span class="sr-only">(opens in a new tab)</span>
-                        </a>
-                        <a class="store-badge store-badge--glass" href="https://play.google.com/store/apps/details?id=com.plugz.suskii.app&amp;hl=en_AU" target="_blank" rel="noopener" aria-label="Get SUSKII Marketplace on Google Play (opens in a new tab)">
-                            <svg class="store-badge__logo" aria-hidden="true"><use href="#i-gplay"/></svg>
-                            <span class="store-badge__text"><small>Get it on</small>Google Play</span>
-                        </a>
-                    </div>
-                    <a class="final-cta__link" href="#platforms">Explore all platforms <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
@@ -964,6 +885,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=2.2.1" defer></script>
+    <script src="js/main.js?v=2.3.3" defer></script>
 </body>
 </html>

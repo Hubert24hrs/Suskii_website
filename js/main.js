@@ -106,7 +106,7 @@
         }
 
         // Stagger siblings that enter together
-        document.querySelectorAll('.hero__copy, .app-grid, .bento, .about__pillars, .contact__grid').forEach((group) => {
+        document.querySelectorAll('.hero__copy, .bento, .about__pillars, .contact__grid').forEach((group) => {
             group.querySelectorAll(':scope > .reveal').forEach((el, i) => el.style.setProperty('--d', `${i * 0.08}s`));
         });
 
