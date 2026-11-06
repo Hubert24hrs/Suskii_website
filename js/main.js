@@ -150,6 +150,19 @@
         document.querySelectorAll('main > section[id]').forEach((section) => observer.observe(section));
     }
 
+    // ─── Render every section before an in-page jump ───
+    // Sections use content-visibility: auto, so their heights are estimates until rendered.
+    // Rendering them all first makes anchor links (and #hash URLs) land on the exact spot.
+    function initAnchorJumps() {
+        const renderAll = () => document.documentElement.classList.add('cv-done');
+        if (location.hash.length > 1) renderAll();
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a[href^="#"]');
+            if (link && link.getAttribute('href').length > 1) renderAll();
+        }, true);
+        window.addEventListener('hashchange', renderAll);
+    }
+
     // ─── Pause decorative animations that are off-screen (saves battery and main-thread work) ───
     function initOffscreenPause() {
         if (!('IntersectionObserver' in window)) return;
@@ -163,7 +176,7 @@
         document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
     }
 
-    [initHeaderState, initPlatformsMenu, initMobileNav, initReveal, initActiveSection, initOffscreenPause, setYear].forEach((fn) => {
+    [initHeaderState, initPlatformsMenu, initMobileNav, initAnchorJumps, initReveal, initActiveSection, initOffscreenPause, setYear].forEach((fn) => {
         try { fn(); } catch (err) { console.warn(`[SUSKII] ${fn.name} failed:`, err); }
     });
 })();

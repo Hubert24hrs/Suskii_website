@@ -812,6 +812,12 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
 @keyframes drop-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
 @keyframes travel-down { 0% { transform: translateY(0); opacity: 0; } 20%, 80% { opacity: 1; } 100% { transform: translateY(var(--travel, 30px)); opacity: 0; } }
 
+/* Skip layout/paint of far-below-the-fold sections until they approach the viewport.
+   main.js adds .cv-done before any in-page jump so anchors land exactly. */
+.js main > section:not(.hero), .js .site-footer { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+.js main > .platforms { contain-intrinsic-size: auto 3400px; }
+.js.cv-done main > section, .js.cv-done .site-footer { content-visibility: visible; }
+
 /* Decorative loops pause while their section is off-screen (set by main.js) */
 .is-offscreen, .is-offscreen * { animation-play-state: paused !important; }
 
