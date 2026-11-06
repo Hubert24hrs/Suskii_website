@@ -2,6 +2,20 @@
 
 The public website keeps working exactly as before with **no** configuration. The build publishes the committed pages, and `/admin` shows "not set up yet". Turn the admin on with the steps below.
 
+## Current production status
+
+As of 2026-11-06, the admin is **active** on `https://suskii-website.vercel.app`.
+
+| Item | State |
+|---|---|
+| Database | Neon Postgres (Vercel Marketplace), connected to Production **and Preview**. The tables were created by the build. |
+| File storage | Vercel Blob store `suskii-media`, connected with `BLOB_READ_WRITE_TOKEN` (Production and Preview). |
+| Secrets | `CENTRAL_ADMIN_SECRET`, `CRON_SECRET` and `SITE_ORIGIN` are set for Production. `ADMIN_BOOTSTRAP_TOKEN` was used once to create the first admin, then removed. |
+| First Super Admin | `admin@suskii.com`, created 2026-11-06. **To do:** change the one-time password, turn on MFA, and enable the MFA policy. |
+| Health | `GET /api/health` returns `{"ok":true,"admin":"ready"}`. `/api/setup` returns 403, so setup is closed. |
+| Not configured yet | `VERCEL_DEPLOY_HOOK_URL` (publishing needs a manual redeploy until it is set), `RESEND_API_KEY` / `MAIL_FROM` (Super Admins share one-time links instead of email), every platform integration, and a custom domain. |
+| Known risk | Preview deployments use the **production database**. Give Preview its own Neon branch or database, or remove `DATABASE_URL` from Preview. |
+
 ## 1. Database (PostgreSQL)
 
 Any managed PostgreSQL 14+ works: **Neon** (Vercel Marketplace → Neon), Supabase or AWS RDS.
@@ -41,19 +55,36 @@ All values are server-side only. Never prefix them with `NEXT_PUBLIC_` and never
 
 ## 4. First administrator
 
+Use **one** of these methods.
+
+**Option A: from a trusted machine**, when you can copy the connection string:
+
 ```bash
 DATABASE_URL="postgres://…" CENTRAL_ADMIN_SECRET="…" \
 ADMIN_EMAIL=you@suskii.com ADMIN_NAME="Your Name" npm run admin:create
 ```
 
-Sign in at `/admin/login`, change the one-time password, and turn on two-factor authentication under *My account*. Then, in *Settings → Security policy*, enable **Require two-factor authentication for privileged roles**.
+**Option B: one-time browser or API setup.** Use this when the database variables are marked *Sensitive* in Vercel. The Neon integration does this, so `vercel env pull` returns them empty. This is how production was set up.
+
+1. Add `ADMIN_BOOTSTRAP_TOKEN` (24 or more random characters) to Production and redeploy.
+2. Open `/admin/setup` and enter the token, your name, email and password. You can also `POST /api/setup` with `{ token, email, name, password }`. Setup only works while **no** administrator exists.
+3. **Remove `ADMIN_BOOTSTRAP_TOKEN` and redeploy.** `GET /api/setup/status` should then report `"bootstrapEnabled": false`.
+
+Then sign in at `/admin/login`:
+
+1. Change the one-time password and turn on two-factor authentication under *My account*.
+2. In *Settings → Security policy*, enable **Require two-factor authentication for privileged roles**.
+3. Invite everyone else from *Administrators*.
+
+Never create more admins through setup.
 
 ## 5. Deploy
 
 The repository is linked to Vercel; pushing to `main` deploys to production.
 
 - **Build:** `npm run build` writes `dist/`, which Vercel serves.
-- **API:** the API is one Node function, `api/index.ts` (all `/api/*` paths are rewritten to it), with a maximum duration of 60 s.
+- **API:** the API is one Node function, `api/index.ts` (all `/api/*` paths are rewritten to it), with a maximum duration of 60 s. Don't rename it to a `[...path].ts` catch-all: on Vercel that matches only one path segment.
+- **Runtime:** Node `24.x` (pinned in `package.json`). Production dependencies must load without `require()` of ES modules; a test checks this.
 - **Cron:** `vercel.json` schedules `/api/cron` daily, which the Hobby plan allows. On Pro, change it to `*/15 * * * *` for 15-minute synchronisation and scheduled publishing.
 - **Checking it:** after the deploy, `GET /api/health` returns `{ ok: true, admin: "ready" }`.
 
@@ -70,9 +101,12 @@ Every deployment is immutable. In Vercel → Deployments, use **Instant Rollback
 
 ## Operations checklist
 
-- [ ] `CENTRAL_ADMIN_SECRET`, `DATABASE_URL` and `CRON_SECRET` are set for Production, with separate values for Preview.
-- [ ] First Super Admin created, password changed, MFA on, and the MFA policy enabled.
-- [ ] `ADMIN_BOOTSTRAP_TOKEN` is not set.
-- [ ] Blob, the deploy hook and email are configured, or knowingly left off.
+- [x] `CENTRAL_ADMIN_SECRET`, `DATABASE_URL` and `CRON_SECRET` are set for Production.
+- [ ] Preview uses its own database, not the production one.
+- [x] First Super Admin created (`admin@suskii.com`).
+- [ ] Its one-time password is changed, MFA is on, and the MFA policy is enabled.
+- [x] `ADMIN_BOOTSTRAP_TOKEN` is not set.
+- [x] Blob storage is connected.
+- [ ] The deploy hook and email are configured, or knowingly left off.
 - [ ] Backups and point-in-time recovery are confirmed. A restore has been tested.
 - [ ] Each platform stays **Not Configured** until its team provides the items in INTEGRATIONS.md.
