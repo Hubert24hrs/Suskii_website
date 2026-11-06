@@ -14,7 +14,7 @@
     function initHeaderState() {
         if (!header || header.classList.contains('site-header--solid')) return;
         const update = () => header.classList.toggle('is-scrolled', window.scrollY > 12);
-        update();
+        requestAnimationFrame(update); // first read after layout, not during start-up
         window.addEventListener('scroll', update, { passive: true });
     }
 
@@ -107,7 +107,7 @@
         }
 
         // Stagger siblings that enter together
-        document.querySelectorAll('.hero__copy, .bento, .about__pillars, .contact__grid').forEach((group) => {
+        document.querySelectorAll('.bento, .about__pillars, .contact__grid').forEach((group) => {
             group.querySelectorAll(':scope > .reveal').forEach((el, i) => el.style.setProperty('--d', `${i * 0.08}s`));
         });
 

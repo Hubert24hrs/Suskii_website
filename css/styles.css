@@ -401,8 +401,8 @@ a.store-badge:hover { transform: translateY(-2px); box-shadow: var(--shadow-md);
 .orbit__ring--3 { inset: 32%; background: radial-gradient(circle, rgba(255, 255, 255, .9), rgba(255, 255, 255, .2)); border-color: rgba(10, 15, 36, .06); }
 .orbit__comet { position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--c-market); box-shadow: 0 0 16px 4px rgba(232, 70, 30, .4); }
 .orbit__ring--2 .orbit__comet { background: var(--c-travel); box-shadow: 0 0 16px 4px rgba(79, 70, 229, .4); top: auto; bottom: -5px; }
-.orbit__links { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.orbit__link { fill: none; stroke-width: 1.5; stroke-dasharray: 4 6; animation: dash 1.6s linear infinite; }
+.orbit__links { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; animation: link-pulse 3.2s ease-in-out infinite; }
+.orbit__link { fill: none; stroke-width: 1.5; stroke-dasharray: 4 6; }
 .orbit__link--market { stroke: var(--c-market); }
 .orbit__link--errands { stroke: var(--c-errands); }
 .orbit__link--travel { stroke: var(--c-travel); }
@@ -806,7 +806,7 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
 .js .reveal.is-visible { opacity: 1; transform: none; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
-@keyframes dash { to { stroke-dashoffset: -20; } }
+@keyframes link-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
 @keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
 @keyframes drop-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
