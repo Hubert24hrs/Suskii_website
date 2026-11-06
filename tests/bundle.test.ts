@@ -47,3 +47,17 @@ describe('browser bundles', () => {
         expect(readFileSync('robots.txt', 'utf8')).toMatch(/Disallow:\s*\/admin/);
     });
 });
+
+describe('serverless runtime compatibility', () => {
+    it('the API loads without require() of ES modules (as on Vercel)', async () => {
+        const { execFileSync } = await import('node:child_process');
+        const code = `const { handle } = await import('./server/app.ts');
+const r = await handle(new Request('http://x/api/health'));
+const c = await import('./server/cms/content.ts');
+console.log(r.status, c.sanitizeRich('<p>ok<script>x</script></p>'));`;
+        const out = execFileSync(process.execPath, ['--no-experimental-require-module', '--import', 'tsx', '--input-type=module', '-e', code], {
+            env: { ...process.env, DATABASE_URL: '' }, encoding: 'utf8', timeout: 60_000,
+        });
+        expect(out.trim()).toBe('200 <p>ok</p>');
+    }, 90_000);
+});
