@@ -150,11 +150,20 @@
         document.querySelectorAll('main > section[id]').forEach((section) => observer.observe(section));
     }
 
+    // ─── Pause decorative animations that are off-screen (saves battery and main-thread work) ───
+    function initOffscreenPause() {
+        if (!('IntersectionObserver' in window)) return;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => entry.target.classList.toggle('is-offscreen', !entry.isIntersecting));
+        }, { rootMargin: '100px 0px' });
+        document.querySelectorAll('.hero__visual, .eco-stack, .device-stage, .bento__visual, .platform--market .platform__meta').forEach((el) => observer.observe(el));
+    }
+
     function setYear() {
         document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
     }
 
-    [initHeaderState, initPlatformsMenu, initMobileNav, initReveal, initActiveSection, setYear].forEach((fn) => {
+    [initHeaderState, initPlatformsMenu, initMobileNav, initReveal, initActiveSection, initOffscreenPause, setYear].forEach((fn) => {
         try { fn(); } catch (err) { console.warn(`[SUSKII] ${fn.name} failed:`, err); }
     });
 })();
