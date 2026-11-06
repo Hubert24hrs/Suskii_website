@@ -10,8 +10,8 @@ As of 2026-11-06, the admin is **active** on `https://suskii-website.vercel.app`
 |---|---|
 | Database | Neon Postgres (Vercel Marketplace), connected to Production **and Preview**. The tables were created by the build. |
 | File storage | Vercel Blob store `suskii-media`, connected with `BLOB_READ_WRITE_TOKEN` (Production and Preview). |
-| Secrets | `CENTRAL_ADMIN_SECRET`, `CRON_SECRET` and `SITE_ORIGIN` are set for Production. `ADMIN_BOOTSTRAP_TOKEN` was used once to create the first admin, then removed. |
-| First Super Admin | `admin@suskii.com`, created 2026-11-06. **To do:** change the one-time password, turn on MFA, and enable the MFA policy. |
+| Secrets | `CENTRAL_ADMIN_SECRET`, `CRON_SECRET` and `SITE_ORIGIN` are set for Production. `ADMIN_BOOTSTRAP_TOKEN` (first admin) and `ADMIN_RECOVERY_*` (password reissue) were each used once, then removed. |
+| Super Admin login | `admin@suskii.com` at `/admin/login`. Created 2026-11-06; the password was reissued the same day by break-glass recovery, so the original one-time password is void. The current password is stored only in the owner's git-ignored `.data/admin-login.txt`. Never commit it: this repository is public. **To do:** change the password, turn on MFA, and enable the MFA policy. |
 | Health | `GET /api/health` returns `{"ok":true,"admin":"ready"}`. `/api/setup` returns 403, so setup is closed. |
 | Not configured yet | `VERCEL_DEPLOY_HOOK_URL` (publishing needs a manual redeploy until it is set), `RESEND_API_KEY` / `MAIL_FROM` (Super Admins share one-time links instead of email), every platform integration, and a custom domain. |
 | Known risk | Preview deployments use the **production database**. Give Preview its own Neon branch or database, or remove `DATABASE_URL` from Preview. |
@@ -124,7 +124,9 @@ Every deployment is immutable. In Vercel → Deployments, use **Instant Rollback
 - [x] `CENTRAL_ADMIN_SECRET`, `DATABASE_URL` and `CRON_SECRET` are set for Production.
 - [ ] Preview uses its own database, not the production one.
 - [x] First Super Admin created (`admin@suskii.com`).
-- [ ] Its one-time password is changed, MFA is on, and the MFA policy is enabled.
+- [x] The original one-time password was replaced by recovery, and the `ADMIN_RECOVERY_*` variables were removed.
+- [ ] The owner has changed the reissued password, MFA is on, and the MFA policy is enabled.
+- [ ] `.data/admin-login.txt` and `.data/production-secrets.env` have been moved to a password manager and deleted.
 - [x] `ADMIN_BOOTSTRAP_TOKEN` is not set.
 - [x] Blob storage is connected.
 - [ ] The deploy hook and email are configured, or knowingly left off.

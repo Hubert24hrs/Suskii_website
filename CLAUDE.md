@@ -77,13 +77,25 @@ docs/             ADMIN.md (features, roles, security), INTEGRATIONS.md (platfor
 
 ## Current production state
 
-As of 2026-11-06 (PRs #2 and #3 merged):
+As of 2026-11-06 (PRs #2 to #5 merged):
 
 - **Vercel project:** `hubert25-s-projects/suskii-website`. Production is the `main` branch.
 - **Storage:** Neon Postgres connected to Production and Preview. Blob store `suskii-media` connected (`BLOB_READ_WRITE_TOKEN`).
-- **Production variables:** `CENTRAL_ADMIN_SECRET`, `CRON_SECRET` and `SITE_ORIGIN` are set. `ADMIN_BOOTSTRAP_TOKEN` was used once and then removed.
+- **Production variables:** `CENTRAL_ADMIN_SECRET`, `CRON_SECRET` and `SITE_ORIGIN` are set. `ADMIN_BOOTSTRAP_TOKEN` and the `ADMIN_RECOVERY_*` variables were each used once and then removed.
 - **Not set yet:** `VERCEL_DEPLOY_HOOK_URL`, `RESEND_API_KEY` / `MAIL_FROM`, and all `SUSKII_*_API_*` / `WEBHOOK_*_SECRET`.
-- **First Super Admin:** `admin@suskii.com`. The owner must change the one-time password and turn on MFA.
+- **Super Admin login:**
+  - email `admin@suskii.com`, sign in at `https://suskii-website.vercel.app/admin/login`
+  - created 2026-11-06; its password was **reissued the same day** by break-glass recovery (PR #5), so the original one-time password no longer works
+  - the current password is kept **only** in the owner's git-ignored `.data/admin-login.txt`
+  - **never write it into a tracked file: this repository is public**
+  - to do: the owner changes the password and turns on MFA
+- **Local-only files** (git-ignored, on the owner's machine):
+  - `.data/admin-login.txt`: the admin login
+  - `.data/production-secrets.env`: copies of `CENTRAL_ADMIN_SECRET` and `CRON_SECRET`
+  - `.data/.env.production`: `vercel env pull` output; the Sensitive values in it are blank
+  - `.data/pglite`: the local dev database
+  - `.data/dev-admin.txt`: the local dev admin login
+  - Move the production files into a password manager, then delete them.
 - **Health check:** `GET /api/health` returns `{"ok":true,"admin":"ready"}`.
 - **Cron:** runs daily on the Hobby plan.
 - **Open decisions:** the admin domain (`admin.suskii.com` is recommended; `suskii.com` is the separate Marketplace app), a separate Preview database, the email provider, and each platform team's API details.
