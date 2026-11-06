@@ -23,11 +23,11 @@ referral.html         Legacy URL; forwards to https://suskii.com/referral, keepi
 css/styles.css        The full design system: tokens, components, sections, motion, responsive rules
 js/main.js            Progressive enhancement: header state, platforms menu, mobile drawer,
                       scroll reveal, active-section nav, mobile "Install" bar
-assets/brand/         SUSKII parent-brand mark (SVG)
+assets/brand/         Official SUSKII logo (transparent PNG/WebP), favicon and app icons
 assets/img/           Optimised WebP images used by the page mockups
 assets/og/            Open Graph / social share image (1200×630)
 assets/images/        Original images (app icon source, QR code, legacy OG image)
-favicon.svg, favicon.ico, site.webmanifest, robots.txt, sitemap.xml
+favicon.ico, site.webmanifest, robots.txt, sitemap.xml
 scripts/check-site.mjs  Zero-dependency site validator (see Testing)
 vercel.json           Security headers and asset caching
 ```
@@ -36,7 +36,7 @@ Every section and link works without JavaScript. JS only adds motion and menu be
 
 ## Design system
 
-- **Parent brand:** deep ink `#0A0F24` plus the SUSKII mark, an "S" path linking three nodes (one per platform).
+- **Parent brand:** the official SUSKII logo (`assets/brand/suskii-logo.*`) on a deep ink `#0A0F24` / white palette.
 - **Platform identities**, set as CSS custom properties on each `.platform--*` block:
   - Marketplace: orange (`--c-market`, from the original SUSKII brand colour)
   - Errands: teal (`--c-errands`)

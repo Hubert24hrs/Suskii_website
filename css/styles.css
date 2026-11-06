@@ -272,7 +272,7 @@ a.store-badge:hover { transform: translateY(-2px); box-shadow: var(--shadow-md);
 .site-header__inner { display: flex; align-items: center; gap: 24px; height: var(--header-h); }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); }
-.brand__mark { width: 36px; height: 36px; border-radius: 10px; }
+.brand__mark { width: auto; height: 40px; aspect-ratio: 226 / 256; object-fit: contain; }
 .brand__word { font-size: 1.3rem; font-weight: 800; letter-spacing: .06em; }
 .brand--light { color: #fff; }
 
@@ -397,7 +397,7 @@ a.store-badge:hover { transform: translateY(-2px); box-shadow: var(--shadow-md);
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
   display: flex; flex-direction: column; align-items: center; gap: 10px;
 }
-.orbit__core img { width: clamp(64px, 17%, 96px); height: auto; border-radius: 26%; box-shadow: 0 24px 50px -14px rgba(10, 15, 36, .55), 0 0 0 8px rgba(255, 255, 255, .85); }
+.orbit__core img { width: clamp(68px, 18%, 104px); height: auto; filter: drop-shadow(0 18px 26px rgba(232, 70, 30, .35)) drop-shadow(0 6px 10px rgba(10, 15, 36, .25)); }
 .orbit__core span { font-weight: 800; letter-spacing: .14em; font-size: .8125rem; color: var(--ink); }
 
 .orbit__node {
@@ -465,7 +465,7 @@ a.store-badge:hover { transform: translateY(-2px); box-shadow: var(--shadow-md);
   background: var(--ink); color: #fff;
   box-shadow: var(--shadow-lg);
 }
-.eco-core__mark { width: 52px; height: 52px; border-radius: 15px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .15); }
+.eco-core__mark { width: auto; height: 56px; aspect-ratio: 226 / 256; }
 .eco-core__list { display: flex; flex-wrap: wrap; gap: 10px 26px; flex: 1; }
 .eco-core__list li { display: inline-flex; align-items: center; gap: 9px; font-size: .9375rem; font-weight: 600; color: rgba(255, 255, 255, .9); }
 .eco-core__list .icon { color: var(--c-errands-2); }
@@ -673,7 +673,7 @@ a.store-badge:hover { transform: translateY(-2px); box-shadow: var(--shadow-md);
 .app-card:hover { transform: translateY(-4px); border-color: rgba(255, 255, 255, .22); }
 .app-card--market { border-color: rgba(232, 70, 30, .45); background: linear-gradient(180deg, rgba(232, 70, 30, .16), rgba(255, 255, 255, .03)); }
 .app-card__top { display: flex; align-items: center; gap: 16px; }
-.app-card__icon { width: 64px; height: 64px; border-radius: 18px; box-shadow: 0 10px 24px -10px rgba(0, 0, 0, .6); }
+.app-card__icon { width: 64px; height: 64px; object-fit: contain; filter: drop-shadow(0 10px 14px rgba(0, 0, 0, .45)); }
 .app-card__title { color: #fff; font-size: 1.25rem; margin-bottom: 6px; }
 .app-card .status--live { --s: #4ADE80; }
 .app-card .status--soon { --s: #FBBF24; }
@@ -775,7 +775,7 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
   background: conic-gradient(from 180deg at 50% 50%, rgba(232, 70, 30, .55), rgba(14, 159, 142, .45), rgba(79, 70, 229, .6), rgba(232, 70, 30, .55));
   filter: blur(90px); opacity: .7; animation: spin 24s linear infinite;
 }
-.final-cta__mark { width: 64px; height: 64px; border-radius: 18px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .2), 0 20px 40px -12px rgba(0, 0, 0, .6); }
+.final-cta__mark { width: auto; height: 76px; aspect-ratio: 226 / 256; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, .45)); }
 .final-cta__title { margin-top: 28px; color: #fff; font-size: var(--fs-h2); font-weight: 800; letter-spacing: -0.04em; max-width: 16ch; text-wrap: balance; }
 .final-cta__lead { margin-top: 18px; max-width: 560px; font-size: var(--fs-lead); }
 .final-cta__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 36px; }
@@ -809,7 +809,7 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
   transform: translateY(140%); transition: transform .45s var(--ease);
 }
 .app-bar.is-visible { transform: translateY(0); }
-.app-bar img { width: 40px; height: 40px; border-radius: 11px; }
+.app-bar img { width: 40px; height: 40px; object-fit: contain; }
 .app-bar__text { display: flex; flex-direction: column; flex: 1; min-width: 0; line-height: 1.25; }
 .app-bar__text strong { font-size: .875rem; color: var(--ink); }
 .app-bar__text small { font-size: .75rem; color: var(--muted); }
