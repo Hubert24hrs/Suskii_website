@@ -26,7 +26,8 @@ js/main.js            Progressive enhancement: header state, platforms menu, mob
 assets/brand/         Official SUSKII logo (transparent PNG/WebP), favicon and app icons
 assets/img/           Optimised WebP images used by the page mockups
 assets/og/            Open Graph / social share image (1200×630)
-assets/images/        Original images (app icon source, QR code, legacy OG image)
+assets/partners/      Partner logos (My Eya Homes, Eya Autos)
+assets/images/        Apple touch icon
 favicon.ico, site.webmanifest, robots.txt, sitemap.xml
 scripts/check-site.mjs  Zero-dependency site validator (see Testing)
 vercel.json           Security headers and asset caching
@@ -41,7 +42,7 @@ Every section and link works without JavaScript. JS only adds motion and menu be
   - Marketplace: orange (`--c-market`, from the original SUSKII brand colour)
   - Errands: teal (`--c-errands`)
   - Travel & Tours: indigo/sky on a dark stage (`--c-travel`)
-- **Type:** [Geist](https://fonts.google.com/specimen/Geist) (Google Fonts, `display=swap`).
+- **Type:** [Geist](https://github.com/vercel/geist-font) variable font, self-hosted in `assets/fonts/` (latin + latin-ext, preloaded, `font-display: swap`; SIL OFL, see `assets/fonts/OFL.txt`).
 - **Reusable components:** `.btn`, `.status` (`--live` / `--soon` / `--dev`), `.app-tile`, `.store-badge` (`--soon`, `--light`, `--glass`), `.feature-list`, `.platform`, `.bento__tile`, `.contact-card`.
 
 The store badges are styled to match the official artwork. If brand guidelines require Google's and Apple's official badge images, drop those images into the `.store-badge` links.

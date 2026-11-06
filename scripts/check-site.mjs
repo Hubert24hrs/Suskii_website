@@ -39,10 +39,6 @@ const VERIFIED_URLS = [
     // Partners (supplied by SUSKII)
     'https://myeyahomes.com/',
     'https://eyaautos.com/',
-    // Infrastructure (fonts, canonical / OG / schema URLs)
-    'https://fonts.googleapis.com',
-    'https://fonts.gstatic.com',
-    'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap',
 ];
 
 /**
@@ -132,9 +128,7 @@ for (const [, ref] of css.matchAll(/url\(["']?(?!data:)([^"')]+)["']?\)/g)) {
 }
 
 if (ONLINE) {
-    const skip = /fonts\.g(oogleapis|static)\.com\/?$/;
     for (const url of externalUrls) {
-        if (skip.test(url)) continue;
         try {
             const res = await fetch(url, { redirect: 'follow', headers: { 'user-agent': 'Mozilla/5.0 (SUSKII link check)' } });
             // LinkedIn answers bots with 999; treat that as reachable.

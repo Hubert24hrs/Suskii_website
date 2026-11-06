@@ -7,7 +7,8 @@
 
     const header = document.getElementById('site-header');
     const desktopQuery = window.matchMedia('(min-width: 1081px)');
-
+    // Safari < 14 only supports the older addListener API on MediaQueryList
+    const onMediaChange = (query, fn) => (query.addEventListener ? query.addEventListener('change', fn) : query.addListener(fn));
 
     // ─── Header: solid background once the page scrolls ───
     function initHeaderState() {
@@ -92,7 +93,7 @@
                 toggle.focus();
             }
         });
-        desktopQuery.addEventListener('change', (e) => {
+        onMediaChange(desktopQuery, (e) => {
             if (e.matches) setOpen(false);
         });
     }
@@ -135,24 +136,19 @@
         if (!links.length || !('IntersectionObserver' in window)) return;
         const byId = new Map(links.map((link) => [link.getAttribute('href').slice(1), link]));
         const trigger = document.querySelector('.primary-nav__trigger');
-        const platformIds = new Set(['platforms', 'marketplace', 'errands', 'travel']);
 
+        // Every top-level section is observed, so sections without a nav link clear the highlight
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
                 const id = entry.target.id;
-                links.forEach((link) => link.classList.remove('is-active'));
-                trigger?.classList.toggle('is-active', platformIds.has(id));
-                byId.get(id)?.classList.add('is-active');
+                links.forEach((link) => link.classList.toggle('is-active', link === byId.get(id)));
+                trigger?.classList.toggle('is-active', id === 'platforms');
             });
         }, { rootMargin: '-45% 0px -50% 0px' });
 
-        ['ecosystem', 'platforms', 'about', 'contact'].forEach((id) => {
-            const section = document.getElementById(id);
-            if (section) observer.observe(section);
-        });
+        document.querySelectorAll('main > section[id]').forEach((section) => observer.observe(section));
     }
-
 
     function setYear() {
         document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
