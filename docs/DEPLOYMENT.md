@@ -78,6 +78,26 @@ Then sign in at `/admin/login`:
 
 Never create more admins through setup.
 
+### Locked out: break-glass password recovery
+
+Use this when no Super Admin can sign in to issue a reset link, and the database can't be reached directly.
+
+1. On a trusted machine, generate a hash:
+
+   ```bash
+   ADMIN_EMAIL=admin@suskii.com npm run admin:hash-password
+   ```
+
+   It prints an `scrypt$…` hash and saves the new password to the git-ignored `.data/recovery-password.txt`. The plaintext password never leaves your machine.
+2. In Vercel, set these for **Production only**, then redeploy:
+   - `ADMIN_RECOVERY_EMAIL`, the account to recover
+   - `ADMIN_RECOVERY_PASSWORD_HASH`, the hash from step 1
+   - optionally `ADMIN_RECOVERY_RESET_MFA=true` if the authenticator app is lost
+3. The build log shows `admin recovery: Password replaced…`. The old password stops working, and every session and reset link is revoked. The change is recorded in the audit log as `auth.password.recovery`.
+4. **Remove the `ADMIN_RECOVERY_*` variables and redeploy.** Later builds would do nothing anyway (the recovery is idempotent), but the variables shouldn't linger.
+
+Recovery is ignored on Preview deployments.
+
 ## 5. Deploy
 
 The repository is linked to Vercel; pushing to `main` deploys to production.

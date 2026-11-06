@@ -2,6 +2,14 @@
 
 All notable changes to the SUSKII website. Dates are UTC.
 
+## 3.0.3 — 2026-11-06: break-glass password recovery
+
+- **Added `npm run admin:hash-password`** and an `ADMIN_RECOVERY_EMAIL` / `ADMIN_RECOVERY_PASSWORD_HASH` build step.
+  - The build replaces an administrator's password, revokes their sessions and reset links, and writes an audit entry.
+  - It is idempotent and ignored on Preview deployments.
+  - This is for when nobody can sign in and the Sensitive database variables can't be reached from a laptop.
+- **Used it** to issue the owner a new password for `admin@suskii.com`. The original one-time password no longer works.
+
 ## 3.0.2 — 2026-11-06: production activation
 
 - **Activated the central admin on production.** These were set up in Vercel, not in the code:
