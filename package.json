@@ -44,6 +44,9 @@
   "overrides": {
     "@vercel/cli-config": {
       "zod": "4.6.7"
+    },
+    "sanitize-html": {
+      "htmlparser2": "^10.1.0"
     }
   }
 }

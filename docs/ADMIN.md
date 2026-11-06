@@ -185,7 +185,7 @@ Coverage includes:
 
 ```
 admin/                 Admin SPA (vanilla ES modules, no build step): app.js shell, views/*, lib.js, charts.js, admin.css
-api/[...path].ts       The single Vercel Function; routes everything under /api to server/
+api/index.ts           The single Vercel Function (vercel.json rewrites /api/* to it); routes everything under /api to server/
 server/
   app.ts, http.ts      Router, security headers, errors
   db.ts, migrate.ts    PostgreSQL (pg) / PGlite, forward-only migrations

@@ -4,12 +4,13 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {
-    "api/[...path].ts": {
+    "api/index.ts": {
       "maxDuration": 60,
       "includeFiles": "{index.html,db/migrations/**}"
     }
   },
   "rewrites": [
+    { "source": "/api/:path*", "destination": "/api" },
     { "source": "/admin", "destination": "/admin/index.html" },
     { "source": "/admin/:path((?!.*[.][a-z0-9]+$).*)", "destination": "/admin/index.html" }
   ],
