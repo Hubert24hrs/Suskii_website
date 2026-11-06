@@ -23,12 +23,31 @@ async function copyPublic(): Promise<void> {
     for (const d of PUBLIC_DIRS) if (existsSync(join(ROOT, d))) await cp(join(ROOT, d), join(OUT, d), { recursive: true });
 }
 
+/** Break-glass admin password recovery (server/auth/recovery.ts). Never runs on Preview deployments. */
+async function maybeRecoverAdmin(db: import('../server/db.js').Db): Promise<void> {
+    const email = process.env.ADMIN_RECOVERY_EMAIL ?? '';
+    const passwordHash = process.env.ADMIN_RECOVERY_PASSWORD_HASH ?? '';
+    if (!email && !passwordHash) return;
+    if (process.env.VERCEL_ENV === 'preview') {
+        console.warn('[build] ADMIN_RECOVERY_* is set on a Preview deployment; ignored. Set it for Production only.');
+        return;
+    }
+    try {
+        const { applyPasswordRecovery } = await import('../server/auth/recovery.js');
+        const res = await applyPasswordRecovery(db, { email, passwordHash, resetMfa: process.env.ADMIN_RECOVERY_RESET_MFA === 'true' });
+        console.log(`[build] admin recovery: ${res.message}`);
+    } catch (e) {
+        console.error('[build] admin recovery failed:', (e as Error).message);
+    }
+}
+
 async function bakeCms(): Promise<string> {
     const { getDb } = await import('../server/db.js');
     const { migrate } = await import('../server/migrate.js');
     const { renderSitePages } = await import('../server/cms/site.js');
     const db = await getDb();
     const applied = await migrate(db, (m) => console.log(`[build] migration ${m}`));
+    await maybeRecoverAdmin(db);
     const pages = await renderSitePages(db, await readFile(join(ROOT, 'index.html'), 'utf8'));
     for (const [path, html] of pages) {
         const file = path === '/' ? join(OUT, 'index.html') : join(OUT, ...path.split('/').filter(Boolean), 'index.html');

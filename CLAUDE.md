@@ -13,7 +13,8 @@ The admin is live and active as of 2026-11-06. See [Current production state](#c
 npm install
 npm run dev            # site + admin at http://localhost:5173; embedded PostgreSQL (PGlite) in .data/pglite
 npm run admin:create   # ADMIN_EMAIL=… ADMIN_NAME=… [ADMIN_PASSWORD=…] — first admin; refuses if one exists
-npm test               # scripts/check-site.mjs + Vitest (80 tests, in-memory PGlite)
+npm run admin:hash-password   # scrypt hash for break-glass recovery (ADMIN_RECOVERY_PASSWORD_HASH)
+npm test               # scripts/check-site.mjs + Vitest (83 tests, in-memory PGlite)
 npm run test:e2e       # Playwright (10 tests). If its browsers aren't installed:
                        #   PLAYWRIGHT_CHROMIUM_PATH=<path to chrome-headless-shell.exe> npm run test:e2e
 npm run typecheck      # tsc --noEmit, strict, NodeNext
@@ -71,6 +72,7 @@ docs/             ADMIN.md (features, roles, security), INTEGRATIONS.md (platfor
 - **Environment variables:**
   - The Neon variables (`DATABASE_URL` and friends) are **Sensitive**: `vercel env pull` returns them empty, so `npm run admin:create` can't reach the production database from a laptop. To create another first-admin-style account, use Admin → Administrators → Invite. In an emergency: set `ADMIN_BOOTSTRAP_TOKEN`, redeploy, `POST /api/setup`, then remove the token and redeploy.
   - Preview deployments currently share the production `DATABASE_URL`. Don't run destructive experiments on preview links.
+- **Lost admin access:** `npm run admin:hash-password`, then set `ADMIN_RECOVERY_EMAIL` and `ADMIN_RECOVERY_PASSWORD_HASH` for Production and redeploy. Remove them afterwards. Details are in docs/DEPLOYMENT.md, "Locked out". It is ignored on Preview.
 - **Preview access:** preview URLs are behind Vercel login (HTTP 302 to vercel.com). Use the browser pane while signed in to Vercel. `vercel curl` did not work on this Windows setup.
 
 ## Current production state
