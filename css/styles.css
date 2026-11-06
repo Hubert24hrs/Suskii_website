@@ -945,6 +945,8 @@ a.contact-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md)
 /* Phones: lighter compositing for low-end Android, steadier layout */
 @media (max-width: 720px) {
   .orbit__node, .float-card, .eyebrow-pill, .browser { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  /* The hero diagram sits near the fold on phones: keep it still (steadier first screen, less battery) */
+  .orbit__ring, .orbit__node, .orbit__links { animation: none; }
   .orbit__node, .float-card, .eyebrow-pill { background: #fff; }
   .browser { background: #151B3D; }
   .hero__glow { opacity: .55; }
