@@ -114,7 +114,9 @@
             group.querySelectorAll(':scope > .reveal').forEach((el, i) => el.style.setProperty('--d', `${i * 0.08}s`));
         });
 
+        let observerAlive = false;
         const observer = new IntersectionObserver((entries) => {
+            observerAlive = true;
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
                 entry.target.classList.add('is-visible');
@@ -123,6 +125,12 @@
         }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
         items.forEach((el) => observer.observe(el));
+
+        // Some in-app browsers (social media webviews) never deliver observer callbacks;
+        // never leave content invisible because of that.
+        setTimeout(() => {
+            if (!observerAlive) items.forEach((el) => el.classList.add('is-visible'));
+        }, 1500);
     }
 
     // ─── Highlight the nav link for the section in view ───
