@@ -1,16 +1,49 @@
 {
   "name": "suskii-website",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
-  "description": "SUSKII corporate ecosystem website: static HTML/CSS/JS deployed on Vercel.",
+  "description": "SUSKII corporate website (static) with an integrated CMS and central operations admin (/admin), deployed on Vercel.",
   "type": "module",
   "scripts": {
-    "dev": "python -m http.server 5173",
-    "test": "node scripts/check-site.mjs",
+    "dev": "tsx scripts/dev-server.ts",
+    "dev:static": "python -m http.server 5173",
+    "build": "tsx scripts/build-site.ts",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "admin:create": "tsx scripts/create-admin.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node scripts/check-site.mjs && vitest run",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
     "test:links": "node scripts/check-site.mjs --online",
-    "lint": "html-validate \"*.html\""
+    "lint": "html-validate \"*.html\" admin/index.html",
+    "audit:deps": "npm audit --omit=dev"
   },
   "devDependencies": {
-    "html-validate": "^9.0.0"
+    "@electric-sql/pglite": "^0.5.15",
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "@types/qrcode": "^1.5.6",
+    "@types/sanitize-html": "^2.16.2",
+    "html-validate": "^11.4.0",
+    "tsx": "^4.23.15",
+    "typescript": "5.9",
+    "vitest": "^4.1.12"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.8.2",
+    "cheerio": "^1.2.0",
+    "pg": "^8.23.1",
+    "qrcode": "^1.5.4",
+    "sanitize-html": "^2.18.1",
+    "sharp": "^0.35.5"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "overrides": {
+    "@vercel/cli-config": {
+      "zod": "4.6.7"
+    }
   }
 }

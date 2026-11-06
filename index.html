@@ -6,8 +6,8 @@
     <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
     <!-- ─── SEO ─── -->
-    <title>SUSKII — Technology connecting people to commerce, services and travel</title>
-    <meta name="description" content="SUSKII is the parent brand of SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours: independent digital platforms forming one connected ecosystem for everyday commerce, services and travel.">
+    <title data-cms="site.seo.title">SUSKII — Technology connecting people to commerce, services and travel</title>
+    <meta data-cms-attr="content={site.seo.description}" name="description" content="SUSKII is the parent brand of SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours: independent digital platforms forming one connected ecosystem for everyday commerce, services and travel.">
     <meta name="author" content="SUSKII">
     <meta name="theme-color" content="#0A0F24">
     <link rel="canonical" href="https://suskii-website.vercel.app/">
@@ -17,20 +17,20 @@
     <meta property="og:url" content="https://suskii-website.vercel.app/">
     <meta property="og:site_name" content="SUSKII">
     <meta property="og:locale" content="en_GB">
-    <meta property="og:title" content="SUSKII — One ecosystem for commerce, services and travel">
-    <meta property="og:description" content="Meet the SUSKII ecosystem: SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours.">
-    <meta property="og:image" content="https://suskii-website.vercel.app/assets/og/suskii-ecosystem.png">
+    <meta data-cms-attr="content={site.seo.ogTitle}" property="og:title" content="SUSKII — One ecosystem for commerce, services and travel">
+    <meta data-cms-attr="content={site.seo.ogDescription}" property="og:description" content="Meet the SUSKII ecosystem: SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours.">
+    <meta data-cms-attr="content={site.seo.ogImage.url}" property="og:image" content="https://suskii-website.vercel.app/assets/og/suskii-ecosystem.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="SUSKII ecosystem: Marketplace, Errands, and Travel &amp; Tours">
+    <meta data-cms-attr="content={site.seo.ogImageAlt}" property="og:image:alt" content="SUSKII ecosystem: Marketplace, Errands, and Travel &amp; Tours">
 
     <!-- ─── Twitter / X ─── -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SUSKII — One ecosystem for commerce, services and travel">
-    <meta name="twitter:description" content="Meet the SUSKII ecosystem: SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours.">
-    <meta name="twitter:image" content="https://suskii-website.vercel.app/assets/og/suskii-ecosystem.png">
-    <meta name="twitter:image:alt" content="SUSKII ecosystem: Marketplace, Errands, and Travel &amp; Tours">
+    <meta data-cms-attr="content={site.seo.ogTitle}" name="twitter:title" content="SUSKII — One ecosystem for commerce, services and travel">
+    <meta data-cms-attr="content={site.seo.ogDescription}" name="twitter:description" content="Meet the SUSKII ecosystem: SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours.">
+    <meta data-cms-attr="content={site.seo.ogImage.url}" name="twitter:image" content="https://suskii-website.vercel.app/assets/og/suskii-ecosystem.png">
+    <meta data-cms-attr="content={site.seo.ogImageAlt}" name="twitter:image:alt" content="SUSKII ecosystem: Marketplace, Errands, and Travel &amp; Tours">
 
     <!-- ─── Icons ─── -->
     <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32">
@@ -40,10 +40,10 @@
 
     <!-- ─── Fonts & styles ─── -->
     <link rel="preload" href="assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="css/styles.css?v=2.6.2">
+    <link rel="stylesheet" href="css/styles.css?v=2.7.0">
 
     <!-- ─── Structured data ─── -->
-    <script type="application/ld+json">
+    <script type="application/ld+json" data-cms-jsonld>
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -235,23 +235,23 @@
                 <div class="hero__copy">
                     <p class="eyebrow-pill">
                         <span class="eyebrow-pill__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                        The SUSKII ecosystem
+                        <span data-cms="home.hero.eyebrow">The SUSKII ecosystem</span>
                     </p>
                     <h1 class="hero__title" id="hero-title">
-                        Connecting people to
-                        <span class="tint tint--market">commerce,</span>
-                        <span class="tint tint--errands">services</span> and
-                        <span class="tint tint--travel">travel.</span>
+                        <span data-cms="home.hero.titleLead">Connecting people to</span>
+                        <span class="tint tint--market" data-cms="home.hero.titleCommerce">commerce,</span>
+                        <span class="tint tint--errands" data-cms="home.hero.titleServices">services</span> <span data-cms="home.hero.titleJoin">and</span>
+                        <span class="tint tint--travel" data-cms="home.hero.titleTravel">travel.</span>
                     </h1>
-                    <p class="hero__lead">
+                    <p class="hero__lead" data-cms="home.hero.lead">
                         SUSKII is a technology company building independent digital platforms that work together, so buying, selling, getting things done and going places all start in one trusted ecosystem.
                     </p>
                     <div class="hero__actions">
                         <a class="btn btn--primary btn--lg" href="#platforms">
-                            Explore Our Platforms
+                            <span data-cms="home.hero.primaryCta">Explore Our Platforms</span>
                             <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>
                         </a>
-                        <a class="btn btn--ghost btn--lg" href="#about">About SUSKII</a>
+                        <a class="btn btn--ghost btn--lg" href="#about" data-cms="home.hero.secondaryCta">About SUSKII</a>
                     </div>
                     <ul class="hero__status">
                         <li><span class="dot dot--live" aria-hidden="true"></span>Marketplace <em>Live</em></li>
@@ -299,9 +299,9 @@
         <section class="section ecosystem" id="ecosystem" aria-labelledby="ecosystem-title">
             <div class="container">
                 <header class="section-head reveal">
-                    <p class="eyebrow">Our Ecosystem</p>
-                    <h2 class="section-title" id="ecosystem-title">One parent brand. Independent platforms. A connected experience.</h2>
-                    <p class="section-lead">SUSKII is the home of a growing family of digital products. Each platform is focused on one everyday need and runs as its own product, while all of them share the same SUSKII foundations: trust, simplicity and a commitment to the communities they serve.</p>
+                    <p class="eyebrow" data-cms="home.ecosystem.eyebrow">Our Ecosystem</p>
+                    <h2 class="section-title" id="ecosystem-title" data-cms="home.ecosystem.title">One parent brand. Independent platforms. A connected experience.</h2>
+                    <p class="section-lead" data-cms="home.ecosystem.lead">SUSKII is the home of a growing family of digital products. Each platform is focused on one everyday need and runs as its own product, while all of them share the same SUSKII foundations: trust, simplicity and a commitment to the communities they serve.</p>
                 </header>
 
                 <div class="eco-stack reveal">
@@ -389,9 +389,9 @@
         <section class="section platforms" id="platforms" aria-labelledby="platforms-title">
             <div class="container">
                 <header class="section-head section-head--center reveal">
-                    <p class="eyebrow">Our Platforms</p>
-                    <h2 class="section-title" id="platforms-title">Three platforms. Each built for one everyday need.</h2>
-                    <p class="section-lead">Every SUSKII platform has its own identity, team focus and product roadmap, and every one follows the same SUSKII standards.</p>
+                    <p class="eyebrow" data-cms="home.platforms.eyebrow">Our Platforms</p>
+                    <h2 class="section-title" id="platforms-title" data-cms="home.platforms.title">Three platforms. Each built for one everyday need.</h2>
+                    <p class="section-lead" data-cms="home.platforms.lead">Every SUSKII platform has its own identity, team focus and product roadmap, and every one follows the same SUSKII standards.</p>
                 </header>
             </div>
 
@@ -405,11 +405,11 @@
                         </div>
                         <div class="platform__meta">
                             <span class="status status--live">Live</span>
-                            <span class="platform__category">Online P2P Marketplace</span>
+                            <span class="platform__category" data-cms="platform.marketplace.category">Online P2P Marketplace</span>
                         </div>
-                        <h3 class="platform__title" id="marketplace-title">A market for anything salable.</h3>
-                        <p class="platform__desc">An online marketplace where individuals and businesses can buy and sell virtually anything. SUSKII Marketplace is a digital market hub connecting buyers and sellers, from gadgets and fashion to property and vehicles.</p>
-                        <ul class="feature-list">
+                        <h3 class="platform__title" id="marketplace-title" data-cms="platform.marketplace.title">A market for anything salable.</h3>
+                        <p class="platform__desc" data-cms="platform.marketplace.description">An online marketplace where individuals and businesses can buy and sell virtually anything. SUSKII Marketplace is a digital market hub connecting buyers and sellers, from gadgets and fashion to property and vehicles.</p>
+                        <ul class="feature-list" data-cms-list="platform.marketplace.features">
                             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Buy and sell products</li>
                             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Individual and business sellers</li>
                             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Product discovery and search</li>
@@ -435,7 +435,7 @@
                         </div>
                     </div>
 
-                    <div class="platform__visual reveal">
+                    <div class="platform__visual reveal" data-cms-banner="platform.marketplace.banner">
                         <div class="device-stage device-stage--market">
                             <div class="phone" role="img" aria-label="Illustration of the SUSKII Marketplace app showing search, categories and product listings">
                                 <div class="phone__screen" aria-hidden="true">
@@ -486,11 +486,11 @@
                         </div>
                         <div class="platform__meta">
                             <span class="status status--soon">Coming soon</span>
-                            <span class="platform__category">Services Marketplace</span>
+                            <span class="platform__category" data-cms="platform.errands.category">Services Marketplace</span>
                         </div>
-                        <h3 class="platform__title" id="errands-title">Rendering All Available Services.</h3>
-                        <p class="platform__desc">A platform where users can discover, request and access different services. SUSKII Errands connects people who need services with individuals and businesses offering those services.</p>
-                        <ul class="feature-list">
+                        <h3 class="platform__title" id="errands-title" data-cms="platform.errands.title">Rendering All Available Services.</h3>
+                        <p class="platform__desc" data-cms="platform.errands.description">A platform where users can discover, request and access different services. SUSKII Errands connects people who need services with individuals and businesses offering those services.</p>
+                        <ul class="feature-list" data-cms-list="platform.errands.features">
                             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Request different services</li>
                             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Discover available service providers</li>
                             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Browse service categories</li>
@@ -513,10 +513,10 @@
                                 </span>
                             </div>
                         </div>
-                        <p class="platform__note">The SUSKII Errands website and apps are not public yet. We’ll share the links here when they launch.</p>
+                        <p class="platform__note" data-cms="platform.errands.note">The SUSKII Errands website and apps are not public yet. We’ll share the links here when they launch.</p>
                     </div>
 
-                    <div class="platform__visual reveal">
+                    <div class="platform__visual reveal" data-cms-banner="platform.errands.banner">
                         <div class="device-stage device-stage--errands">
                             <div class="phone" role="img" aria-label="Preview illustration of the SUSKII Errands app showing service categories and a service request">
                                 <div class="phone__screen" aria-hidden="true">
@@ -572,12 +572,12 @@
                         </div>
                         <div class="platform__meta">
                             <span class="status status--dev">In development</span>
-                            <span class="platform__category">Travel and Tourism</span>
+                            <span class="platform__category" data-cms="platform.travel_tour.category">Travel and Tourism</span>
                         </div>
-                        <h3 class="platform__title" id="travel-title">The next journey for the SUSKII ecosystem.</h3>
-                        <p class="platform__desc">An upcoming travel platform designed to make travel planning, bookings and tourism services accessible through the SUSKII ecosystem.</p>
+                        <h3 class="platform__title" id="travel-title" data-cms="platform.travel_tour.title">The next journey for the SUSKII ecosystem.</h3>
+                        <p class="platform__desc" data-cms="platform.travel_tour.description">An upcoming travel platform designed to make travel planning, bookings and tourism services accessible through the SUSKII ecosystem.</p>
                         <p class="platform__sublabel">Planned features</p>
-                        <ul class="feature-list feature-list--grid">
+                        <ul class="feature-list feature-list--grid" data-cms-list="platform.travel_tour.features">
                             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-plane"/></svg>Flight booking</li>
                             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-bed"/></svg>Hotel reservations</li>
                             <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-car"/></svg>Car rentals</li>
@@ -586,7 +586,7 @@
                         </ul>
                         <div class="notice">
                             <svg class="icon icon--sm" aria-hidden="true"><use href="#i-clock"/></svg>
-                            <p>SUSKII Travel &amp; Tours is in development. Bookings are <strong>not yet available</strong>.</p>
+                            <p data-cms-html="platform.travel_tour.notice">SUSKII Travel &amp; Tours is in development. Bookings are <strong>not yet available</strong>.</p>
                         </div>
                         <div class="platform__actions">
                             <a class="btn btn--brand" href="mailto:support@suskii.com?subject=SUSKII%20Travel%20%26%20Tours%20interest">
@@ -596,7 +596,7 @@
                         </div>
                     </div>
 
-                    <div class="platform__visual reveal">
+                    <div class="platform__visual reveal" data-cms-banner="platform.travel_tour.banner">
                         <div class="device-stage device-stage--travel">
                             <div class="browser" role="img" aria-label="Concept illustration of SUSKII Travel and Tours planning screens for flights, hotels, car rentals and intercity travel">
                                 <div class="browser__bar" aria-hidden="true">
@@ -637,15 +637,15 @@
         <section class="section why" id="why" aria-labelledby="why-title">
             <div class="container">
                 <header class="section-head reveal">
-                    <p class="eyebrow">Why SUSKII</p>
-                    <h2 class="section-title" id="why-title">Everyday digital services, brought together.</h2>
+                    <p class="eyebrow" data-cms="home.why.eyebrow">Why SUSKII</p>
+                    <h2 class="section-title" id="why-title" data-cms="home.why.title">Everyday digital services, brought together.</h2>
                 </header>
 
                 <div class="bento">
                     <article class="bento__tile bento__tile--vision reveal">
                         <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-layers"/></svg></span>
-                        <h3>One vision for everyday life</h3>
-                        <p>We’re building one trusted ecosystem where the services people rely on every day (shopping, help at home, getting around) are all within reach.</p>
+                        <h3 data-cms="home.why.tiles.0.title">One vision for everyday life</h3>
+                        <p data-cms="home.why.tiles.0.text">We’re building one trusted ecosystem where the services people rely on every day (shopping, help at home, getting around) are all within reach.</p>
                         <div class="bento__visual" aria-hidden="true">
                             <span class="app-tile app-tile--market"><svg class="icon"><use href="#i-bag"/></svg></span>
                             <span class="app-tile app-tile--errands"><svg class="icon"><use href="#i-wrench"/></svg></span>
@@ -654,23 +654,23 @@
                     </article>
                     <article class="bento__tile reveal">
                         <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span>
-                        <h3>Convenience</h3>
-                        <p>Every SUSKII platform shares one family of design and standards, so moving between them feels familiar from the first tap.</p>
+                        <h3 data-cms="home.why.tiles.1.title">Convenience</h3>
+                        <p data-cms="home.why.tiles.1.text">Every SUSKII platform shares one family of design and standards, so moving between them feels familiar from the first tap.</p>
                     </article>
                     <article class="bento__tile reveal">
                         <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></span>
-                        <h3>Accessibility</h3>
-                        <p>Mobile-first products designed for the devices and connections people actually use, and free to browse.</p>
+                        <h3 data-cms="home.why.tiles.2.title">Accessibility</h3>
+                        <p data-cms="home.why.tiles.2.text">Mobile-first products designed for the devices and connections people actually use, and free to browse.</p>
                     </article>
                     <article class="bento__tile reveal">
                         <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-spark"/></svg></span>
-                        <h3>Innovation</h3>
-                        <p>Modern digital products built for local markets, from smarter discovery to new ways of requesting services and planning travel.</p>
+                        <h3 data-cms="home.why.tiles.3.title">Innovation</h3>
+                        <p data-cms="home.why.tiles.3.text">Modern digital products built for local markets, from smarter discovery to new ways of requesting services and planning travel.</p>
                     </article>
                     <article class="bento__tile reveal">
                         <span class="bento__icon" aria-hidden="true"><svg class="icon"><use href="#i-network"/></svg></span>
-                        <h3>Connectivity</h3>
-                        <p>We connect buyers with sellers, customers with service providers and travellers with journeys, creating opportunity on both sides.</p>
+                        <h3 data-cms="home.why.tiles.4.title">Connectivity</h3>
+                        <p data-cms="home.why.tiles.4.text">We connect buyers with sellers, customers with service providers and travellers with journeys, creating opportunity on both sides.</p>
                     </article>
                 </div>
             </div>
@@ -680,30 +680,30 @@
         <section class="section about" id="about" aria-labelledby="about-title">
             <div class="container about__layout">
                 <div class="about__intro reveal">
-                    <p class="eyebrow">About SUSKII</p>
-                    <h2 class="section-title" id="about-title">Building useful technology for the way people live.</h2>
-                    <p class="section-lead">SUSKII started with a simple idea: a market for anything salable. Today it is growing into a family of platforms for the everyday needs that matter most: trading, getting things done and travelling. We build carefully, launch when products are ready, and put people first.</p>
+                    <p class="eyebrow" data-cms="home.about.eyebrow">About SUSKII</p>
+                    <h2 class="section-title" id="about-title" data-cms="home.about.title">Building useful technology for the way people live.</h2>
+                    <p class="section-lead" data-cms="home.about.lead">SUSKII started with a simple idea: a market for anything salable. Today it is growing into a family of platforms for the everyday needs that matter most: trading, getting things done and travelling. We build carefully, launch when products are ready, and put people first.</p>
                     <dl class="about__facts">
-                        <div><dt>Platforms</dt><dd>3</dd></div>
-                        <div><dt>Live today</dt><dd>Nigeria &amp; Rwanda</dd></div>
-                        <div class="about__offices"><dt>Office</dt><dd>Kigali, Rwanda</dd><dd>Lagos, Nigeria</dd><dd>Across Africa</dd><dd class="about__soon">Globally soon</dd></div>
+                        <div><dt>Platforms</dt><dd data-cms="home.about.platformsCount">3</dd></div>
+                        <div><dt>Live today</dt><dd data-cms="home.about.liveToday">Nigeria &amp; Rwanda</dd></div>
+                        <div class="about__offices" data-cms-list="home.about.offices"><dt>Office</dt><dd>Kigali, Rwanda</dd><dd>Lagos, Nigeria</dd><dd>Across Africa</dd><dd class="about__soon">Globally soon</dd></div>
                     </dl>
                 </div>
                 <div class="about__pillars">
                     <article class="pillar reveal">
                         <span class="pillar__icon" aria-hidden="true"><svg class="icon"><use href="#i-eye"/></svg></span>
                         <h3>Our vision</h3>
-                        <p>To be the trusted digital ecosystem people across Africa turn to for everyday commerce, services and travel.</p>
+                        <p data-cms="home.about.vision">To be the trusted digital ecosystem people across Africa turn to for everyday commerce, services and travel.</p>
                     </article>
                     <article class="pillar reveal">
                         <span class="pillar__icon" aria-hidden="true"><svg class="icon"><use href="#i-target"/></svg></span>
                         <h3>Our mission</h3>
-                        <p>To build useful, accessible platforms that connect people and businesses to opportunity, and make everyday transactions simpler, safer and closer to home.</p>
+                        <p data-cms="home.about.mission">To build useful, accessible platforms that connect people and businesses to opportunity, and make everyday transactions simpler, safer and closer to home.</p>
                     </article>
                     <article class="pillar reveal">
                         <span class="pillar__icon" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
                         <h3>Our commitment</h3>
-                        <p>Trust and safety first. Honest communication about what is available today and what is coming next. Products shipped only when they are ready to serve people well.</p>
+                        <p data-cms="home.about.commitment">Trust and safety first. Honest communication about what is available today and what is coming next. Products shipped only when they are ready to serve people well.</p>
                     </article>
                 </div>
             </div>
@@ -714,9 +714,9 @@
             <div class="container faq__layout">
                 <header class="section-head reveal">
                     <p class="eyebrow">Questions</p>
-                    <h2 class="section-title" id="faq-title">Frequently asked questions</h2>
+                    <h2 class="section-title" id="faq-title" data-cms="home.faq.title">Frequently asked questions</h2>
                 </header>
-                <div class="faq__list reveal">
+                <div class="faq__list reveal" data-cms-list="home.faq.items">
                     <details class="faq__item">
                         <summary>What is SUSKII?</summary>
                         <p>SUSKII is a technology company and the parent brand of SUSKII Marketplace, SUSKII Errands and SUSKII Travel &amp; Tours. Each is an independent platform within the SUSKII ecosystem.</p>
@@ -750,9 +750,9 @@
             <div class="container">
                 <header class="section-head reveal">
                     <p class="eyebrow">Partners</p>
-                    <h2 class="section-title" id="partners-title">In partnership with.</h2>
+                    <h2 class="section-title" id="partners-title" data-cms="home.partners.title">In partnership with.</h2>
                 </header>
-                <ul class="partners__list reveal">
+                <ul class="partners__list reveal" data-cms-list="home.partners.items">
                     <li>
                         <a class="partner" href="https://myeyahomes.com/" target="_blank" rel="noopener">
                             <span class="partner__logo"><img src="assets/partners/my-eya-homes.webp" alt="My Eya Homes — Estate &amp; Investments" width="373" height="240" loading="lazy"></span>
@@ -782,25 +782,25 @@
             <div class="container">
                 <header class="section-head reveal">
                     <p class="eyebrow">Contact</p>
-                    <h2 class="section-title" id="contact-title">Talk to SUSKII.</h2>
+                    <h2 class="section-title" id="contact-title" data-cms="site.contact.title">Talk to SUSKII.</h2>
                 </header>
                 <div class="contact__grid">
-                    <a class="contact-card reveal" href="mailto:support@suskii.com">
+                    <a class="contact-card reveal" href="mailto:support@suskii.com" data-cms-attr="href=mailto:{site.contact.email}">
                         <span class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
                         <span class="contact-card__label">Email</span>
-                        <strong>support@suskii.com</strong>
-                        <span class="contact-card__hint">Support, partnerships and press</span>
+                        <strong data-cms="site.contact.email">support@suskii.com</strong>
+                        <span class="contact-card__hint" data-cms="site.contact.emailHint">Support, partnerships and press</span>
                     </a>
-                    <a class="contact-card reveal" href="https://www.google.com/maps/search/?api=1&amp;query=Kigali%20Kisimenti%2C%20Opposite%20Jollof%20Kigali" target="_blank" rel="noopener">
+                    <a class="contact-card reveal" href="https://www.google.com/maps/search/?api=1&amp;query=Kigali%20Kisimenti%2C%20Opposite%20Jollof%20Kigali" target="_blank" rel="noopener" data-cms-attr="href={site.contact.mapsUrl}">
                         <span class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-pin"/></svg></span>
                         <span class="contact-card__label">Office</span>
-                        <strong>Kisimenti, Kigali</strong>
-                        <span class="contact-card__hint">Opposite Jollof Kigali · Open in Google Maps</span>
+                        <strong data-cms="site.contact.officeTitle">Kisimenti, Kigali</strong>
+                        <span class="contact-card__hint" data-cms="site.contact.officeHint">Opposite Jollof Kigali · Open in Google Maps</span>
                     </a>
                     <div class="contact-card contact-card--social reveal">
                         <span class="contact-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-network"/></svg></span>
                         <span class="contact-card__label">Follow SUSKII</span>
-                        <ul class="social">
+                        <ul class="social" data-cms-list="site.social">
                             <li><a href="https://www.facebook.com/profile.php?id=61592829380893" target="_blank" rel="noopener" aria-label="SUSKII on Facebook"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
                             <li><a href="https://www.instagram.com/suskiiapp" target="_blank" rel="noopener" aria-label="SUSKII on Instagram"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
                             <li><a href="https://www.tiktok.com/@suskii2026" target="_blank" rel="noopener" aria-label="SUSKII on TikTok"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-tiktok"/></svg></a></li>
@@ -808,6 +808,7 @@
                         </ul>
                     </div>
                 </div>
+                <div data-cms-slot="contact-form"></div>
             </div>
         </section>
 
@@ -822,8 +823,8 @@
                         <img class="brand__mark" src="assets/brand/suskii-logo-sm.webp" alt="" width="99" height="112" loading="lazy">
                         <span class="brand__word">SUSKII</span>
                     </a>
-                    <p>SUSKII is a technology company building digital platforms that connect people and businesses to commerce, services and travel.</p>
-                    <ul class="social social--footer">
+                    <p data-cms="site.footer.description">SUSKII is a technology company building digital platforms that connect people and businesses to commerce, services and travel.</p>
+                    <ul class="social social--footer" data-cms-list="site.social">
                         <li><a href="https://www.facebook.com/profile.php?id=61592829380893" target="_blank" rel="noopener" aria-label="SUSKII on Facebook"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
                         <li><a href="https://www.instagram.com/suskiiapp" target="_blank" rel="noopener" aria-label="SUSKII on Instagram"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
                         <li><a href="https://www.tiktok.com/@suskii2026" target="_blank" rel="noopener" aria-label="SUSKII on TikTok"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-tiktok"/></svg></a></li>
@@ -853,7 +854,7 @@
 
                 <nav class="site-footer__col" aria-label="Company">
                     <h2>Company</h2>
-                    <ul>
+                    <ul data-cms-company-links>
                         <li><a href="#about">About SUSKII</a></li>
                         <li><a href="#ecosystem">Our Ecosystem</a></li>
                         <li><a href="#why">Why SUSKII</a></li>
@@ -865,14 +866,14 @@
                 <div class="site-footer__col">
                     <h2>Contact</h2>
                     <ul>
-                        <li><a href="mailto:support@suskii.com">support@suskii.com</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Kigali%20Kisimenti%2C%20Opposite%20Jollof%20Kigali" target="_blank" rel="noopener">Kisimenti, Kigali, Rwanda</a></li>
+                        <li><a href="mailto:support@suskii.com" data-cms-attr="href=mailto:{site.contact.email}" data-cms="site.contact.email">support@suskii.com</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Kigali%20Kisimenti%2C%20Opposite%20Jollof%20Kigali" target="_blank" rel="noopener" data-cms-attr="href={site.contact.mapsUrl}" data-cms="site.contact.officeFooter">Kisimenti, Kigali, Rwanda</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="site-footer__bottom">
-                <p>© <span data-year>2026</span> SUSKII. All rights reserved.</p>
+                <p>© <span data-year>2026</span> <span data-cms="site.footer.copyrightName">SUSKII</span>. All rights reserved.</p>
                 <ul class="site-footer__legal">
                     <li><a href="privacy.html">Privacy Policy</a></li>
                     <li><a href="terms.html">Terms of Service</a></li>
@@ -881,6 +882,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=2.6.2" defer></script>
+    <script src="js/main.js?v=2.7.0" defer></script>
 </body>
 </html>

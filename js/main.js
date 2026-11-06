@@ -172,11 +172,63 @@
         document.querySelectorAll('.hero__visual, .eco-stack, .device-stage, .bento__visual, .platform--market .platform__meta').forEach((el) => observer.observe(el));
     }
 
+    // ─── Contact and job-application forms (progressive enhancement; they also work without JavaScript) ───
+    function initForms() {
+        const params = new URLSearchParams(location.search);
+        const forms = document.querySelectorAll('[data-contact-form], [data-apply-form]');
+        forms.forEach((form) => {
+            const status = form.querySelector('.contact-form__status');
+            const button = form.querySelector('button[type="submit"]');
+            const isApply = form.hasAttribute('data-apply-form');
+            const show = (text, kind) => {
+                if (!status) return;
+                status.textContent = text;
+                status.classList.toggle('is-ok', kind === 'ok');
+                status.classList.toggle('is-error', kind === 'error');
+            };
+            const outcome = params.get(isApply ? 'application' : 'inquiry');
+            if (outcome === 'sent') show(isApply ? 'Thank you. Your application has been received.' : 'Thank you. Your message has been sent and our team will reply by email.', 'ok');
+            if (outcome === 'error') show('Sorry, that could not be sent. Please check the form and try again.', 'error');
+
+            form.addEventListener('submit', async (e) => {
+                if (!window.fetch) return;
+                e.preventDefault();
+                form.querySelectorAll('.field.is-invalid').forEach((f) => f.classList.remove('is-invalid'));
+                const invalid = [...form.querySelectorAll('input, textarea, select')].filter((el) => !el.closest('.contact-form__trap') && !el.checkValidity());
+                if (invalid.length) {
+                    invalid.forEach((el) => el.closest('.field')?.classList.add('is-invalid'));
+                    show('Please complete the highlighted fields.', 'error');
+                    invalid[0].focus();
+                    return;
+                }
+                const file = form.querySelector('input[type="file"]')?.files?.[0];
+                if (file && file.size > 4 * 1024 * 1024) { show('Your CV must be 4 MB or smaller.', 'error'); return; }
+                button.disabled = true;
+                show(isApply ? 'Uploading your application…' : 'Sending…');
+                try {
+                    const body = isApply ? new FormData(form) : JSON.stringify(Object.fromEntries(new FormData(form)));
+                    const res = await fetch(form.action, {
+                        method: 'POST', body, credentials: 'omit',
+                        headers: isApply ? { Accept: 'application/json' } : { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    });
+                    const data = await res.json().catch(() => ({}));
+                    if (!res.ok) throw new Error(data?.error?.message || 'Sorry, that could not be sent. Please try again.');
+                    form.reset();
+                    show(data.message || 'Thank you. We have received your message.', 'ok');
+                } catch (err) {
+                    show(err.message || 'Sorry, that could not be sent. Please try again.', 'error');
+                } finally {
+                    button.disabled = false;
+                }
+            });
+        });
+    }
+
     function setYear() {
         document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
     }
 
-    [initHeaderState, initPlatformsMenu, initMobileNav, initAnchorJumps, initReveal, initActiveSection, initOffscreenPause, setYear].forEach((fn) => {
+    [initHeaderState, initPlatformsMenu, initMobileNav, initAnchorJumps, initReveal, initActiveSection, initOffscreenPause, initForms, setYear].forEach((fn) => {
         try { fn(); } catch (err) { console.warn(`[SUSKII] ${fn.name} failed:`, err); }
     });
 })();

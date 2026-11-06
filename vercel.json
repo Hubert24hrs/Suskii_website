@@ -1,6 +1,21 @@
 {
   "name": "suskii-website",
   "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/[...path].ts": {
+      "maxDuration": 60,
+      "includeFiles": "{index.html,db/migrations/**}"
+    }
+  },
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/admin/:path((?!.*[.][a-z0-9]+$).*)", "destination": "/admin/index.html" }
+  ],
+  "crons": [
+    { "path": "/api/cron", "schedule": "0 6 * * *" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -14,6 +29,15 @@
     {
       "source": "/(assets|css|js)/(.*)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }]
+    },
+    {
+      "source": "/admin(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" }
+      ]
     }
   ]
 }

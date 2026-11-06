@@ -12,7 +12,13 @@ Only verified URLs are linked. Anything not publicly available is shown as **Com
 
 ## Stack
 
-A plain static site (HTML, CSS and vanilla JS) with no framework and no build step, deployed on Vercel.
+The public site is plain static HTML, CSS and vanilla JS, with no framework, deployed on Vercel. Since v3 it also has a **central admin and CMS** at `/admin`, backed by one TypeScript Vercel Function (`api/`) and PostgreSQL. Published CMS content is baked into the static pages at build time. With no database configured, the committed pages are published exactly as they are.
+
+| Guide | Covers |
+|---|---|
+| [docs/ADMIN.md](docs/ADMIN.md) | Admin pages, roles, CMS workflow, data rules, security measures, tests |
+| [docs/INTEGRATIONS.md](docs/INTEGRATIONS.md) | Connecting Marketplace, Errands and Travel & Tours: API contract, webhooks, and what each platform team must provide |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Database, environment variables, first administrator, cron, domain, backups |
 
 ```
 index.html            Home page: hero, ecosystem, platforms, why, about, FAQ, partners, contact, footer
@@ -30,7 +36,11 @@ assets/partners/      Partner logos (My Eya Homes, Eya Autos)
 assets/images/        Apple touch icon
 favicon.ico, site.webmanifest, robots.txt, sitemap.xml
 scripts/check-site.mjs  Zero-dependency site validator (see Testing)
-vercel.json           Security headers and asset caching
+vercel.json           Build, function, cron, rewrites, security headers and asset caching
+admin/                Central admin single-page app (vanilla ES modules)
+api/, server/, db/    Admin API, CMS, integrations, reporting; SQL migrations
+scripts/*.ts          build-site (bakes CMS content into dist/), dev-server, migrate, create-admin
+tests/, e2e/          Vitest (in-memory PostgreSQL) and Playwright tests
 ```
 
 Every section and link works without JavaScript. JS only adds motion and menu behaviour, and it respects `prefers-reduced-motion`.
@@ -62,19 +72,23 @@ A **Partners** section, placed right after the FAQ, links to SUSKII's partners: 
 ## Local development
 
 ```bash
-npm run dev          # python -m http.server 5173, then open http://localhost:5173
+npm install
+npm run dev          # site + admin at http://localhost:5173 (embedded PostgreSQL in .data/, nothing else to install)
+ADMIN_EMAIL=me@suskii.test ADMIN_NAME="Me" npm run admin:create   # first local administrator
+npm run dev:static   # the old way: plain static server, no admin
 ```
 
-Any static server works. When you change `css/styles.css` or `js/main.js`, bump the `?v=` query on their `<link>`/`<script>` tags in every HTML file. Vercel caches `/css` and `/js` for 7 days.
+When you change `css/styles.css` or `js/main.js`, bump the `?v=` query on their `<link>`/`<script>` tags in every HTML file, and `ASSET_VERSION` in `server/cms/pages.ts`. Vercel caches `/css` and `/js` for 7 days.
 
 ## Testing
 
 ```bash
-npm install          # installs html-validate (dev only)
-npm test             # structural checks: local files, #anchors, verified external URLs,
-                     # rel=noopener, img alt/width/height, duplicate ids, JSON-LD validity
-npm run test:links   # the same, plus a live request to every external URL
-npm run lint         # html-validate (recommended rules) on every page
+npm test             # site checks (anchors, verified URLs, alt text, JSON-LD) + admin unit/integration tests
+npm run test:e2e     # Playwright end-to-end: admin sign-in, CMS publishing, contact form, mobile
+npm run test:links   # site checks plus a live request to every external URL
+npm run typecheck    # TypeScript (strict)
+npm run lint         # html-validate on every page
+npm run audit:deps   # npm audit of production dependencies
 ```
 
 ## SEO
@@ -86,7 +100,7 @@ npm run lint         # html-validate (recommended rules) on every page
 
 ## Deployment (Vercel)
 
-The project is already linked to Vercel (`.vercel/project.json`, project `suskii-website`). Deploy as a static site with no build command and the repository root as the output directory. `.vercelignore` keeps dev tooling (`scripts/`, `package.json`, `node_modules`, this README) out of the upload, so Vercel serves the files as they are.
+The project is linked to Vercel (project `suskii-website`). The build command is `npm run build`, which writes `dist/`. The API is a single Node function. Without a database the build simply publishes the committed static pages, so the public site never depends on the admin being configured. See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) to switch the admin on.
 
 ```bash
 vercel          # preview deployment

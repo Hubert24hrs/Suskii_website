@@ -1,8 +1,10 @@
-# Deploy as a pure static site: keep dev tooling out of the upload
+# Dev-only material never needed by the build or the API function
 node_modules
-scripts
-package.json
-package-lock.json
-.htmlvalidate.json
-README.md
 .claude
+.data
+.tmp
+dist
+tests
+e2e
+playwright-report
+test-results
