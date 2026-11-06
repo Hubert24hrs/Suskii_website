@@ -117,8 +117,8 @@ for (const [page, html] of docs) {
         if (!/\swidth="/.test(img) || !/\sheight="/.test(img)) fail(page, `<img> without width/height: ${img}`);
     }
 
-    if (!/<title>[^<]+<\/title>/.test(html)) fail(page, 'missing <title>');
-    if (!/<meta name="description"/.test(html) && page !== 'referral.html') fail(page, 'missing meta description');
+    if (!/<title[^>]*>[^<]+<\/title>/.test(html)) fail(page, 'missing <title>');
+    if (!/<meta[^>]*\sname="description"/.test(html) && page !== 'referral.html') fail(page, 'missing meta description');
 }
 
 // CSS url() references

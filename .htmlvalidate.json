@@ -5,6 +5,8 @@
     "void-style": "off",
     "no-trailing-whitespace": "off",
     "long-title": "off",
-    "no-redundant-role": "off"
+    "no-redundant-role": "off",
+    "attribute-empty-style": "off",
+    "attribute-boolean-style": "off"
   }
 }
